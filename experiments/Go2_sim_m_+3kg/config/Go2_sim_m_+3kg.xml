@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<config>
+  <paths
+    workspace="/home/jkang/third_party/PRIME"
+    experiment="${workspace}/experiments/Go2_sim_m_+3kg"
+    descriptions="${workspace}/experiments/Go2_sim_m_+3kg/descriptions"
+    data="${workspace}/experiments/Go2_sim_m_+3kg/data"
+    results="${workspace}/experiments/Go2_sim_m_+3kg/results" />
+
+  <robot
+    urdf="${descriptions}/urdf/go2.urdf"
+    srdf="${descriptions}/srdf/go2.srdf"
+    reference_configuration="standing" />
+
+  <contacts>
+    <frame name="RR_foot" />
+    <frame name="RL_foot" />
+    <frame name="FR_foot" />
+    <frame name="FL_foot" />
+  </contacts>
+
+  <identification>
+    <link index="1" />
+  </identification>
+
+  <data
+    q="${data}/p_sense.csv"
+    v="${data}/v_sense.csv"
+    u="${data}/tau_sense.csv"
+    q_has_time_column="true"
+    v_has_time_column="true"
+    u_has_time_column="true"
+    torso_base_frame=""
+    joint_order="3,4,5,0,1,2,9,10,11,6,7,8"
+    normalize_base_quaternion="true"
+    shift_base_to_ground="true"
+    reuse_initial_ground_height="true"
+    average_controls="false" />
+
+  <solver
+    horizon="2500"
+    interval="0.005"
+    down_sample="2"
+    max_iter="200"
+    callbacks="true"
+    start_idx="200"
+    n_thread="1"
+    alpha0="1.0"
+    dry_run="false" />
+
+  <weights
+    arrival_alpha="40.0"
+    arrival_com="40.0"
+    arrival_diag="40.0"
+    arrival_scale_alpha="10.0"
+    meas_position="400.0"
+    meas_position_z="20.0"
+    meas_orientation="10.0"
+    meas_joint="200.0"
+    meas_linearVel="30.0"
+    meas_angularVel="100.0"
+    meas_jointVel="20.0"
+    meas_params="0.0"
+    dyn_position="20.0"
+    dyn_orientation="20.0"
+    dyn_joint="40.0"
+    dyn_params="0.0"
+    kappa="500.0"
+    mu="0.8" />
+
+  <outputs
+    directory="${results}"
+    xs_log="xs_log.csv"
+    us_log="us_log.csv"
+    xs_results="xs_results_fddp.csv"
+    us_results="us_results_fddp.csv"
+    u0_results="u0_results_fddp.csv"
+    inertia_report="inertia_identification.txt"
+    xs_rollout="xs_rollout.csv"
+    force_log="f_rollout.csv"
+    log_initial_guess="true"
+    rollout="true" />
+</config>

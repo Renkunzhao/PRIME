@@ -1,0 +1,134 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Workspace: Configure",
+      "type": "shell",
+      "command": "cmake",
+      "args": [
+        "-S",
+        ".",
+        "-B",
+        "build",
+        "-DBUILD_PYTHON_INTERFACE=OFF",
+        "-DBUILD_EXAMPLES=OFF",
+        "-DCMAKE_BUILD_TYPE=Release"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Workspace: Build",
+      "type": "shell",
+      "command": "cmake",
+      "args": [
+        "--build",
+        "build",
+        "-j2"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": "$gcc",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "dependsOn": [
+        "Workspace: Configure"
+      ]
+    },
+    {
+      "label": "Experiment: Build",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "-lc",
+        "case \"${input:experiment}\" in g1_real_dance_1) target=g1_real_dance_1 ;; g1_real_dance_2) target=g1_real_dance_2 ;; go2_sim_cz_m0p1) target=go2_sim_cz_m0p1 ;; go2_sim_m_p3kg) target=go2_sim_m_p3kg ;; go2_sim_m_p3kg_kappa) target=go2_sim_m_p3kg_kappa ;; go2_real_belly_plate_4p6kg) target=go2_real_belly_plate_4p6kg ;; *) echo \"Unknown experiment: ${input:experiment}\" >&2; exit 2 ;; esac; cmake --build build --target \"$target\" -j2"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": "$gcc",
+      "group": "build",
+      "dependsOn": [
+        "Workspace: Configure"
+      ]
+    },
+    {
+      "label": "Experiment: Run",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "-lc",
+        "case \"${input:experiment}\" in g1_real_dance_1) target=g1_real_dance_1; exe=build/experiments/G1_real_dance_1/g1_real_dance_1; cfg=experiments/G1_real_dance_1/config/g1_real_dance_1.xml ;; g1_real_dance_2) target=g1_real_dance_2; exe=build/experiments/G1_real_dance_2/g1_real_dance_2; cfg=experiments/G1_real_dance_2/config/g1_real_dance_2.xml ;; go2_sim_cz_m0p1) target=go2_sim_cz_m0p1; exe=build/experiments/Go2_sim_cz_-0.1m/go2_sim_cz_m0p1; cfg=experiments/Go2_sim_cz_-0.1m/config/Go2_sim_cz_-0.1m.xml ;; go2_sim_m_p3kg) target=go2_sim_m_p3kg; exe=build/experiments/Go2_sim_m_+3kg/go2_sim_m_p3kg; cfg=experiments/Go2_sim_m_+3kg/config/Go2_sim_m_+3kg.xml ;; go2_sim_m_p3kg_kappa) target=go2_sim_m_p3kg_kappa; exe=build/experiments/Go2_sim_m_p3kg_kappa/go2_sim_m_p3kg_kappa; cfg=experiments/Go2_sim_m_p3kg_kappa/config/Go2_sim_m_p3kg_kappa.xml ;; go2_real_belly_plate_4p6kg) target=go2_real_belly_plate_4p6kg; exe=build/experiments/Go2_real_belly_plate_4.6kg/go2_real_belly_plate_4p6kg; cfg=experiments/Go2_real_belly_plate_4.6kg/config/go2_real_belly_plate_4.6kg.xml ;; *) echo \"Unknown experiment: ${input:experiment}\" >&2; exit 2 ;; esac; cmake --build build --target \"$target\" -j2 && \"$exe\" \"$cfg\""
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": "$gcc",
+      "group": "test",
+      "dependsOn": [
+        "Workspace: Configure"
+      ],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    },
+    {
+      "label": "Experiment: Visualize",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "-lc",
+        "case \"${input:experiment}\" in g1_real_dance_1) vis=experiments/G1_real_dance_1/visualizer/meshcat_g1.py; results=experiments/G1_real_dance_1/results ;; g1_real_dance_2) vis=experiments/G1_real_dance_2/visualizer/meshcat_g1.py; results=experiments/G1_real_dance_2/results ;; go2_sim_cz_m0p1) vis=experiments/Go2_sim_cz_-0.1m/visualizer/meshcat_go2.py; results=experiments/Go2_sim_cz_-0.1m/results ;; go2_sim_m_p3kg) vis=experiments/Go2_sim_m_+3kg/visualizer/meshcat_go2.py; results=experiments/Go2_sim_m_+3kg/results ;; go2_sim_m_p3kg_kappa) vis=experiments/Go2_sim_m_p3kg_kappa/visualizer/meshcat_go2.py; results=experiments/Go2_sim_m_p3kg_kappa/results ;; go2_real_belly_plate_4p6kg) vis=experiments/Go2_real_belly_plate_4.6kg/visualizer/meshcat_go2.py; results=experiments/Go2_real_belly_plate_4.6kg/results ;; *) echo \"Unknown experiment: ${input:experiment}\" >&2; exit 2 ;; esac; python3 \"$vis\" \"$results\""
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "group": "test",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    }
+  ],
+  "inputs": [
+    {
+      "id": "experiment",
+      "type": "pickString",
+      "description": "Select PRIME experiment",
+      "options": [
+        {
+          "label": "G1 Real Dance 1",
+          "value": "g1_real_dance_1"
+        },
+        {
+          "label": "G1 Real Dance 2",
+          "value": "g1_real_dance_2"
+        },
+        {
+          "label": "Go2 Sim cz -0.1m",
+          "value": "go2_sim_cz_m0p1"
+        },
+        {
+          "label": "Go2 Sim m +3kg",
+          "value": "go2_sim_m_p3kg"
+        },
+        {
+          "label": "Go2 Sim m +3kg kappa",
+          "value": "go2_sim_m_p3kg_kappa"
+        },
+        {
+          "label": "Go2 Real Belly Plate 4.6kg",
+          "value": "go2_real_belly_plate_4p6kg"
+        }
+      ],
+      "default": "g1_real_dance_1"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+*.pyc
+*.pyd
+*.pyo
+*~
+*.orig
+*.ipynb_checkpoints
+build*/*
+_build*
+*.aux
+*.log
+*.pdf
+.clang-format
+.vscode/*
+!.vscode/tasks.json
+*#*#
+.cache/
+
+# Experiment folders are part of the public artifact package for PRIME.
+# Keep robot configs, data, descriptions, generated results, and visualizers
+# visible to git even if a file extension matches a generic ignore rule above.
+!experiments/**/config/**
+!experiments/**/data/**
+!experiments/**/descriptions/**
+!experiments/**/results/**
+!experiments/**/src/**
+!experiments/**/visualizer/**

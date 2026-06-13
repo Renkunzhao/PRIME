@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<robot name="g1">
+
+  <!-- Attach floating base to world for planning -->
+  <virtual_joint
+      name="world_joint"
+      type="floating"
+      parent_frame="world"
+      child_link="pelvis" />
+
+  <!-- A minimal group containing the main body joints (optional but useful) -->
+  <group name="whole_body">
+    <chain base_link="pelvis" tip_link="LL_FOOT"/>
+    <chain base_link="pelvis" tip_link="LR_FOOT"/>
+    <chain base_link="pelvis" tip_link="head_link"/>
+    <!-- If you have hand tip links later, add them here -->
+  </group>
+
+  <!-- Standing posture -->
+  <group_state name="standing" group="whole_body">
+
+    <!-- Legs: neutral standing-ish -->
+    <joint name="left_hip_pitch_joint"  value="0.0"/>
+    <joint name="left_hip_roll_joint"   value="0.0"/>
+    <joint name="left_hip_yaw_joint"    value="0.0"/>
+    <joint name="left_knee_joint"       value="0.4"/>
+    <joint name="left_ankle_pitch_joint" value="-0.4"/>
+    <joint name="left_ankle_roll_joint"  value="0.0"/>
+
+    <joint name="right_hip_pitch_joint"  value="0.0"/>
+    <joint name="right_hip_roll_joint"   value="0.0"/>
+    <joint name="right_hip_yaw_joint"    value="0.0"/>
+    <joint name="right_knee_joint"       value="0.4"/>
+    <joint name="right_ankle_pitch_joint" value="-0.4"/>
+    <joint name="right_ankle_roll_joint"  value="0.0"/>
+
+    <!-- Torso -->
+    <joint name="waist_yaw_joint"   value="0.0"/>
+    <joint name="waist_roll_joint"  value="0.0"/>
+    <joint name="waist_pitch_joint" value="0.0"/>
+
+    <!-- Arms (only include these if the URDF actually defines them) -->
+    <joint name="left_shoulder_pitch_joint" value="0.0"/>
+    <joint name="left_shoulder_roll_joint"  value="0.0"/>
+    <joint name="left_shoulder_yaw_joint"   value="0.0"/>
+    <joint name="left_elbow_joint"          value="0.0"/>
+    <joint name="left_wrist_roll_joint"     value="0.0"/>
+    <joint name="left_wrist_pitch_joint"    value="0.0"/>
+    <joint name="left_wrist_yaw_joint"      value="0.0"/>
+
+    <joint name="right_shoulder_pitch_joint" value="0.0"/>
+    <joint name="right_shoulder_roll_joint"  value="0.0"/>
+    <joint name="right_shoulder_yaw_joint"   value="0.0"/>
+    <joint name="right_elbow_joint"          value="0.0"/>
+    <joint name="right_wrist_roll_joint"     value="0.0"/>
+    <joint name="right_wrist_pitch_joint"    value="0.0"/>
+    <joint name="right_wrist_yaw_joint"      value="0.0"/>
+  </group_state>
+
+  <!-- Disable collisions across fixed joints (common MoveIt SRDF hygiene) -->
+  <disable_collisions link1="pelvis" link2="pelvis_contour_link" reason="FixedJoint"/>
+
+  <disable_collisions link1="torso_link" link2="logo_link" reason="FixedJoint"/>
+  <disable_collisions link1="torso_link" link2="head_link" reason="FixedJoint"/>
+
+  <disable_collisions link1="torso_link" link2="imu_in_torso" reason="FixedJoint"/>
+  <disable_collisions link1="pelvis" link2="imu_in_pelvis" reason="FixedJoint"/>
+  <disable_collisions link1="torso_link" link2="mid360_link" reason="FixedJoint"/>
+
+  <disable_collisions link1="left_ankle_roll_link" link2="LL_FOOT" reason="FixedJoint"/>
+  <disable_collisions link1="right_ankle_roll_link" link2="LR_FOOT" reason="FixedJoint"/>
+
+  <disable_collisions link1="LL_FOOT" link2="LL_FOOT_FL" reason="FixedJoint"/>
+  <disable_collisions link1="LL_FOOT" link2="LL_FOOT_FR" reason="FixedJoint"/>
+  <disable_collisions link1="LL_FOOT" link2="LL_FOOT_RL" reason="FixedJoint"/>
+  <disable_collisions link1="LL_FOOT" link2="LL_FOOT_RR" reason="FixedJoint"/>
+
+  <disable_collisions link1="LR_FOOT" link2="LR_FOOT_FL" reason="FixedJoint"/>
+  <disable_collisions link1="LR_FOOT" link2="LR_FOOT_FR" reason="FixedJoint"/>
+  <disable_collisions link1="LR_FOOT" link2="LR_FOOT_RL" reason="FixedJoint"/>
+  <disable_collisions link1="LR_FOOT" link2="LR_FOOT_RR" reason="FixedJoint"/>
+
+  <!-- Optional: if you want MoveIt to ignore adjacent link collisions broadly, add more disable_collisions here -->
+
+</robot>

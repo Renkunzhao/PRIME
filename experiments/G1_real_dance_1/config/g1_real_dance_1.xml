@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<config>
+  <paths
+    workspace="/home/jkang/third_party/PRIME"
+    experiment="${workspace}/experiments/G1_real_dance_1"
+    descriptions="${workspace}/experiments/G1_real_dance_1/descriptions"
+    data="${workspace}/experiments/G1_real_dance_1/data"
+    results="${workspace}/experiments/G1_real_dance_1/results" />
+
+  <robot
+    urdf="${descriptions}/urdf/main.urdf"
+    srdf="${descriptions}/srdf/main.srdf"
+    reference_configuration="standing" />
+
+  <contacts>
+    <frame name="LL_FOOT_FL" />
+    <frame name="LL_FOOT_FR" />
+    <frame name="LL_FOOT_RL" />
+    <frame name="LL_FOOT_RR" />
+    <frame name="LR_FOOT_FL" />
+    <frame name="LR_FOOT_FR" />
+    <frame name="LR_FOOT_RL" />
+    <frame name="LR_FOOT_RR" />
+  </contacts>
+
+  <identification>
+    <link index="16" />
+  </identification>
+
+  <data
+    q="${data}/p_sense.csv"
+    v="${data}/v_sense.csv"
+    u="${data}/tau_sense.csv"
+    q_has_time_column="true"
+    v_has_time_column="true"
+    u_has_time_column="true"
+    torso_base_frame="torso_link"
+    joint_order=""
+    normalize_base_quaternion="true"
+    shift_base_to_ground="true"
+    reuse_initial_ground_height="false"
+    average_controls="false" />
+
+  <solver
+    horizon="2000"
+    interval="0.005"
+    down_sample="2"
+    max_iter="200"
+    callbacks="true"
+    start_idx="200"
+    n_thread="1"
+    alpha0="1.0"
+    dry_run="false" />
+
+  <weights
+    arrival_alpha="40.0"
+    arrival_com="40.0"
+    arrival_diag="40.0"
+    arrival_scale_alpha="10.0"
+    meas_position="400.0"
+    meas_position_z="200.0"
+    meas_orientation="30.0"
+    meas_joint="200.0"
+    meas_linearVel="0.0"
+    meas_angularVel="150.0"
+    meas_jointVel="40.0"
+    meas_params="0.0"
+    dyn_position="20.0"
+    dyn_orientation="20.0"
+    dyn_joint="20.0"
+    dyn_params="0.0"
+    kappa="1000.0"
+    mu="1.0" />
+
+  <outputs
+    directory="${results}"
+    xs_log="xs_log.csv"
+    us_log="us_log.csv"
+    xs_results="xs_results_fddp.csv"
+    us_results="us_results_fddp.csv"
+    u0_results="u0_results_fddp.csv"
+    inertia_report="inertia_identification.txt"
+    xs_rollout="xs_rollout.csv"
+    force_log="f_rollout.csv"
+    log_initial_guess="true"
+    rollout="true" />
+</config>
