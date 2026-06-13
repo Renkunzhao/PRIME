@@ -70,15 +70,15 @@ PRIME reconstructs physics-consistent motion, contact, and inertial estimates
 across humanoid and quadruped experiments from kinematics and actuator sensing.
 
 <p align="center">
-  <video src="media/PRIME_1_cropped.mp4" width="95%" controls muted loop playsinline></video>
+  <video src="https://raw.githubusercontent.com/well-robotics/PRIME/main/media/PRIME_1_cropped.mp4" width="95%" controls muted loop playsinline></video>
 </p>
 
 <p align="center">
-  <video src="media/PRIME_2_cropped_trimmed.mp4" width="95%" controls muted loop playsinline></video>
+  <video src="https://raw.githubusercontent.com/well-robotics/PRIME/main/media/PRIME_2_cropped_trimmed.mp4" width="95%" controls muted loop playsinline></video>
 </p>
 
 <p align="center">
-  <video src="media/PRIME_3_cropped_trimmed.mp4" width="95%" controls muted loop playsinline></video>
+  <video src="https://raw.githubusercontent.com/well-robotics/PRIME/main/media/PRIME_3_cropped_trimmed.mp4" width="95%" controls muted loop playsinline></video>
 </p>
 
 <p align="center">
