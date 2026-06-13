@@ -11,7 +11,7 @@ full-information estimation problem. Given measured kinematics and actuator
 commands, PRIME refines the robot trajectory while jointly estimating
 frictional contact interactions and physically consistent inertial parameters.
 The implementation uses differentiable Anitescu-style contact dynamics with
-smoothed complementarity constraints and solves the resulting problem with
+smoothed complementarity and solves the resulting problem with
 Crocoddyl/FDDP.
 
 <p align="center">
@@ -23,11 +23,6 @@ Crocoddyl/FDDP.
 <p align="center">
   <img src="media/FirstPlot_new.png" alt="PRIME pipeline from real robot motion and sensing to physics-consistent motion, inertia, and contact estimation" width="78%">
 </p>
-
-PRIME combines measured robot motion, actuator sensing, robot dynamics, and
-contact dynamics in a single differentiable optimization loop. The output is a
-physics-consistent trajectory together with estimated contact forces and
-inertial parameters.
 
 PRIME is built on [Crocoddyl](https://github.com/loco-3d/crocoddyl) as the
 optimization backend and preserves Crocoddyl's BSD-3-Clause license and
@@ -65,7 +60,7 @@ Crocoddyl paper. See `CITATION.cff` for citation metadata.
   smoothed Anitescu-style frictional contact dynamics.
 - Joint trajectory estimation, contact-force reconstruction, and inertial
   parameter identification from kinematics and actuator sensing.
-- Contact annotation and reconstruction tools for real-robot locomotion logs without relying on contact-related sensors.
+- Contact annotation tools for real-robot locomotion logs without relying on contact-related sensors.
 - Self-contained Unitree G1 and Go2 experiments for both real and simulated
   robot data, with XML configs, robot descriptions, results, and visualizers.
 
@@ -289,14 +284,6 @@ behavior while avoiding the hardest initialization directly from raw sensing.
 See `experiments/Go2_real_belly_plate_4.6kg/config/go2_real_belly_plate_4.6kg.xml`
 for a staged real-robot example.
 
-The current G1 description layout is standalone:
-
-```text
-experiments/G1_sim/descriptions/
-  urdf/main.urdf
-  srdf/main.srdf
-  meshes/*.STL
-```
 
 ## Adding Experiments
 
