@@ -6,6 +6,29 @@ import time
 import warnings
 from pathlib import Path
 
+
+def _preload_system_numpy():
+    """Load the OS NumPy before OpenRobots bindings see user-site NumPy 2.x."""
+    system_dist = "/usr/lib/python3/dist-packages"
+    if system_dist not in sys.path:
+        return
+
+    original_path = list(sys.path)
+    sys.path.remove(system_dist)
+    insert_at = 0
+    for i, path in enumerate(sys.path):
+        if path.endswith("/lib-dynload"):
+            insert_at = i + 1
+            break
+    sys.path.insert(insert_at, system_dist)
+    try:
+        import numpy  # noqa: F401
+    finally:
+        sys.path[:] = original_path
+
+
+_preload_system_numpy()
+
 import meshcat
 import meshcat.geometry as g
 import meshcat.transformations as tf

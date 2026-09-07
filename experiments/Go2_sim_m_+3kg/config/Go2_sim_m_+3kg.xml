@@ -41,7 +41,7 @@
     horizon="2500"
     interval="0.005"
     down_sample="2"
-    max_iter="200"
+    max_iter="20"
     callbacks="true"
     start_idx="200"
     n_thread="1"
