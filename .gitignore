@@ -24,3 +24,7 @@ _build*
 !experiments/**/results/**
 !experiments/**/src/**
 !experiments/**/visualizer/**
+
+# MHE runs generate many per-window outputs; keep them out of git.
+experiments/*_mhe/results/**
+!experiments/*_mhe/results/.gitkeep

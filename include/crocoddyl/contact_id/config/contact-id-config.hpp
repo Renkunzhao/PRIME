@@ -175,6 +175,10 @@ struct ContactIDOutputConfig {
   std::string force_log;
   bool log_initial_guess;
   bool rollout;
+  bool save_window_outputs;
+  bool save_debug_marginals;
+  bool save_force_rollout;
+  std::size_t save_every_n_windows;
 
   ContactIDOutputConfig()
       : directory("."),
@@ -187,7 +191,11 @@ struct ContactIDOutputConfig {
         xs_rollout("xs_rollout.csv"),
         force_log("f_rollout.csv"),
         log_initial_guess(false),
-        rollout(true) {}
+        rollout(true),
+        save_window_outputs(true),
+        save_debug_marginals(true),
+        save_force_rollout(true),
+        save_every_n_windows(1) {}
 };
 
 struct ContactIDXMLConfig {
@@ -637,6 +645,21 @@ inline ContactIDXMLConfig load_config(const std::string& xml_path) {
   cfg.outputs.log_initial_guess =
       attr_bool(outputs, "log_initial_guess", cfg.outputs.log_initial_guess);
   cfg.outputs.rollout = attr_bool(outputs, "rollout", cfg.outputs.rollout);
+  cfg.outputs.save_window_outputs =
+      attr_bool(outputs, "save_window_outputs",
+                cfg.outputs.save_window_outputs);
+  cfg.outputs.save_debug_marginals =
+      attr_bool(outputs, "save_debug_marginals",
+                cfg.outputs.save_debug_marginals);
+  cfg.outputs.save_force_rollout =
+      attr_bool(outputs, "save_force_rollout",
+                cfg.outputs.save_force_rollout);
+  cfg.outputs.save_every_n_windows =
+      attr_size(outputs, "save_every_n_windows",
+                cfg.outputs.save_every_n_windows);
+  if (cfg.outputs.save_every_n_windows == 0) {
+    throw std::runtime_error("outputs save_every_n_windows must be > 0.");
+  }
 
   return cfg;
 }

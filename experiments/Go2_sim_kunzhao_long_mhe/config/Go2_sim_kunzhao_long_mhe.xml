@@ -38,20 +38,20 @@
     average_controls="false" />
 
   <solver
-    horizon="300"
+    horizon="200"
     interval="0.005"
     down_sample="2"
     max_iter="10"
-    callbacks="true"
+    callbacks="false"
     start_idx="10000"
-    n_thread="1"
+    n_thread="8"
     alpha0="1.0"
     dry_run="false" />
 
   <moving_horizon
     enabled="true"
-    max_windows="200"
-    stride_knots="50"
+    max_windows="10"
+    stride_knots="25"
     information_floor="1e-9"
     information_ceiling="1e12" 
     information_forgetting_enabled="false"
@@ -87,6 +87,10 @@
     inertia_report="inertia_identification.txt"
     xs_rollout="xs_rollout.csv"
     force_log="f_rollout.csv"
-    log_initial_guess="true"
-    rollout="true" />
+    log_initial_guess="false"
+    rollout="false"
+    save_window_outputs="true"
+    save_debug_marginals="false"
+    save_force_rollout="false"
+    save_every_n_windows="1" />
 </config>

@@ -108,7 +108,7 @@ inline void clear_outputs(const crocoddyl::ContactIDOutputConfig& outputs) {
   if (outputs.rollout) {
     truncate_file(output_path(outputs, outputs.xs_rollout));
   }
-  if (!outputs.force_log.empty()) {
+  if (outputs.save_force_rollout && !outputs.force_log.empty()) {
     truncate_file(output_path(outputs, outputs.force_log));
   }
   if (outputs.log_initial_guess) {

@@ -40,6 +40,19 @@ struct PreparedContactIDData {
   std::vector<Eigen::VectorXd> parameter_logs;
 };
 
+struct LoadedContactIDLogs {
+  Eigen::MatrixXd q_processed;
+  Eigen::MatrixXd v_processed;
+  Eigen::MatrixXd u_processed;
+  std::vector<Eigen::VectorXd> parameter_logs;
+
+  std::size_t rows() const {
+    return static_cast<std::size_t>(
+        std::min(q_processed.rows(),
+                 std::min(v_processed.rows(), u_processed.rows())));
+  }
+};
+
 inline Eigen::VectorXd csv_row(const Eigen::MatrixXd& mat, std::size_t row,
                                bool has_time_column, Eigen::Index cols) {
   // The experiment CSVs are numeric and may carry a leading timestamp column.
@@ -232,6 +245,31 @@ inline std::vector<Eigen::VectorXd> compute_parameter_logs(
   return pi_logs;
 }
 
+inline LoadedContactIDLogs load_contact_id_logs(
+    const pinocchio::Model& model,
+    const std::vector<pinocchio::JointIndex>& joints,
+    const crocoddyl::ContactIDXMLConfig& cfg) {
+  LoadedContactIDLogs logs;
+  logs.parameter_logs =
+      compute_parameter_logs(model, joints, cfg.parameter_offsets);
+
+  logs.q_processed = csvutil::readCSVtoEigen(cfg.data.q_csv);
+  logs.v_processed = csvutil::readCSVtoEigen(cfg.data.v_csv);
+  logs.u_processed = csvutil::readCSVtoEigen(cfg.data.u_csv);
+
+  apply_joint_order(logs.q_processed, cfg.data.q_has_time_column, 7,
+                    model.nq - 7, cfg.data.joint_order);
+  apply_joint_order(logs.v_processed, cfg.data.v_has_time_column, 6,
+                    model.nv - 6, cfg.data.joint_order);
+  apply_joint_order(logs.u_processed, cfg.data.u_has_time_column, 0,
+                    model.nv - 6, cfg.data.joint_order);
+
+  convert_torso_measurements_to_base(model, cfg.data.torso_base_frame,
+                                     cfg.data.q_has_time_column,
+                                     logs.q_processed);
+  return logs;
+}
+
 inline void fill_state(const pinocchio::Model& model,
                        const std::vector<Eigen::VectorXd>& pi_logs,
                        const crocoddyl::ContactIDDataConfig& data_cfg,
@@ -258,29 +296,14 @@ inline PreparedContactIDData prepare_contact_id_data(
     const pinocchio::Model& model,
     const std::vector<pinocchio::JointIndex>& joints,
     const std::vector<std::string>& contact_frames,
-    const crocoddyl::ContactIDXMLConfig& cfg) {
+    const crocoddyl::ContactIDXMLConfig& cfg,
+    const LoadedContactIDLogs& logs) {
   PreparedContactIDData prepared;
-  prepared.parameter_logs =
-      compute_parameter_logs(model, joints, cfg.parameter_offsets);
-
-  const Eigen::MatrixXd q_csv = csvutil::readCSVtoEigen(cfg.data.q_csv);
-  Eigen::MatrixXd q_processed = q_csv;
-  Eigen::MatrixXd v_processed = csvutil::readCSVtoEigen(cfg.data.v_csv);
-  Eigen::MatrixXd u_processed = csvutil::readCSVtoEigen(cfg.data.u_csv);
-
-  apply_joint_order(q_processed, cfg.data.q_has_time_column, 7, model.nq - 7,
-                    cfg.data.joint_order);
-  apply_joint_order(v_processed, cfg.data.v_has_time_column, 6, model.nv - 6,
-                    cfg.data.joint_order);
-  apply_joint_order(u_processed, cfg.data.u_has_time_column, 0, model.nv - 6,
-                    cfg.data.joint_order);
-
-  convert_torso_measurements_to_base(model, cfg.data.torso_base_frame,
-                                     cfg.data.q_has_time_column, q_processed);
+  prepared.parameter_logs = logs.parameter_logs;
 
   const std::size_t last_state_row = cfg.solver.start_idx + cfg.solver.horizon;
-  if (last_state_row > static_cast<std::size_t>(q_processed.rows()) ||
-      last_state_row > static_cast<std::size_t>(v_processed.rows())) {
+  if (last_state_row > static_cast<std::size_t>(logs.q_processed.rows()) ||
+      last_state_row > static_cast<std::size_t>(logs.v_processed.rows())) {
     throw std::runtime_error("State CSVs are shorter than requested horizon.");
   }
 
@@ -293,8 +316,8 @@ inline PreparedContactIDData prepare_contact_id_data(
   // The contact-ID state layout is determined by the Pinocchio model and the
   // number of identified links. Unfilled parameter-rate slots remain zero.
   prepared.x0 = Eigen::VectorXd::Zero(nx);
-  fill_state(model, prepared.parameter_logs, cfg.data, q_processed, v_processed,
-             cfg.solver.start_idx, prepared.x0);
+  fill_state(model, prepared.parameter_logs, cfg.data, logs.q_processed,
+             logs.v_processed, cfg.solver.start_idx, prepared.x0);
 
   double initial_ground_height = 0.;
   if (cfg.data.shift_base_to_ground) {
@@ -311,8 +334,8 @@ inline PreparedContactIDData prepare_contact_id_data(
        i += cfg.solver.down_sample) {
     const std::size_t row = cfg.solver.start_idx + i;
     Eigen::VectorXd x_i = Eigen::VectorXd::Zero(nx);
-    fill_state(model, prepared.parameter_logs, cfg.data, q_processed, v_processed,
-               row, x_i);
+    fill_state(model, prepared.parameter_logs, cfg.data, logs.q_processed,
+               logs.v_processed, row, x_i);
     if (cfg.data.shift_base_to_ground) {
       const double ground_height =
           cfg.data.reuse_initial_ground_height
@@ -329,7 +352,7 @@ inline PreparedContactIDData prepare_contact_id_data(
        i += cfg.solver.down_sample) {
     const std::size_t row = cfg.solver.start_idx + i;
     Eigen::VectorXd u_i =
-        make_control(u_processed, row, cfg.solver.down_sample,
+        make_control(logs.u_processed, row, cfg.solver.down_sample,
                      cfg.data.u_has_time_column, model.nv,
                      cfg.data.average_controls);
     prepared.ctrl_task.push_back(u_i);
@@ -337,6 +360,16 @@ inline PreparedContactIDData prepare_contact_id_data(
   }
 
   return prepared;
+}
+
+inline PreparedContactIDData prepare_contact_id_data(
+    const pinocchio::Model& model,
+    const std::vector<pinocchio::JointIndex>& joints,
+    const std::vector<std::string>& contact_frames,
+    const crocoddyl::ContactIDXMLConfig& cfg) {
+  return prepare_contact_id_data(
+      model, joints, contact_frames, cfg,
+      load_contact_id_logs(model, joints, cfg));
 }
 
 }  // namespace contact_id_experiment

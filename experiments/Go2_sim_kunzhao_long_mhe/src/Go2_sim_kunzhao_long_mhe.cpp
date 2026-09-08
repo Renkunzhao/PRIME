@@ -7,6 +7,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #include <algorithm>
+#include <chrono>
 #include <cmath>
 #include <fstream>
 #include <iomanip>
@@ -43,6 +44,38 @@ struct ExtractedMarginal {
   std::string status;
 };
 
+struct WindowTiming {
+  double data_ms;
+  double problem_ms;
+  double solve_ms;
+  double output_ms;
+  double extraction_ms;
+  double total_ms;
+
+  WindowTiming()
+      : data_ms(0.),
+        problem_ms(0.),
+        solve_ms(0.),
+        output_ms(0.),
+        extraction_ms(0.),
+        total_ms(0.) {}
+};
+
+using Clock = std::chrono::steady_clock;
+
+double elapsed_ms(const Clock::time_point& start,
+                  const Clock::time_point& end) {
+  return std::chrono::duration<double, std::milli>(end - start).count();
+}
+
+bool compiled_with_multithreading() {
+#ifdef CROCODDYL_WITH_MULTITHREADING
+  return true;
+#else
+  return false;
+#endif
+}
+
 std::vector<double> make_solver_alphas(double alpha0) {
   std::vector<double> alphas;
   for (int i = 0; i < 11; ++i) {
@@ -74,6 +107,26 @@ crocoddyl::ContactIDOutputConfig window_outputs(
   out.directory = crocoddyl::contact_id_xml::join_path(
       base.directory, window_label(window_index, start_idx));
   return out;
+}
+
+bool save_on_window(const crocoddyl::ContactIDOutputConfig& outputs,
+                    std::size_t window_index) {
+  return window_index % outputs.save_every_n_windows == 0;
+}
+
+bool save_window_outputs(const crocoddyl::ContactIDOutputConfig& outputs,
+                         std::size_t window_index) {
+  return outputs.save_window_outputs && save_on_window(outputs, window_index);
+}
+
+bool save_debug_outputs(const crocoddyl::ContactIDOutputConfig& outputs,
+                        std::size_t window_index) {
+  return outputs.save_debug_marginals && save_on_window(outputs, window_index);
+}
+
+void disable_solver_side_force_logging(
+    crocoddyl::ContactIDOutputConfig& outputs) {
+  outputs.force_log.clear();
 }
 
 Eigen::VectorXd flatten_parameter_logs(
@@ -122,6 +175,35 @@ void apply_prior_mean_to_data(const pinocchio::Model& model,
   overwrite_theta_sequence(data.state_task, model.nq, theta);
   overwrite_theta_sequence(data.state_init, model.nq, theta);
   data.parameter_logs = split_parameter_logs(theta);
+}
+
+void apply_shifted_warm_start(const pinocchio::Model& model,
+                              const Eigen::VectorXd& theta,
+                              std::size_t stride_knots,
+                              const std::vector<Eigen::VectorXd>& previous_xs,
+                              const std::vector<Eigen::VectorXd>& previous_us,
+                              contact_id_experiment::PreparedContactIDData& data) {
+  if (previous_xs.empty() || previous_us.empty() || stride_knots == 0 ||
+      stride_knots >= previous_xs.size()) {
+    overwrite_theta_sequence(data.state_init, model.nq, theta);
+    return;
+  }
+
+  const std::size_t state_limit =
+      std::min(data.state_init.size(), previous_xs.size() - stride_knots);
+  for (std::size_t i = 1; i < state_limit; ++i) {
+    data.state_init[i] = previous_xs[stride_knots + i];
+  }
+
+  if (stride_knots + 1 < previous_us.size()) {
+    const std::size_t control_limit =
+        std::min(data.ctrl_init.size(), previous_us.size() - stride_knots);
+    for (std::size_t i = 1; i < control_limit; ++i) {
+      data.ctrl_init[i] = previous_us[stride_knots + i];
+    }
+  }
+
+  overwrite_theta_sequence(data.state_init, model.nq, theta);
 }
 
 Eigen::MatrixXd symmetrized(const Eigen::MatrixXd& matrix) {
@@ -331,8 +413,37 @@ boost::shared_ptr<crocoddyl::ShootingProblem> create_problem(
           data.x0, static_cast<double>(solver_cfg.down_sample) *
                        solver_cfg.interval,
           data.state_task.size(), data.state_task, data.ctrl_task);
-  shooting_problem->set_nthreads(static_cast<int>(solver_cfg.n_thread));
+  if (compiled_with_multithreading()) {
+    shooting_problem->set_nthreads(static_cast<int>(solver_cfg.n_thread));
+  }
   return shooting_problem;
+}
+
+void save_force_rollout_serial(
+    const pinocchio::Model& model,
+    const std::vector<pinocchio::JointIndex>& joints,
+    const std::vector<std::string>& contact_frames,
+    const crocoddyl::ContactIDWeights& weights,
+    const crocoddyl::ContactIDSolverConfig& solver_cfg,
+    const crocoddyl::ContactIDOutputConfig& outputs,
+    const crocoddyl::MarginalizedArrivalPrior& prior,
+    contact_id_experiment::PreparedContactIDData data,
+    const std::vector<Eigen::VectorXd>& xs_solution,
+    const std::vector<Eigen::VectorXd>& us_solution) {
+  if (!outputs.save_force_rollout || outputs.force_log.empty()) {
+    return;
+  }
+
+  contact_id_experiment::ensure_dir(outputs.directory);
+  contact_id_experiment::truncate_file(
+      contact_id_experiment::output_path(outputs, outputs.force_log));
+
+  crocoddyl::ContactIDSolverConfig serial_solver = solver_cfg;
+  serial_solver.n_thread = 1;
+  boost::shared_ptr<crocoddyl::ShootingProblem> force_problem =
+      create_problem(model, joints, contact_frames, weights, serial_solver,
+                     outputs, prior, data);
+  force_problem->calc(xs_solution, us_solution);
 }
 
 ExtractedMarginal extract_dropped_chunk_information(
@@ -500,21 +611,29 @@ void write_summary_row(std::ofstream& os, std::size_t window_index,
   os << "\n";
 }
 
-std::size_t available_windows(const crocoddyl::ContactIDXMLConfig& cfg) {
-  const Eigen::Index q_rows =
-      csvutil::readCSVtoEigen(cfg.data.q_csv).rows();
-  const Eigen::Index v_rows =
-      csvutil::readCSVtoEigen(cfg.data.v_csv).rows();
-  const Eigen::Index u_rows =
-      csvutil::readCSVtoEigen(cfg.data.u_csv).rows();
-  const std::size_t rows = static_cast<std::size_t>(
-      std::min(q_rows, std::min(v_rows, u_rows)));
+std::size_t available_windows(
+    const crocoddyl::ContactIDXMLConfig& cfg,
+    const contact_id_experiment::LoadedContactIDLogs& logs) {
+  const std::size_t rows = logs.rows();
   const std::size_t stride =
       cfg.moving_horizon.stride_knots * cfg.solver.down_sample;
   if (cfg.solver.start_idx + cfg.solver.horizon > rows) {
     return 0;
   }
   return 1 + (rows - cfg.solver.start_idx - cfg.solver.horizon) / stride;
+}
+
+void write_timing_header(std::ofstream& os) {
+  os << "window,start_idx,data_ms,problem_ms,solve_ms,output_ms,"
+        "extraction_ms,total_ms\n";
+}
+
+void write_timing_row(std::ofstream& os, std::size_t window_index,
+                      std::size_t start_idx, const WindowTiming& timing) {
+  os << window_index << "," << start_idx << "," << timing.data_ms << ","
+     << timing.problem_ms << "," << timing.solve_ms << ","
+     << timing.output_ms << "," << timing.extraction_ms << ","
+     << timing.total_ms << "\n";
 }
 
 }  // namespace
@@ -530,7 +649,14 @@ int main(int argc, char* argv[]) {
         crocoddyl::contact_id_xml::load_config(argv[1]);
     contact_id_experiment::validate_required(cfg);
 
-    const std::size_t max_available_windows = available_windows(cfg);
+    const pinocchio::Model model =
+        contact_id_experiment::load_floating_base_model(cfg.robot);
+    const std::vector<pinocchio::JointIndex> joints =
+        contact_id_experiment::resolve_identified_joints(model, cfg);
+    const contact_id_experiment::LoadedContactIDLogs logs =
+        contact_id_experiment::load_contact_id_logs(model, joints, cfg);
+
+    const std::size_t max_available_windows = available_windows(cfg, logs);
     if (max_available_windows == 0) {
       throw std::runtime_error("No valid moving-horizon windows fit the data.");
     }
@@ -561,6 +687,15 @@ int main(int argc, char* argv[]) {
                 << cfg.moving_horizon.information_forgetting_enabled
                 << " information_forgetting_factor="
                 << cfg.moving_horizon.information_forgetting_factor
+                << " n_thread=" << cfg.solver.n_thread
+                << " compiled_multithreading="
+                << compiled_with_multithreading()
+                << " save_window_outputs="
+                << cfg.outputs.save_window_outputs
+                << " save_debug_marginals="
+                << cfg.outputs.save_debug_marginals
+                << " save_every_n_windows="
+                << cfg.outputs.save_every_n_windows
                 << "\n";
       return 0;
     }
@@ -570,10 +705,13 @@ int main(int argc, char* argv[]) {
            "only. The long window remains the identification solve; the "
            "arrival prior is updated by a short dropped-chunk backward pass.\n";
 
-    const pinocchio::Model model =
-        contact_id_experiment::load_floating_base_model(cfg.robot);
-    const std::vector<pinocchio::JointIndex> joints =
-        contact_id_experiment::resolve_identified_joints(model, cfg);
+    if (cfg.solver.n_thread > 1 && !compiled_with_multithreading()) {
+      std::cout
+          << "Requested n_thread=" << cfg.solver.n_thread
+          << ", but this build was not compiled with "
+             "CROCODDYL_WITH_MULTITHREADING. Reconfigure with "
+             "-DBUILD_WITH_MULTITHREADS=ON for node-level parallel calc/calcDiff.\n";
+    }
 
     contact_id_experiment::clear_directory_contents(cfg.outputs.directory);
     std::cout << "Cleared MHE results directory: " << cfg.outputs.directory
@@ -586,9 +724,20 @@ int main(int argc, char* argv[]) {
     }
     summary << std::setprecision(12);
     write_summary_header(summary, static_cast<Eigen::Index>(10 * joints.size()));
+    const std::string timing_path = crocoddyl::contact_id_xml::join_path(
+        cfg.outputs.directory, "timing_summary.csv");
+    std::ofstream timing_summary(timing_path.c_str(),
+                                std::ios::out | std::ios::trunc);
+    if (!timing_summary.is_open()) {
+      throw std::runtime_error("Cannot open timing summary: " + timing_path);
+    }
+    timing_summary << std::setprecision(12);
+    write_timing_header(timing_summary);
 
     crocoddyl::MarginalizedArrivalPrior carried_prior;
     Eigen::VectorXd carried_theta;
+    std::vector<Eigen::VectorXd> previous_xs;
+    std::vector<Eigen::VectorXd> previous_us;
     const double information_forgetting_factor =
         cfg.moving_horizon.information_forgetting_enabled
             ? cfg.moving_horizon.information_forgetting_factor
@@ -596,52 +745,83 @@ int main(int argc, char* argv[]) {
 
     crocoddyl::Timer timer;
     for (std::size_t w = 0; w < n_windows; ++w) {
+      WindowTiming timing;
+      const Clock::time_point window_start = Clock::now();
       crocoddyl::ContactIDXMLConfig window_cfg = cfg;
       window_cfg.solver.start_idx =
           cfg.solver.start_idx +
           w * cfg.moving_horizon.stride_knots * cfg.solver.down_sample;
 
+      const Clock::time_point data_start = Clock::now();
       contact_id_experiment::PreparedContactIDData data =
           contact_id_experiment::prepare_contact_id_data(
-              model, joints, cfg.contact_frames, window_cfg);
+              model, joints, cfg.contact_frames, window_cfg, logs);
       if (w == 0) {
         carried_theta = flatten_parameter_logs(data.parameter_logs);
         carried_prior =
             initial_arrival_prior(model, joints, cfg.weights, carried_theta);
       } else {
         apply_prior_mean_to_data(model, carried_theta, data);
+        apply_shifted_warm_start(model, carried_theta,
+                                 cfg.moving_horizon.stride_knots,
+                                 previous_xs, previous_us, data);
       }
+      timing.data_ms = elapsed_ms(data_start, Clock::now());
 
       const crocoddyl::ContactIDOutputConfig outputs =
           window_outputs(cfg.outputs, w, window_cfg.solver.start_idx);
-      contact_id_experiment::clear_outputs(outputs);
-      contact_id_experiment::log_initial_guess(outputs, data.state_task,
-                                               data.ctrl_task);
-      save_prior_debug(outputs, "arrival_prior_used", carried_prior);
+      if (save_window_outputs(cfg.outputs, w) ||
+          save_debug_outputs(cfg.outputs, w)) {
+        contact_id_experiment::ensure_dir(outputs.directory);
+      }
+      if (save_window_outputs(cfg.outputs, w)) {
+        contact_id_experiment::clear_outputs(outputs);
+        contact_id_experiment::log_initial_guess(outputs, data.state_task,
+                                                 data.ctrl_task);
+      }
+      if (save_debug_outputs(cfg.outputs, w)) {
+        save_prior_debug(outputs, "arrival_prior_used", carried_prior);
+      }
 
       std::cout << "Solving MHE window " << w + 1 << " / " << n_windows
                 << " start_idx=" << window_cfg.solver.start_idx
                 << " dense_prior=" << carried_prior.enabled
                 << " information_forgetting_factor="
                 << information_forgetting_factor << "\n";
+      crocoddyl::ContactIDOutputConfig solver_outputs = outputs;
+      disable_solver_side_force_logging(solver_outputs);
+      const Clock::time_point problem_start = Clock::now();
       boost::shared_ptr<crocoddyl::ShootingProblem> shooting_problem =
           create_problem(model, joints, cfg.contact_frames, cfg.weights,
-                         window_cfg.solver, outputs, carried_prior, data);
+                         window_cfg.solver, solver_outputs, carried_prior,
+                         data);
+      timing.problem_ms = elapsed_ms(problem_start, Clock::now());
 
       crocoddyl::SolverFDDP solver(shooting_problem);
       solver.set_alphas(make_solver_alphas(cfg.solver.alpha0));
       configure_callbacks(solver, cfg.solver.callbacks);
+      const Clock::time_point solve_start = Clock::now();
       solver.solve(data.state_init, data.ctrl_init, cfg.solver.max_iter, false,
                    0.1);
+      timing.solve_ms = elapsed_ms(solve_start, Clock::now());
 
-      contact_id_experiment::save_solution_outputs(
-          outputs, shooting_problem, solver.get_xs(), solver.get_us());
-      contact_id_experiment::save_inertia_identification_report(
-          outputs, model, joints, data.parameter_logs, solver.get_xs(),
-          solver.get_us());
+      const Clock::time_point output_start = Clock::now();
+      if (save_window_outputs(cfg.outputs, w)) {
+        contact_id_experiment::save_solution_outputs(
+            outputs, shooting_problem, solver.get_xs(), solver.get_us());
+        save_force_rollout_serial(model, joints, cfg.contact_frames,
+                                  cfg.weights, window_cfg.solver, outputs,
+                                  carried_prior, data, solver.get_xs(),
+                                  solver.get_us());
+        contact_id_experiment::save_inertia_identification_report(
+            outputs, model, joints, data.parameter_logs, solver.get_xs(),
+            solver.get_us());
+      }
+      timing.output_ms = elapsed_ms(output_start, Clock::now());
 
       const crocoddyl::MarginalizedArrivalPrior arrival_prior_used =
           carried_prior;
+      const Clock::time_point extraction_start = Clock::now();
       const ExtractedMarginal dropped_information =
           extract_dropped_chunk_information(
               model, joints, cfg.contact_frames, window_cfg, data,
@@ -649,27 +829,38 @@ int main(int argc, char* argv[]) {
               cfg.moving_horizon.stride_knots,
               cfg.moving_horizon.information_floor,
               cfg.moving_horizon.information_ceiling);
-      save_extraction_debug(outputs, "dropped_information",
-                            dropped_information);
+      if (save_debug_outputs(cfg.outputs, w)) {
+        save_extraction_debug(outputs, "dropped_information",
+                              dropped_information);
+      }
       const ExtractedMarginal marginal =
           accumulate_parameter_information(
               carried_prior, dropped_information,
               cfg.moving_horizon.information_floor,
               cfg.moving_horizon.information_ceiling,
               information_forgetting_factor);
-      save_extraction_debug(outputs, "accumulated_prior", marginal);
+      if (save_debug_outputs(cfg.outputs, w)) {
+        save_extraction_debug(outputs, "accumulated_prior", marginal);
+      }
+      timing.extraction_ms = elapsed_ms(extraction_start, Clock::now());
       carried_prior = marginal.prior;
       carried_theta = marginal.prior.mean;
+      previous_xs = solver.get_xs();
+      previous_us = solver.get_us();
 
       const double feasibility = solver.computeDynamicFeasibility();
       write_summary_row(summary, w, window_cfg.solver.start_idx,
                         solver.get_cost(), feasibility, arrival_prior_used,
                         marginal, information_forgetting_factor);
       summary.flush();
+      timing.total_ms = elapsed_ms(window_start, Clock::now());
+      write_timing_row(timing_summary, w, window_cfg.solver.start_idx, timing);
+      timing_summary.flush();
     }
 
     std::cout << "MHE windows solved: " << n_windows << "\n";
     std::cout << "MHE summary: " << summary_path << "\n";
+    std::cout << "Timing summary: " << timing_path << "\n";
     std::cout << "Duration: " << timer.get_duration() / 1000. << " seconds\n";
   } catch (const std::exception& e) {
     std::cerr << "go2_sim_kunzhao_long_mhe: " << e.what() << "\n";
