@@ -19,10 +19,74 @@
 
 #include <pinocchio/algorithm/joint-configuration.hpp>
 
+#include "crocoddyl/core/cost-base.hpp"
 #include "crocoddyl/core/costs/residual.hpp"
 #include "crocoddyl/contact_id/anitescu/Logchol.hpp"
 
 namespace crocoddyl {
+
+class CostModelDenseControlPrior : public CostModelAbstract {
+ public:
+  CostModelDenseControlPrior(boost::shared_ptr<StateAbstract> state,
+                             const Eigen::VectorXd& reference,
+                             const Eigen::MatrixXd& information)
+      : CostModelAbstract(state, static_cast<std::size_t>(reference.size()),
+                          static_cast<std::size_t>(reference.size())),
+        reference_(reference),
+        information_(information) {
+    if (information_.rows() != reference_.size() ||
+        information_.cols() != reference_.size()) {
+      throw std::runtime_error(
+          "Dense control prior information has inconsistent dimensions.");
+    }
+  }
+
+  virtual ~CostModelDenseControlPrior() {}
+
+  virtual void calc(const boost::shared_ptr<CostDataAbstract>& data,
+                    const Eigen::Ref<const Eigen::VectorXd>&,
+                    const Eigen::Ref<const Eigen::VectorXd>& u) {
+    if (u.size() != reference_.size()) {
+      throw std::runtime_error("Dense control prior received wrong u size.");
+    }
+    data->residual->r = u - reference_;
+    data->cost = 0.5 * data->residual->r.dot(information_ * data->residual->r);
+  }
+
+  virtual void calc(const boost::shared_ptr<CostDataAbstract>& data,
+                    const Eigen::Ref<const Eigen::VectorXd>&) {
+    data->residual->r.setZero();
+    data->cost = 0.;
+  }
+
+  virtual void calcDiff(const boost::shared_ptr<CostDataAbstract>& data,
+                        const Eigen::Ref<const Eigen::VectorXd>&,
+                        const Eigen::Ref<const Eigen::VectorXd>& u) {
+    if (u.size() != reference_.size()) {
+      throw std::runtime_error("Dense control prior received wrong u size.");
+    }
+    data->Lx.setZero();
+    data->Lxx.setZero();
+    data->Lxu.setZero();
+    data->residual->r = u - reference_;
+    data->Lu.noalias() = information_ * data->residual->r;
+    data->Luu = information_;
+  }
+
+  virtual void calcDiff(const boost::shared_ptr<CostDataAbstract>& data,
+                        const Eigen::Ref<const Eigen::VectorXd>&) {
+    data->Lx.setZero();
+    data->Lxx.setZero();
+  }
+
+  virtual void print(std::ostream& os) const {
+    os << "CostModelDenseControlPrior {nu=" << reference_.size() << "}";
+  }
+
+ private:
+  Eigen::VectorXd reference_;
+  Eigen::MatrixXd information_;
+};
 
 Eigen::VectorXd computeFrozenSFromLogCholeskyJacobian(
     const pinocchio::Model& model, pinocchio::JointIndex j_link, double alpha) {
@@ -80,7 +144,7 @@ ContactAnitescuIDProblem::createEstimationProblem(
   std::vector<boost::shared_ptr<crocoddyl::ActionModelAbstract> >
       estimation_step;
 
-  estimation3d_model.push_back(createArrivalModel());
+  estimation3d_model.push_back(createArrivalModel(x0));
   estimation_step = createStepModels(timestep, n_knots, state_task, ctrl_task);
 
   estimation3d_model.insert(estimation3d_model.end(), estimation_step.begin(),
@@ -178,13 +242,38 @@ ContactAnitescuIDProblem::createDiscreteModel(
 }
 
 boost::shared_ptr<crocoddyl::ActionModelAbstract>
-ContactAnitescuIDProblem::createArrivalModel() {
+ContactAnitescuIDProblem::createArrivalModel(const Eigen::VectorXd& x0) {
   boost::shared_ptr<ActuationModelFloatingBaseArrivalID> actuation_arrival =
       boost::make_shared<crocoddyl::ActuationModelFloatingBaseArrivalID>(state_);
 
   const int nu = static_cast<int>(actuation_arrival->get_nu());
   boost::shared_ptr<crocoddyl::CostModelSum> cost_model =
       boost::make_shared<crocoddyl::CostModelSum>(state_, nu);
+
+  if (arrival_prior_.enabled) {
+    if (arrival_prior_.mean.size() != nu ||
+        arrival_prior_.information.rows() != nu ||
+        arrival_prior_.information.cols() != nu) {
+      throw std::runtime_error(
+          "Marginalized arrival prior dimensions do not match the parameter "
+          "dimension.");
+    }
+    if (x0.size() != static_cast<Eigen::Index>(state_->get_nx())) {
+      throw std::runtime_error(
+          "Marginalized arrival prior requires the shooting initial state.");
+    }
+
+    const Eigen::VectorXd current_theta =
+        x0.segment(rmodel_.nq, state_->get_np());
+    const Eigen::VectorXd defect_task = arrival_prior_.mean - current_theta;
+    boost::shared_ptr<crocoddyl::CostModelAbstract> dense_prior =
+        boost::make_shared<CostModelDenseControlPrior>(
+            state_, defect_task, arrival_prior_.information);
+    cost_model->addCost("marginalizedArrival", dense_prior, 1.);
+
+    return boost::make_shared<crocoddyl::ActionModelArrivalFwdDynamicsID>(
+        state_, actuation_arrival, cost_model);
+  }
 
   Eigen::VectorXd defect_task = Eigen::VectorXd::Zero(nu);
   Eigen::VectorXd defect_weights = Eigen::VectorXd::Zero(nu);
@@ -233,6 +322,15 @@ ContactAnitescuIDProblem::createArrivalModel() {
 
   return boost::make_shared<crocoddyl::ActionModelArrivalFwdDynamicsID>(
       state_, actuation_arrival, cost_model);
+}
+
+void ContactAnitescuIDProblem::set_arrival_prior(
+    const MarginalizedArrivalPrior& prior) {
+  arrival_prior_ = prior;
+}
+
+void ContactAnitescuIDProblem::clear_arrival_prior() {
+  arrival_prior_ = MarginalizedArrivalPrior();
 }
 
 const Eigen::VectorXd& ContactAnitescuIDProblem::get_defaultState() const {

@@ -22,6 +22,7 @@
 #include <sys/types.h>
 #include <vector>
 
+#include <boost/filesystem.hpp>
 #include <boost/shared_ptr.hpp>
 
 #include "crocoddyl/contact_id/config/contact-id-config.hpp"
@@ -49,6 +50,33 @@ inline void ensure_dir(const std::string& path) {
       throw std::runtime_error("Failed to create directory '" + partial +
                                "': " + std::strerror(errno));
     }
+  }
+}
+
+inline void clear_directory_contents(const std::string& path) {
+  namespace fs = boost::filesystem;
+  if (path.empty() || path == "." || path == "/") {
+    throw std::runtime_error("Refusing to clear unsafe output directory: '" +
+                             path + "'");
+  }
+
+  const fs::path directory = fs::absolute(fs::path(path));
+  if (directory == directory.root_path() || directory == fs::current_path()) {
+    throw std::runtime_error("Refusing to clear unsafe output directory: '" +
+                             directory.string() + "'");
+  }
+
+  if (!fs::exists(directory)) {
+    ensure_dir(directory.string());
+    return;
+  }
+  if (!fs::is_directory(directory)) {
+    throw std::runtime_error("Output path is not a directory: " +
+                             directory.string());
+  }
+
+  for (fs::directory_iterator it(directory), end; it != end; ++it) {
+    fs::remove_all(it->path());
   }
 }
 

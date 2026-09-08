@@ -16,6 +16,8 @@
 #ifndef CROCODDYL_CONTACT_ID_PROBLEM_CONTACT_ANITESCU_ID_HPP_
 #define CROCODDYL_CONTACT_ID_PROBLEM_CONTACT_ANITESCU_ID_HPP_
 
+#include <Eigen/Dense>
+
 #include <pinocchio/algorithm/frames.hpp>
 #include <pinocchio/algorithm/kinematics.hpp>
 #include <pinocchio/multibody/frame.hpp>
@@ -36,6 +38,17 @@
 #include "crocoddyl/contact_id/config/contact-id-config.hpp"
 
 namespace crocoddyl {
+
+struct MarginalizedArrivalPrior {
+  bool enabled;
+  Eigen::VectorXd mean;
+  Eigen::MatrixXd information;
+
+  MarginalizedArrivalPrior() : enabled(false) {}
+  MarginalizedArrivalPrior(const Eigen::VectorXd& mean_in,
+                           const Eigen::MatrixXd& information_in)
+      : enabled(true), mean(mean_in), information(information_in) {}
+};
 
 Eigen::VectorXd computeFrozenSFromLogCholeskyJacobian(
     const pinocchio::Model& model, pinocchio::JointIndex j_link, double alpha);
@@ -63,7 +76,11 @@ class ContactAnitescuIDProblem {
       const double timeStep, const Eigen::VectorXd& state_task,
       const Eigen::VectorXd& ctrl_task = Eigen::VectorXd());
 
-  boost::shared_ptr<ActionModelAbstract> createArrivalModel();
+  boost::shared_ptr<ActionModelAbstract> createArrivalModel(
+      const Eigen::VectorXd& x0 = Eigen::VectorXd());
+
+  void set_arrival_prior(const MarginalizedArrivalPrior& prior);
+  void clear_arrival_prior();
 
   const Eigen::VectorXd& get_defaultState() const;
   const ContactIDWeights& get_weights() const;
@@ -83,6 +100,7 @@ class ContactAnitescuIDProblem {
   ContactIDWeights weights_;
   std::string force_log_path_;
   Eigen::VectorXd defaultstate_;
+  MarginalizedArrivalPrior arrival_prior_;
 };
 
 class QuadrupedAnitescuIDProblem : public ContactAnitescuIDProblem {

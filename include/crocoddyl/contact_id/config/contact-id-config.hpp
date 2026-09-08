@@ -111,6 +111,21 @@ struct ContactIDContinuationConfig {
   ContactIDContinuationConfig() : enabled(false) {}
 };
 
+struct ContactIDMovingHorizonConfig {
+  bool enabled;
+  std::size_t max_windows;
+  std::size_t stride_knots;
+  double information_floor;
+  double information_ceiling;
+
+  ContactIDMovingHorizonConfig()
+      : enabled(false),
+        max_windows(1),
+        stride_knots(1),
+        information_floor(1e-9),
+        information_ceiling(1e12) {}
+};
+
 struct ContactIDRobotConfig {
   std::string urdf;
   std::string srdf;
@@ -181,6 +196,7 @@ struct ContactIDXMLConfig {
   ContactIDSolverConfig solver;
   ContactIDWeights weights;
   ContactIDContinuationConfig continuation;
+  ContactIDMovingHorizonConfig moving_horizon;
   ContactIDOutputConfig outputs;
   std::string xml_dir;
 };
@@ -556,6 +572,38 @@ inline ContactIDXMLConfig load_config(const std::string& xml_path) {
     if (cfg.continuation.enabled && cfg.continuation.stages.empty()) {
       throw std::runtime_error(
           "Continuation is enabled but no <stage> entries were provided.");
+    }
+  }
+
+  rapidxml::xml_node<>* moving_horizon = root->first_node("moving_horizon");
+  if (moving_horizon) {
+    cfg.moving_horizon.enabled =
+        attr_bool(moving_horizon, "enabled", cfg.moving_horizon.enabled);
+    cfg.moving_horizon.max_windows =
+        attr_size(moving_horizon, "max_windows",
+                  cfg.moving_horizon.max_windows);
+    cfg.moving_horizon.stride_knots =
+        attr_size(moving_horizon, "stride_knots",
+                  cfg.moving_horizon.stride_knots);
+    cfg.moving_horizon.information_floor =
+        attr_double(moving_horizon, "information_floor",
+                    cfg.moving_horizon.information_floor);
+    cfg.moving_horizon.information_ceiling =
+        attr_double(moving_horizon, "information_ceiling",
+                    cfg.moving_horizon.information_ceiling);
+    if (cfg.moving_horizon.enabled &&
+        cfg.moving_horizon.max_windows == 0) {
+      throw std::runtime_error("Moving horizon max_windows must be > 0.");
+    }
+    if (cfg.moving_horizon.enabled &&
+        cfg.moving_horizon.stride_knots == 0) {
+      throw std::runtime_error("Moving horizon stride_knots must be > 0.");
+    }
+    if (!(cfg.moving_horizon.information_floor > 0.) ||
+        cfg.moving_horizon.information_ceiling <
+            cfg.moving_horizon.information_floor) {
+      throw std::runtime_error(
+          "Moving horizon information bounds are invalid.");
     }
   }
 
