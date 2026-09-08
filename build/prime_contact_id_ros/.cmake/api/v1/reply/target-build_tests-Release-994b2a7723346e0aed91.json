@@ -1,0 +1,58 @@
+{
+	"backtrace" : 5,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_custom_target",
+			"include"
+		],
+		"files" : 
+		[
+			"/home/jkang/third_party/PRIME/cmake/test.cmake",
+			"/home/jkang/third_party/PRIME/cmake/base.cmake",
+			"/home/jkang/third_party/PRIME/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 2
+			},
+			{
+				"command" : 1,
+				"file" : 2,
+				"line" : 45,
+				"parent" : 0
+			},
+			{
+				"file" : 1,
+				"parent" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 175,
+				"parent" : 2
+			},
+			{
+				"file" : 0,
+				"parent" : 3
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 46,
+				"parent" : 4
+			}
+		]
+	},
+	"id" : "build_tests::@747ebaa991c02475c66e",
+	"name" : "build_tests",
+	"paths" : 
+	{
+		"build" : "prime",
+		"source" : "/home/jkang/third_party/PRIME"
+	},
+	"sources" : [],
+	"type" : "UTILITY"
+}

@@ -1,0 +1,611 @@
+[0.005s] Invoking command in '/home/jkang/third_party/PRIME_ros/build/prime_contact_id_ros': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/jkang/third_party/PRIME_ros/src/prime_contact_id_ros -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/jkang/third_party/PRIME_ros/install/prime_contact_id_ros
+[0.013s] -- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.082s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.085s] -- Found rclcpp: 16.0.12 (/opt/ros/humble/share/rclcpp/cmake)
+[0.099s] -- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.100s] -- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.102s] -- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.107s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.112s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.127s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.128s] -- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.187s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.209s] -- Found sensor_msgs: 4.9.0 (/opt/ros/humble/share/sensor_msgs/cmake)
+[0.222s] -- Found nav_msgs: 4.9.0 (/opt/ros/humble/share/nav_msgs/cmake)
+[0.230s] -- Found diagnostic_msgs: 4.9.0 (/opt/ros/humble/share/diagnostic_msgs/cmake)
+[0.235s] CMake Warning at /opt/openrobots/lib/cmake/hpp-fcl/hpp-fclConfig.cmake:3 (message):
+[0.235s]   Please update your CMake from 'hpp-fcl' to 'coal'
+[0.236s] Call Stack (most recent call first):
+[0.236s]   CMakeLists.txt:13 (find_package)
+[0.236s] 
+[0.236s] 
+[0.236s] -- coal FOUND. coal at /opt/openrobots/lib/libcoal.so
+[0.240s] -- Found Boost: /usr/include (found version "1.74.0") found components: chrono thread date_time serialization filesystem atomic 
+[0.382s] -- Default C++ standard: 201402
+[0.382s] -- C++ standard sufficient: Minimal required 14, currently defined: 14
+[0.383s] -- JRL cmakemodules found in 'cmake/' git submodule
+[0.386s] -- Configuring "crocoddyl" (https://github.com/loco-3d/crocoddyl)
+[0.386s] -- Package version (ROS package.xml): 0.1.0
+[0.386s] -- Contact RObot COntrol by Differential DYnamic programming Library (Crocoddyl), version 0.1.0
+[0.386s] -- Copyright (C) 2018-2024 CNRS-LAAS, University of Edinburgh, INRIA
+[0.386s] --                         Heriot-Watt University
+[0.386s] -- All rights reserved.
+[0.386s] -- Released under the BSD 3-Clause License.
+[0.395s] -- Could NOT find Doxygen (missing: DOXYGEN_EXECUTABLE) 
+[0.395s] -- Failed to find Doxygen, documentation will not be generated.
+[0.395s] -- C++ standard sufficient: Minimal required 14, currently defined: 14
+[0.396s] -- pinocchio_default FOUND. pinocchio_default at /opt/openrobots/lib/libpinocchio_default.so
+[0.396s] -- pinocchio_parsers FOUND. pinocchio_parsers at /opt/openrobots/lib/libpinocchio_parsers.so
+[0.396s] -- pinocchio_casadi FOUND. pinocchio_casadi at /opt/openrobots/lib/libpinocchio_casadi.so
+[0.396s] -- boost_filesystem FOUND. boost_filesystem at /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+[0.397s] -- boost_serialization FOUND. boost_serialization at /usr/lib/x86_64-linux-gnu/libboost_serialization.so
+[0.397s] -- boost_system FOUND. boost_system at /usr/lib/x86_64-linux-gnu/libboost_system.so
+[0.402s] -- Found Boost: /usr/include (found version "1.74.0") found components: filesystem serialization system 
+[0.402s] CMake Warning at /opt/openrobots/lib/cmake/hpp-fcl/hpp-fclConfig.cmake:3 (message):
+[0.402s]   Please update your CMake from 'hpp-fcl' to 'coal'
+[0.402s] Call Stack (most recent call first):
+[0.402s]   /usr/share/cmake-3.22/Modules/CMakeFindDependencyMacro.cmake:47 (find_package)
+[0.402s]   /opt/openrobots/lib/cmake/pinocchio/pinocchioConfig.cmake:161 (find_dependency)
+[0.403s]   /home/jkang/third_party/PRIME/cmake/package-config.cmake:133 (find_package)
+[0.403s]   /home/jkang/third_party/PRIME/CMakeLists.txt:107 (add_project_dependency)
+[0.403s] 
+[0.403s] 
+[0.403s] -- C++ standard sufficient: Minimal required 14, currently defined: 14
+[0.403s] -- example-robot-data is optional.
+[0.403s] -- Checking for module 'example-robot-data'
+[0.411s] --   Found example-robot-data, version 4.2.0
+[0.437s] -- Pkg-config module example-robot-data v4.2.0 has been detected with success.
+[0.437s] -- scipy is optional.
+[0.438s] -- Checking for module 'scipy'
+[0.439s] --   No package 'scipy' found
+[0.450s] -- Found Boost: /usr/include (found suitable version "1.74.0", minimum required is "1.65") found components: filesystem serialization system 
+[0.453s] -- Found Boost: /usr/include (found suitable version "1.74.0", minimum required is "1.65") found components: unit_test_framework 
+[0.499s] -- Create files for AMENT (ROS 2)
+[0.500s] -- Configuring done
+[0.516s] -- Generating done
+[0.522s] -- Build files have been written to: /home/jkang/third_party/PRIME_ros/build/prime_contact_id_ros
+[0.528s] Invoked command in '/home/jkang/third_party/PRIME_ros/build/prime_contact_id_ros' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/jkang/third_party/PRIME_ros/src/prime_contact_id_ros -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/jkang/third_party/PRIME_ros/install/prime_contact_id_ros
+[0.529s] Invoking command in '/home/jkang/third_party/PRIME_ros/build/prime_contact_id_ros': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/jkang/third_party/PRIME_ros/build/prime_contact_id_ros -- -j32 -l32
+[0.563s] [ 15%] Building CXX object prime/CMakeFiles/crocoddyl.dir/src/core/solvers/fddp.cpp.o
+[0.563s] [ 15%] Building CXX object prime/CMakeFiles/crocoddyl.dir/src/core/solvers/ddp.cpp.o
+[0.563s] [ 15%] Building CXX object prime/CMakeFiles/crocoddyl.dir/src/core/solvers/box-qp.cpp.o
+[0.563s] [ 20%] Building CXX object prime/CMakeFiles/crocoddyl.dir/src/core/utils/callbacks.cpp.o
+[0.564s] [ 25%] Building CXX object prime/CMakeFiles/crocoddyl.dir/src/contact_id/problem/contact-anitescu-id.cpp.o
+[0.564s] [ 30%] Building CXX object prime/CMakeFiles/crocoddyl.dir/src/core/solver-base.cpp.o
+[0.564s] [ 40%] Building CXX object prime/CMakeFiles/crocoddyl.dir/src/multibody/utils/contact-anitescu-id.cpp.o
+[0.564s] [ 45%] Building CXX object prime/CMakeFiles/crocoddyl.dir/src/core/solvers/box-ddp.cpp.o
+[0.564s] [ 45%] Building CXX object prime/CMakeFiles/crocoddyl.dir/src/core/solvers/box-fddp.cpp.o
+[0.564s] [ 50%] Building CXX object prime/CMakeFiles/crocoddyl.dir/src/multibody/utils/quadruped-anitescu-id.cpp.o
+[0.565s] [ 55%] Building CXX object prime/CMakeFiles/crocoddyl.dir/src/core/solvers/intro.cpp.o
+[0.565s] [ 60%] Building CXX object prime/CMakeFiles/crocoddyl.dir/src/core/solvers/kkt.cpp.o
+[0.565s] [ 65%] Building CXX object prime/CMakeFiles/crocoddyl.dir/src/core/utils/exception.cpp.o
+[0.565s] [ 70%] Building CXX object prime/CMakeFiles/crocoddyl.dir/src/core/utils/stop-watch.cpp.o
+[0.566s] [ 75%] Building CXX object prime/CMakeFiles/crocoddyl.dir/src/multibody/utils/quadruped-gaits.cpp.o
+[1.061s] In file included from /home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hpp:316,
+[1.061s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/core/solver-base.hpp:15,
+[1.062s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/core/solvers/ddp.hpp:17,
+[1.062s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/core/solvers/fddp.hpp:16,
+[1.062s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/core/solvers/intro.hpp:12,
+[1.062s]                  from /home/jkang/third_party/PRIME/src/core/solvers/intro.cpp:9:
+[1.062s] /home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hxx: In member function ‘void crocoddyl::ShootingProblemTpl<Scalar>::rollout(const std::vector<typename crocoddyl::MathBaseTpl<_Scalar>::VectorXs>&, std::vector<typename crocoddyl::MathBaseTpl<_Scalar>::VectorXs>&)’:
+[1.062s] /home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hxx:296:16: error: ‘std::filesystem’ has not been declared
+[1.062s]   296 |       if (std::filesystem::exists(fpath))
+[1.062s]       |                ^~~~~~~~~~
+[1.062s] /home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hxx:298:14: error: ‘std::filesystem’ has not been declared
+[1.062s]   298 |         std::filesystem::remove(fpath);
+[1.062s]       |              ^~~~~~~~~~
+[1.062s] In file included from /home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hpp:316,
+[1.062s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/core/solver-base.hpp:15,
+[1.062s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/core/solvers/ddp.hpp:17,
+[1.063s]                  from /home/jkang/third_party/PRIME/src/core/solvers/ddp.cpp:10:
+[1.063s] /home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hxx: In member function ‘void crocoddyl::ShootingProblemTpl<Scalar>::rollout(const std::vector<typename crocoddyl::MathBaseTpl<_Scalar>::VectorXs>&, std::vector<typename crocoddyl::MathBaseTpl<_Scalar>::VectorXs>&)’:
+[1.063s] /home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hxx:296:16: error: ‘std::filesystem’ has not been declared
+[1.063s]   296 |       if (std::filesystem::exists(fpath))
+[1.063s]       |                ^~~~~~~~~~
+[1.063s] /home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hxx:298:14: error: ‘std::filesystem’ has not been declared
+[1.063s]   298 |         std::filesystem::remove(fpath);
+[1.063s]       |              ^~~~~~~~~~
+[1.064s] In file included from /home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hpp:316,
+[1.064s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/core/solver-base.hpp:15,
+[1.064s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/core/solvers/ddp.hpp:17,
+[1.064s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/core/solvers/box-ddp.hpp:16,
+[1.064s]                  from /home/jkang/third_party/PRIME/src/core/solvers/box-ddp.cpp:9:
+[1.064s] /home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hxx: In member function ‘void crocoddyl::ShootingProblemTpl<Scalar>::rollout(const std::vector<typename crocoddyl::MathBaseTpl<_Scalar>::VectorXs>&, std::vector<typename crocoddyl::MathBaseTpl<_Scalar>::VectorXs>&)’:
+[1.064s] /home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hxx:296:16: error: ‘std::filesystem’ has not been declared
+[1.064s]   296 |       if (std::filesystem::exists(fpath))
+[1.064s]       |                ^~~~~~~~~~
+[1.064s] /home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hxx:298:14: error: ‘std::filesystem’ has not been declared
+[1.064s]   298 |         std::filesystem::remove(fpath);
+[1.064s]       |              ^~~~~~~~~~
+[1.070s] In file included from /home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hpp:316,
+[1.070s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/core/solver-base.hpp:15,
+[1.071s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/core/solvers/ddp.hpp:17,
+[1.071s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/core/solvers/fddp.hpp:16,
+[1.071s]                  from /home/jkang/third_party/PRIME/src/core/solvers/fddp.cpp:14:
+[1.071s] /home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hxx: In member function ‘void crocoddyl::ShootingProblemTpl<Scalar>::rollout(const std::vector<typename crocoddyl::MathBaseTpl<_Scalar>::VectorXs>&, std::vector<typename crocoddyl::MathBaseTpl<_Scalar>::VectorXs>&)’:
+[1.071s] /home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hxx:296:16: error: ‘std::filesystem’ has not been declared
+[1.071s]   296 |       if (std::filesystem::exists(fpath))
+[1.071s]       |                ^~~~~~~~~~
+[1.071s] /home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hxx:298:14: error: ‘std::filesystem’ has not been declared
+[1.071s]   298 |         std::filesystem::remove(fpath);
+[1.071s]       |              ^~~~~~~~~~
+[1.284s] In file included from /home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hpp:316,
+[1.284s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/core/solver-base.hpp:15,
+[1.284s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/core/solvers/ddp.hpp:17,
+[1.284s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/core/solvers/fddp.hpp:16,
+[1.284s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/core/solvers/box-fddp.hpp:16,
+[1.284s]                  from /home/jkang/third_party/PRIME/src/core/solvers/box-fddp.cpp:9:
+[1.284s] /home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hxx: In member function ‘void crocoddyl::ShootingProblemTpl<Scalar>::rollout(const std::vector<typename crocoddyl::MathBaseTpl<_Scalar>::VectorXs>&, std::vector<typename crocoddyl::MathBaseTpl<_Scalar>::VectorXs>&)’:
+[1.284s] /home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hxx:296:16: error: ‘std::filesystem’ has not been declared
+[1.284s]   296 |       if (std::filesystem::exists(fpath))
+[1.284s]       |                ^~~~~~~~~~
+[1.284s] /home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hxx:298:14: error: ‘std::filesystem’ has not been declared
+[1.284s]   298 |         std::filesystem::remove(fpath);
+[1.284s]       |              ^~~~~~~~~~
+[1.336s] gmake[2]: *** [prime/CMakeFiles/crocoddyl.dir/build.make:163: prime/CMakeFiles/crocoddyl.dir/src/core/solvers/fddp.cpp.o] Error 1
+[1.336s] gmake[2]: *** Waiting for unfinished jobs....
+[1.435s] In file included from /home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hpp:316,
+[1.435s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/core/solver-base.hpp:15,
+[1.435s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/core/solvers/kkt.hpp:17,
+[1.435s]                  from /home/jkang/third_party/PRIME/src/core/solvers/kkt.cpp:11:
+[1.435s] /home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hxx: In member function ‘void crocoddyl::ShootingProblemTpl<Scalar>::rollout(const std::vector<typename crocoddyl::MathBaseTpl<_Scalar>::VectorXs>&, std::vector<typename crocoddyl::MathBaseTpl<_Scalar>::VectorXs>&)’:
+[1.435s] /home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hxx:296:16: error: ‘std::filesystem’ has not been declared
+[1.435s]   296 |       if (std::filesystem::exists(fpath))
+[1.435s]       |                ^~~~~~~~~~
+[1.435s] /home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hxx:298:14: error: ‘std::filesystem’ has not been declared
+[1.435s]   298 |         std::filesystem::remove(fpath);
+[1.435s]       |              ^~~~~~~~~~
+[1.470s] In file included from /home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hpp:316,
+[1.470s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/core/solver-base.hpp:15,
+[1.470s]                  from /home/jkang/third_party/PRIME/src/core/solver-base.cpp:14:
+[1.470s] /home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hxx: In member function ‘void crocoddyl::ShootingProblemTpl<Scalar>::rollout(const std::vector<typename crocoddyl::MathBaseTpl<_Scalar>::VectorXs>&, std::vector<typename crocoddyl::MathBaseTpl<_Scalar>::VectorXs>&)’:
+[1.471s] /home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hxx:296:16: error: ‘std::filesystem’ has not been declared
+[1.471s]   296 |       if (std::filesystem::exists(fpath))
+[1.471s]       |                ^~~~~~~~~~
+[1.471s] /home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hxx:298:14: error: ‘std::filesystem’ has not been declared
+[1.471s]   298 |         std::filesystem::remove(fpath);
+[1.471s]       |              ^~~~~~~~~~
+[1.489s] /home/jkang/third_party/PRIME/src/core/solver-base.cpp: In constructor ‘crocoddyl::SolverAbstract::SolverAbstract(boost::shared_ptr<crocoddyl::ShootingProblemTpl<double> >)’:
+[1.489s] /home/jkang/third_party/PRIME/src/core/solver-base.cpp:46:19: warning: ‘crocoddyl::SolverAbstract::xreg_’ is deprecated: Use preg_ for primal-variable regularization [-Wdeprecated-declarations]
+[1.489s]    46 |       tmp_feas_(0.) {
+[1.489s]       |                   ^
+[1.489s] In file included from /home/jkang/third_party/PRIME/include/crocoddyl/core/fwd.hpp:12,
+[1.489s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/core/action-base.hpp:17,
+[1.489s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hpp:15,
+[1.489s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/core/solver-base.hpp:15,
+[1.489s]                  from /home/jkang/third_party/PRIME/src/core/solver-base.cpp:14:
+[1.490s] /home/jkang/third_party/PRIME/include/crocoddyl/core/solver-base.hpp:466:21: note: declared here
+[1.490s]   466 |              double xreg_;)  //!< Current state regularization value
+[1.490s]       |                     ^~~~~
+[1.490s] /home/jkang/third_party/PRIME/include/crocoddyl/core/utils/deprecate.hpp:19:51: note: in definition of macro ‘DEPRECATED’
+[1.490s]    19 | #define DEPRECATED(msg, func) [[deprecated(msg)]] func
+[1.490s]       |                                                   ^~~~
+[1.490s] /home/jkang/third_party/PRIME/src/core/solver-base.cpp:46:19: warning: ‘crocoddyl::SolverAbstract::xreg_’ is deprecated: Use preg_ for primal-variable regularization [-Wdeprecated-declarations]
+[1.490s]    46 |       tmp_feas_(0.) {
+[1.490s]       |                   ^
+[1.490s] In file included from /home/jkang/third_party/PRIME/include/crocoddyl/core/fwd.hpp:12,
+[1.490s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/core/action-base.hpp:17,
+[1.490s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hpp:15,
+[1.490s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/core/solver-base.hpp:15,
+[1.490s]                  from /home/jkang/third_party/PRIME/src/core/solver-base.cpp:14:
+[1.490s] /home/jkang/third_party/PRIME/include/crocoddyl/core/solver-base.hpp:466:21: note: declared here
+[1.490s]   466 |              double xreg_;)  //!< Current state regularization value
+[1.490s]       |                     ^~~~~
+[1.490s] /home/jkang/third_party/PRIME/include/crocoddyl/core/utils/deprecate.hpp:19:51: note: in definition of macro ‘DEPRECATED’
+[1.490s]    19 | #define DEPRECATED(msg, func) [[deprecated(msg)]] func
+[1.490s]       |                                                   ^~~~
+[1.490s] /home/jkang/third_party/PRIME/src/core/solver-base.cpp:46:19: warning: ‘crocoddyl::SolverAbstract::ureg_’ is deprecated: Use dreg_ for primal-variable regularization [-Wdeprecated-declarations]
+[1.490s]    46 |       tmp_feas_(0.) {
+[1.491s]       |                   ^
+[1.491s] In file included from /home/jkang/third_party/PRIME/include/crocoddyl/core/fwd.hpp:12,
+[1.491s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/core/action-base.hpp:17,
+[1.491s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hpp:15,
+[1.491s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/core/solver-base.hpp:15,
+[1.491s]                  from /home/jkang/third_party/PRIME/src/core/solver-base.cpp:14:
+[1.491s] /home/jkang/third_party/PRIME/include/crocoddyl/core/solver-base.hpp:468:21: note: declared here
+[1.491s]   468 |              double ureg_;)        //!< Current control regularization values
+[1.491s]       |                     ^~~~~
+[1.491s] /home/jkang/third_party/PRIME/include/crocoddyl/core/utils/deprecate.hpp:19:51: note: in definition of macro ‘DEPRECATED’
+[1.491s]    19 | #define DEPRECATED(msg, func) [[deprecated(msg)]] func
+[1.491s]       |                                                   ^~~~
+[1.491s] /home/jkang/third_party/PRIME/src/core/solver-base.cpp:46:19: warning: ‘crocoddyl::SolverAbstract::ureg_’ is deprecated: Use dreg_ for primal-variable regularization [-Wdeprecated-declarations]
+[1.491s]    46 |       tmp_feas_(0.) {
+[1.491s]       |                   ^
+[1.491s] In file included from /home/jkang/third_party/PRIME/include/crocoddyl/core/fwd.hpp:12,
+[1.491s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/core/action-base.hpp:17,
+[1.491s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hpp:15,
+[1.491s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/core/solver-base.hpp:15,
+[1.491s]                  from /home/jkang/third_party/PRIME/src/core/solver-base.cpp:14:
+[1.491s] /home/jkang/third_party/PRIME/include/crocoddyl/core/solver-base.hpp:468:21: note: declared here
+[1.492s]   468 |              double ureg_;)        //!< Current control regularization values
+[1.492s]       |                     ^~~~~
+[1.492s] /home/jkang/third_party/PRIME/include/crocoddyl/core/utils/deprecate.hpp:19:51: note: in definition of macro ‘DEPRECATED’
+[1.492s]    19 | #define DEPRECATED(msg, func) [[deprecated(msg)]] func
+[1.492s]       |                                                   ^~~~
+[1.495s] In file included from /home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hpp:316,
+[1.495s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/core/solver-base.hpp:15,
+[1.495s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/core/utils/callbacks.hpp:16,
+[1.495s]                  from /home/jkang/third_party/PRIME/src/core/utils/callbacks.cpp:10:
+[1.496s] /home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hxx: In member function ‘void crocoddyl::ShootingProblemTpl<Scalar>::rollout(const std::vector<typename crocoddyl::MathBaseTpl<_Scalar>::VectorXs>&, std::vector<typename crocoddyl::MathBaseTpl<_Scalar>::VectorXs>&)’:
+[1.496s] /home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hxx:296:16: error: ‘std::filesystem’ has not been declared
+[1.496s]   296 |       if (std::filesystem::exists(fpath))
+[1.496s]       |                ^~~~~~~~~~
+[1.496s] /home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hxx:298:14: error: ‘std::filesystem’ has not been declared
+[1.496s]   298 |         std::filesystem::remove(fpath);
+[1.496s]       |              ^~~~~~~~~~
+[1.552s] gmake[2]: *** [prime/CMakeFiles/crocoddyl.dir/build.make:107: prime/CMakeFiles/crocoddyl.dir/src/core/solvers/box-ddp.cpp.o] Error 1
+[1.573s] /home/jkang/third_party/PRIME/src/core/solver-base.cpp: In member function ‘void crocoddyl::SolverAbstract::set_xreg(double)’:
+[1.573s] /home/jkang/third_party/PRIME/src/core/solver-base.cpp:437:7: warning: ‘crocoddyl::SolverAbstract::xreg_’ is deprecated: Use preg_ for primal-variable regularization [-Wdeprecated-declarations]
+[1.573s]   437 |       xreg_ = xreg;
+[1.573s]       |       ^~~~~
+[1.573s] /home/jkang/third_party/PRIME/include/crocoddyl/core/utils/deprecate.hpp:19:51: note: in definition of macro ‘DEPRECATED’
+[1.573s]    19 | #define DEPRECATED(msg, func) [[deprecated(msg)]] func
+[1.573s]       |                                                   ^~~~
+[1.574s] /home/jkang/third_party/PRIME/include/crocoddyl/core/solver-base.hpp:466:21: note: declared here
+[1.574s]   466 |              double xreg_;)  //!< Current state regularization value
+[1.574s]       |                     ^~~~~
+[1.574s] /home/jkang/third_party/PRIME/include/crocoddyl/core/utils/deprecate.hpp:19:51: note: in definition of macro ‘DEPRECATED’
+[1.574s]    19 | #define DEPRECATED(msg, func) [[deprecated(msg)]] func
+[1.574s]       |                                                   ^~~~
+[1.574s] /home/jkang/third_party/PRIME/src/core/solver-base.cpp:437:7: warning: ‘crocoddyl::SolverAbstract::xreg_’ is deprecated: Use preg_ for primal-variable regularization [-Wdeprecated-declarations]
+[1.574s]   437 |       xreg_ = xreg;
+[1.574s]       |       ^~~~~
+[1.574s] /home/jkang/third_party/PRIME/include/crocoddyl/core/utils/deprecate.hpp:19:51: note: in definition of macro ‘DEPRECATED’
+[1.574s]    19 | #define DEPRECATED(msg, func) [[deprecated(msg)]] func
+[1.574s]       |                                                   ^~~~
+[1.574s] /home/jkang/third_party/PRIME/include/crocoddyl/core/solver-base.hpp:466:21: note: declared here
+[1.574s]   466 |              double xreg_;)  //!< Current state regularization value
+[1.574s]       |                     ^~~~~
+[1.574s] /home/jkang/third_party/PRIME/include/crocoddyl/core/utils/deprecate.hpp:19:51: note: in definition of macro ‘DEPRECATED’
+[1.575s]    19 | #define DEPRECATED(msg, func) [[deprecated(msg)]] func
+[1.575s]       |                                                   ^~~~
+[1.575s] /home/jkang/third_party/PRIME/src/core/solver-base.cpp: In member function ‘void crocoddyl::SolverAbstract::set_ureg(double)’:
+[1.575s] /home/jkang/third_party/PRIME/src/core/solver-base.cpp:447:7: warning: ‘crocoddyl::SolverAbstract::ureg_’ is deprecated: Use dreg_ for primal-variable regularization [-Wdeprecated-declarations]
+[1.575s]   447 |       ureg_ = ureg;
+[1.575s]       |       ^~~~~
+[1.575s] /home/jkang/third_party/PRIME/include/crocoddyl/core/utils/deprecate.hpp:19:51: note: in definition of macro ‘DEPRECATED’
+[1.575s]    19 | #define DEPRECATED(msg, func) [[deprecated(msg)]] func
+[1.575s]       |                                                   ^~~~
+[1.575s] /home/jkang/third_party/PRIME/include/crocoddyl/core/solver-base.hpp:468:21: note: declared here
+[1.575s]   468 |              double ureg_;)        //!< Current control regularization values
+[1.575s]       |                     ^~~~~
+[1.575s] /home/jkang/third_party/PRIME/include/crocoddyl/core/utils/deprecate.hpp:19:51: note: in definition of macro ‘DEPRECATED’
+[1.575s]    19 | #define DEPRECATED(msg, func) [[deprecated(msg)]] func
+[1.575s]       |                                                   ^~~~
+[1.575s] /home/jkang/third_party/PRIME/src/core/solver-base.cpp:447:7: warning: ‘crocoddyl::SolverAbstract::ureg_’ is deprecated: Use dreg_ for primal-variable regularization [-Wdeprecated-declarations]
+[1.575s]   447 |       ureg_ = ureg;
+[1.575s]       |       ^~~~~
+[1.575s] /home/jkang/third_party/PRIME/include/crocoddyl/core/utils/deprecate.hpp:19:51: note: in definition of macro ‘DEPRECATED’
+[1.575s]    19 | #define DEPRECATED(msg, func) [[deprecated(msg)]] func
+[1.575s]       |                                                   ^~~~
+[1.576s] /home/jkang/third_party/PRIME/include/crocoddyl/core/solver-base.hpp:468:21: note: declared here
+[1.576s]   468 |              double ureg_;)        //!< Current control regularization values
+[1.576s]       |                     ^~~~~
+[1.576s] /home/jkang/third_party/PRIME/include/crocoddyl/core/utils/deprecate.hpp:19:51: note: in definition of macro ‘DEPRECATED’
+[1.576s]    19 | #define DEPRECATED(msg, func) [[deprecated(msg)]] func
+[1.576s]       |                                                   ^~~~
+[1.593s] gmake[2]: *** [prime/CMakeFiles/crocoddyl.dir/build.make:205: prime/CMakeFiles/crocoddyl.dir/src/core/utils/callbacks.cpp.o] Error 1
+[1.696s] gmake[2]: *** [prime/CMakeFiles/crocoddyl.dir/build.make:93: prime/CMakeFiles/crocoddyl.dir/src/core/solver-base.cpp.o] Error 1
+[1.780s] gmake[2]: *** [prime/CMakeFiles/crocoddyl.dir/build.make:121: prime/CMakeFiles/crocoddyl.dir/src/core/solvers/box-fddp.cpp.o] Error 1
+[2.215s] In file included from /opt/openrobots/include/hpp/fcl/config.hh:1,
+[2.216s]                  from /opt/openrobots/include/pinocchio/serialization/eigen.hpp:20,
+[2.216s]                  from /opt/openrobots/include/pinocchio/serialization/fwd.hpp:11,
+[2.216s]                  from /opt/openrobots/include/pinocchio/multibody/joint/joint-composite.hpp:14,
+[2.216s]                  from /opt/openrobots/include/pinocchio/multibody/joint/joint-generic.hpp:9,
+[2.216s]                  from /opt/openrobots/include/pinocchio/multibody/model.hpp:17,
+[2.216s]                  from /opt/openrobots/include/pinocchio/algorithm/frames.hpp:8,
+[2.216s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/problem/contact-anitescu-id.hpp:21,
+[2.216s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/multibody/utils/contact-anitescu-id.hpp:11,
+[2.216s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/multibody/utils/quadruped-anitescu-id.hpp:12,
+[2.216s]                  from /home/jkang/third_party/PRIME/src/multibody/utils/quadruped-anitescu-id.cpp:9:
+[2.216s] /opt/openrobots/include/hpp/fcl/coal.hpp:10:71: note: ‘#pragma message: Please update your includes from 'hpp/fcl' to 'coal'’
+[2.216s]    10 | #pragma message("Please update your includes from 'hpp/fcl' to 'coal'")
+[2.216s]       |                                                                       ^
+[2.236s] In file included from /opt/openrobots/include/hpp/fcl/config.hh:1,
+[2.236s]                  from /opt/openrobots/include/pinocchio/serialization/eigen.hpp:20,
+[2.236s]                  from /opt/openrobots/include/pinocchio/serialization/fwd.hpp:11,
+[2.236s]                  from /opt/openrobots/include/pinocchio/multibody/joint/joint-composite.hpp:14,
+[2.236s]                  from /opt/openrobots/include/pinocchio/multibody/joint/joint-generic.hpp:9,
+[2.236s]                  from /opt/openrobots/include/pinocchio/multibody/model.hpp:17,
+[2.236s]                  from /opt/openrobots/include/pinocchio/algorithm/frames.hpp:8,
+[2.236s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/problem/contact-anitescu-id.hpp:21,
+[2.236s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/multibody/utils/contact-anitescu-id.hpp:11,
+[2.237s]                  from /home/jkang/third_party/PRIME/src/multibody/utils/contact-anitescu-id.cpp:7:
+[2.237s] /opt/openrobots/include/hpp/fcl/coal.hpp:10:71: note: ‘#pragma message: Please update your includes from 'hpp/fcl' to 'coal'’
+[2.237s]    10 | #pragma message("Please update your includes from 'hpp/fcl' to 'coal'")
+[2.237s]       |                                                                       ^
+[2.362s] gmake[2]: *** [prime/CMakeFiles/crocoddyl.dir/build.make:149: prime/CMakeFiles/crocoddyl.dir/src/core/solvers/ddp.cpp.o] Error 1
+[2.417s] gmake[2]: *** [prime/CMakeFiles/crocoddyl.dir/build.make:191: prime/CMakeFiles/crocoddyl.dir/src/core/solvers/kkt.cpp.o] Error 1
+[2.559s] In file included from /home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hpp:316,
+[2.559s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/problem/contact-anitescu-id.hpp:30,
+[2.559s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/multibody/utils/contact-anitescu-id.hpp:11,
+[2.559s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/multibody/utils/quadruped-anitescu-id.hpp:12,
+[2.559s]                  from /home/jkang/third_party/PRIME/src/multibody/utils/quadruped-anitescu-id.cpp:9:
+[2.559s] /home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hxx: In member function ‘void crocoddyl::ShootingProblemTpl<Scalar>::rollout(const std::vector<typename crocoddyl::MathBaseTpl<_Scalar>::VectorXs>&, std::vector<typename crocoddyl::MathBaseTpl<_Scalar>::VectorXs>&)’:
+[2.559s] /home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hxx:296:16: error: ‘std::filesystem’ has not been declared
+[2.559s]   296 |       if (std::filesystem::exists(fpath))
+[2.559s]       |                ^~~~~~~~~~
+[2.559s] /home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hxx:298:14: error: ‘std::filesystem’ has not been declared
+[2.560s]   298 |         std::filesystem::remove(fpath);
+[2.560s]       |              ^~~~~~~~~~
+[2.581s] In file included from /home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hpp:316,
+[2.581s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/problem/contact-anitescu-id.hpp:30,
+[2.581s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/multibody/utils/contact-anitescu-id.hpp:11,
+[2.581s]                  from /home/jkang/third_party/PRIME/src/multibody/utils/contact-anitescu-id.cpp:7:
+[2.581s] /home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hxx: In member function ‘void crocoddyl::ShootingProblemTpl<Scalar>::rollout(const std::vector<typename crocoddyl::MathBaseTpl<_Scalar>::VectorXs>&, std::vector<typename crocoddyl::MathBaseTpl<_Scalar>::VectorXs>&)’:
+[2.581s] /home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hxx:296:16: error: ‘std::filesystem’ has not been declared
+[2.581s]   296 |       if (std::filesystem::exists(fpath))
+[2.581s]       |                ^~~~~~~~~~
+[2.581s] /home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hxx:298:14: error: ‘std::filesystem’ has not been declared
+[2.581s]   298 |         std::filesystem::remove(fpath);
+[2.581s]       |              ^~~~~~~~~~
+[2.591s] In file included from /opt/openrobots/include/hpp/fcl/config.hh:1,
+[2.591s]                  from /opt/openrobots/include/pinocchio/serialization/eigen.hpp:20,
+[2.591s]                  from /opt/openrobots/include/pinocchio/serialization/fwd.hpp:11,
+[2.591s]                  from /opt/openrobots/include/pinocchio/multibody/joint/joint-composite.hpp:14,
+[2.591s]                  from /opt/openrobots/include/pinocchio/multibody/joint/joint-generic.hpp:9,
+[2.591s]                  from /opt/openrobots/include/pinocchio/multibody/model.hpp:17,
+[2.591s]                  from /opt/openrobots/include/pinocchio/algorithm/center-of-mass.hpp:8,
+[2.591s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/multibody/utils/quadruped-gaits.hpp:12,
+[2.591s]                  from /home/jkang/third_party/PRIME/src/multibody/utils/quadruped-gaits.cpp:9:
+[2.591s] /opt/openrobots/include/hpp/fcl/coal.hpp:10:71: note: ‘#pragma message: Please update your includes from 'hpp/fcl' to 'coal'’
+[2.591s]    10 | #pragma message("Please update your includes from 'hpp/fcl' to 'coal'")
+[2.591s]       |                                                                       ^
+[2.723s] In file included from /opt/openrobots/include/hpp/fcl/config.hh:1,
+[2.723s]                  from /opt/openrobots/include/pinocchio/serialization/eigen.hpp:20,
+[2.723s]                  from /opt/openrobots/include/pinocchio/serialization/fwd.hpp:11,
+[2.723s]                  from /opt/openrobots/include/pinocchio/multibody/joint/joint-composite.hpp:14,
+[2.723s]                  from /opt/openrobots/include/pinocchio/multibody/joint/joint-generic.hpp:9,
+[2.723s]                  from /opt/openrobots/include/pinocchio/multibody/model.hpp:17,
+[2.723s]                  from /opt/openrobots/include/pinocchio/algorithm/frames.hpp:8,
+[2.723s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/problem/contact-anitescu-id.hpp:21,
+[2.723s]                  from /home/jkang/third_party/PRIME/src/contact_id/problem/contact-anitescu-id.cpp:16:
+[2.723s] /opt/openrobots/include/hpp/fcl/coal.hpp:10:71: note: ‘#pragma message: Please update your includes from 'hpp/fcl' to 'coal'’
+[2.723s]    10 | #pragma message("Please update your includes from 'hpp/fcl' to 'coal'")
+[2.723s]       |                                                                       ^
+[3.017s] In file included from /home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hpp:316,
+[3.017s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/problem/contact-anitescu-id.hpp:30,
+[3.017s]                  from /home/jkang/third_party/PRIME/src/contact_id/problem/contact-anitescu-id.cpp:16:
+[3.017s] /home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hxx: In member function ‘void crocoddyl::ShootingProblemTpl<Scalar>::rollout(const std::vector<typename crocoddyl::MathBaseTpl<_Scalar>::VectorXs>&, std::vector<typename crocoddyl::MathBaseTpl<_Scalar>::VectorXs>&)’:
+[3.017s] /home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hxx:296:16: error: ‘std::filesystem’ has not been declared
+[3.017s]   296 |       if (std::filesystem::exists(fpath))
+[3.017s]       |                ^~~~~~~~~~
+[3.017s] /home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hxx:298:14: error: ‘std::filesystem’ has not been declared
+[3.017s]   298 |         std::filesystem::remove(fpath);
+[3.017s]       |              ^~~~~~~~~~
+[3.055s] In file included from /home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hpp:316,
+[3.055s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/multibody/utils/quadruped-gaits.hpp:22,
+[3.055s]                  from /home/jkang/third_party/PRIME/src/multibody/utils/quadruped-gaits.cpp:9:
+[3.055s] /home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hxx: In member function ‘void crocoddyl::ShootingProblemTpl<Scalar>::rollout(const std::vector<typename crocoddyl::MathBaseTpl<_Scalar>::VectorXs>&, std::vector<typename crocoddyl::MathBaseTpl<_Scalar>::VectorXs>&)’:
+[3.055s] /home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hxx:296:16: error: ‘std::filesystem’ has not been declared
+[3.055s]   296 |       if (std::filesystem::exists(fpath))
+[3.055s]       |                ^~~~~~~~~~
+[3.055s] /home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hxx:298:14: error: ‘std::filesystem’ has not been declared
+[3.055s]   298 |         std::filesystem::remove(fpath);
+[3.055s]       |              ^~~~~~~~~~
+[3.288s] In file included from /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/actions/contact-fwddyn-anitescu-id.hpp:31,
+[3.288s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/problem/contact-anitescu-id.hpp:33,
+[3.288s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/multibody/utils/contact-anitescu-id.hpp:11,
+[3.288s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/multibody/utils/quadruped-anitescu-id.hpp:12,
+[3.288s]                  from /home/jkang/third_party/PRIME/src/multibody/utils/quadruped-anitescu-id.cpp:9:
+[3.288s] /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/anitescu/DifferentiableAnitescuSimulator.hpp: In member function ‘void DifferentiableAnitescuSimulator::computeSensitivities()’:
+[3.288s] /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/anitescu/DifferentiableAnitescuSimulator.hpp:405:37: warning: comparison of integer expressions of different signedness: ‘pinocchio::JointIndex’ {aka ‘long unsigned int’} and ‘const int’ [-Wsign-compare]
+[3.288s]   405 |                 if (jid == 0 || jid >= model_.njoints)
+[3.288s]       |                                 ~~~~^~~~~~~~~~~~~~~~~
+[3.294s] /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/anitescu/DifferentiableAnitescuSimulator.hpp:426:37: warning: comparison of integer expressions of different signedness: ‘pinocchio::JointIndex’ {aka ‘long unsigned int’} and ‘const int’ [-Wsign-compare]
+[3.294s]   426 |                 if (jid == 0 || jid >= model_.njoints)
+[3.294s]       |                                 ~~~~^~~~~~~~~~~~~~~~~
+[3.294s] /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/anitescu/DifferentiableAnitescuSimulator.hpp:429:76: warning: conversion from ‘pinocchio::JointIndex’ {aka ‘long unsigned int’} to ‘int’ may change value [-Wconversion]
+[3.294s]   429 |                 Eigen::VectorXd p_jid = computeLogCholeskyFromLink(model_, jid);
+[3.294s]       |                                                                            ^~~
+[3.314s] In file included from /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/actions/contact-fwddyn-anitescu-id.hpp:31,
+[3.314s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/problem/contact-anitescu-id.hpp:33,
+[3.314s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/multibody/utils/contact-anitescu-id.hpp:11,
+[3.314s]                  from /home/jkang/third_party/PRIME/src/multibody/utils/contact-anitescu-id.cpp:7:
+[3.314s] /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/anitescu/DifferentiableAnitescuSimulator.hpp: In member function ‘void DifferentiableAnitescuSimulator::computeSensitivities()’:
+[3.314s] /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/anitescu/DifferentiableAnitescuSimulator.hpp:405:37: warning: comparison of integer expressions of different signedness: ‘pinocchio::JointIndex’ {aka ‘long unsigned int’} and ‘const int’ [-Wsign-compare]
+[3.314s]   405 |                 if (jid == 0 || jid >= model_.njoints)
+[3.315s]       |                                 ~~~~^~~~~~~~~~~~~~~~~
+[3.321s] /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/anitescu/DifferentiableAnitescuSimulator.hpp:426:37: warning: comparison of integer expressions of different signedness: ‘pinocchio::JointIndex’ {aka ‘long unsigned int’} and ‘const int’ [-Wsign-compare]
+[3.321s]   426 |                 if (jid == 0 || jid >= model_.njoints)
+[3.321s]       |                                 ~~~~^~~~~~~~~~~~~~~~~
+[3.321s] /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/anitescu/DifferentiableAnitescuSimulator.hpp:429:76: warning: conversion from ‘pinocchio::JointIndex’ {aka ‘long unsigned int’} to ‘int’ may change value [-Wconversion]
+[3.321s]   429 |                 Eigen::VectorXd p_jid = computeLogCholeskyFromLink(model_, jid);
+[3.321s]       |                                                                            ^~~
+[3.695s] In file included from /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/anitescu/BarrierSOCP.hpp:19,
+[3.695s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/anitescu/DifferentiableAnitescuSimulator.hpp:34,
+[3.695s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/actions/contact-fwddyn-anitescu-id.hpp:31,
+[3.695s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/problem/contact-anitescu-id.hpp:33,
+[3.695s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/multibody/utils/contact-anitescu-id.hpp:11,
+[3.695s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/multibody/utils/quadruped-anitescu-id.hpp:12,
+[3.695s]                  from /home/jkang/third_party/PRIME/src/multibody/utils/quadruped-anitescu-id.cpp:9:
+[3.695s] /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/anitescu/NewtonSolver.hpp: In instantiation of ‘bool NewtonSolver::solve(Eigen::VectorXd&, F&&, G&&, HFun&&, Feas&&) [with F = DifferentiableAnitescuSimulator::solveBarrierNewton()::<lambda(const VectorXd&)>; G = DifferentiableAnitescuSimulator::solveBarrierNewton()::<lambda(const VectorXd&, Eigen::VectorXd&)>; HFun = DifferentiableAnitescuSimulator::solveBarrierNewton()::<lambda(const VectorXd&, Eigen::MatrixXd&)>; Feas = DifferentiableAnitescuSimulator::solveBarrierNewton()::<lambda(const VectorXd&)>; Eigen::VectorXd = Eigen::Matrix<double, -1, 1>]’:
+[3.696s] /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/anitescu/DifferentiableAnitescuSimulator.hpp:340:22:   required from here
+[3.696s] /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/anitescu/NewtonSolver.hpp:52:25: warning: conversion from ‘Eigen::EigenBase<Eigen::Matrix<double, -1, 1> >::Index’ {aka ‘long int’} to ‘int’ may change value [-Wconversion]
+[3.696s]    52 |     const int n = x.size();
+[3.696s]       |                   ~~~~~~^~
+[3.723s] In file included from /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/anitescu/BarrierSOCP.hpp:19,
+[3.724s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/anitescu/DifferentiableAnitescuSimulator.hpp:34,
+[3.724s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/actions/contact-fwddyn-anitescu-id.hpp:31,
+[3.724s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/problem/contact-anitescu-id.hpp:33,
+[3.724s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/multibody/utils/contact-anitescu-id.hpp:11,
+[3.724s]                  from /home/jkang/third_party/PRIME/src/multibody/utils/contact-anitescu-id.cpp:7:
+[3.724s] /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/anitescu/NewtonSolver.hpp: In instantiation of ‘bool NewtonSolver::solve(Eigen::VectorXd&, F&&, G&&, HFun&&, Feas&&) [with F = DifferentiableAnitescuSimulator::solveBarrierNewton()::<lambda(const VectorXd&)>; G = DifferentiableAnitescuSimulator::solveBarrierNewton()::<lambda(const VectorXd&, Eigen::VectorXd&)>; HFun = DifferentiableAnitescuSimulator::solveBarrierNewton()::<lambda(const VectorXd&, Eigen::MatrixXd&)>; Feas = DifferentiableAnitescuSimulator::solveBarrierNewton()::<lambda(const VectorXd&)>; Eigen::VectorXd = Eigen::Matrix<double, -1, 1>]’:
+[3.724s] /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/anitescu/DifferentiableAnitescuSimulator.hpp:340:22:   required from here
+[3.724s] /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/anitescu/NewtonSolver.hpp:52:25: warning: conversion from ‘Eigen::EigenBase<Eigen::Matrix<double, -1, 1> >::Index’ {aka ‘long int’} to ‘int’ may change value [-Wconversion]
+[3.724s]    52 |     const int n = x.size();
+[3.724s]       |                   ~~~~~~^~
+[3.749s] In file included from /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/actions/contact-fwddyn-anitescu-id.hpp:31,
+[3.750s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/problem/contact-anitescu-id.hpp:33,
+[3.750s]                  from /home/jkang/third_party/PRIME/src/contact_id/problem/contact-anitescu-id.cpp:16:
+[3.750s] /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/anitescu/DifferentiableAnitescuSimulator.hpp: In member function ‘void DifferentiableAnitescuSimulator::computeSensitivities()’:
+[3.750s] /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/anitescu/DifferentiableAnitescuSimulator.hpp:405:37: warning: comparison of integer expressions of different signedness: ‘pinocchio::JointIndex’ {aka ‘long unsigned int’} and ‘const int’ [-Wsign-compare]
+[3.750s]   405 |                 if (jid == 0 || jid >= model_.njoints)
+[3.750s]       |                                 ~~~~^~~~~~~~~~~~~~~~~
+[3.756s] /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/anitescu/DifferentiableAnitescuSimulator.hpp:426:37: warning: comparison of integer expressions of different signedness: ‘pinocchio::JointIndex’ {aka ‘long unsigned int’} and ‘const int’ [-Wsign-compare]
+[3.756s]   426 |                 if (jid == 0 || jid >= model_.njoints)
+[3.756s]       |                                 ~~~~^~~~~~~~~~~~~~~~~
+[3.756s] /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/anitescu/DifferentiableAnitescuSimulator.hpp:429:76: warning: conversion from ‘pinocchio::JointIndex’ {aka ‘long unsigned int’} to ‘int’ may change value [-Wconversion]
+[3.756s]   429 |                 Eigen::VectorXd p_jid = computeLogCholeskyFromLink(model_, jid);
+[3.756s]       |                                                                            ^~~
+[4.066s] /home/jkang/third_party/PRIME/src/contact_id/problem/contact-anitescu-id.cpp: In function ‘Eigen::VectorXd crocoddyl::computeFrozenSFromLogCholeskyJacobian(const Model&, pinocchio::JointIndex, double)’:
+[4.066s] /home/jkang/third_party/PRIME/src/contact_id/problem/contact-anitescu-id.cpp:93:59: warning: conversion from ‘pinocchio::JointIndex’ {aka ‘long unsigned int’} to ‘int’ may change value [-Wconversion]
+[4.066s]    93 |   Eigen::VectorXd eta = computeLogCholeskyFromLink(model, j_link);
+[4.066s]       |                                                           ^~~~~~
+[4.336s] In file included from /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/anitescu/BarrierSOCP.hpp:19,
+[4.336s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/anitescu/DifferentiableAnitescuSimulator.hpp:34,
+[4.336s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/actions/contact-fwddyn-anitescu-id.hpp:31,
+[4.336s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/problem/contact-anitescu-id.hpp:33,
+[4.336s]                  from /home/jkang/third_party/PRIME/src/contact_id/problem/contact-anitescu-id.cpp:16:
+[4.336s] /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/anitescu/NewtonSolver.hpp: In instantiation of ‘bool NewtonSolver::solve(Eigen::VectorXd&, F&&, G&&, HFun&&, Feas&&) [with F = DifferentiableAnitescuSimulator::solveBarrierNewton()::<lambda(const VectorXd&)>; G = DifferentiableAnitescuSimulator::solveBarrierNewton()::<lambda(const VectorXd&, Eigen::VectorXd&)>; HFun = DifferentiableAnitescuSimulator::solveBarrierNewton()::<lambda(const VectorXd&, Eigen::MatrixXd&)>; Feas = DifferentiableAnitescuSimulator::solveBarrierNewton()::<lambda(const VectorXd&)>; Eigen::VectorXd = Eigen::Matrix<double, -1, 1>]’:
+[4.336s] /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/anitescu/DifferentiableAnitescuSimulator.hpp:340:22:   required from here
+[4.336s] /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/anitescu/NewtonSolver.hpp:52:25: warning: conversion from ‘Eigen::EigenBase<Eigen::Matrix<double, -1, 1> >::Index’ {aka ‘long int’} to ‘int’ may change value [-Wconversion]
+[4.336s]    52 |     const int n = x.size();
+[4.336s]       |                   ~~~~~~^~
+[4.371s] In file included from /home/jkang/third_party/PRIME/include/crocoddyl/multibody/actions/contact-fwddyn.hpp:400,
+[4.371s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/multibody/utils/quadruped-gaits.hpp:24,
+[4.371s]                  from /home/jkang/third_party/PRIME/src/multibody/utils/quadruped-gaits.cpp:9:
+[4.371s] /home/jkang/third_party/PRIME/include/crocoddyl/multibody/actions/contact-fwddyn.hxx: In instantiation of ‘void crocoddyl::DifferentialActionModelContactFwdDynamicsTpl<Scalar>::calc(const boost::shared_ptr<crocoddyl::DifferentialActionDataAbstractTpl<_Scalar> >&, const Eigen::Ref<const typename crocoddyl::MathBaseTpl<_Scalar>::VectorXs>&, const Eigen::Ref<const typename crocoddyl::MathBaseTpl<_Scalar>::VectorXs>&) [with _Scalar = double; typename Eigen::internal::conditional<const typename crocoddyl::MathBaseTpl<_Scalar>::VectorXs::IsVectorAtCompileTime, Eigen::InnerStride<1>, Eigen::OuterStride<> >::type = Eigen::InnerStride<1>; typename crocoddyl::MathBaseTpl<_Scalar>::VectorXs = Eigen::Matrix<double, -1, 1>]’:
+[4.371s] /home/jkang/third_party/PRIME/include/crocoddyl/multibody/actions/contact-fwddyn.hxx:99:6:   required from here
+[4.371s] /home/jkang/third_party/PRIME/include/crocoddyl/multibody/actions/contact-fwddyn.hxx:141:29: warning: ‘const typename pinocchio::DataTpl<_Scalar, _Options, JointCollectionTpl>::TangentVectorType& pinocchio::forwardDynamics(const pinocchio::ModelTpl<_Scalar, _Options, JointCollectionTpl>&, pinocchio::DataTpl<S1, O1, JointCollectionTpl>&, const Eigen::MatrixBase<Matrix3Like>&, const Eigen::MatrixBase<MatRet>&, const Eigen::MatrixBase<VectorLike>&, Scalar) [with Scalar = double; int Options = 0; JointCollectionTpl = pinocchio::JointCollectionDefaultTpl; TangentVectorType = Eigen::Matrix<double, -1, 1>; ConstraintMatrixType = Eigen::Block<Eigen::Matrix<double, -1, -1>, -1, -1, false>; DriftVectorType = Eigen::Block<Eigen::Matrix<double, -1, 1>, -1, 1, false>; typename pinocchio::DataTpl<_Scalar, _Options, JointCollectionTpl>::TangentVectorType = Eigen::Matrix<double, -1, 1>]’ is deprecated [-Wdeprecated-declarations]
+[4.371s]   141 |   pinocchio::forwardDynamics(
+[4.371s]       |   ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+[4.371s]   142 |       pinocchio_, d->pinocchio, d->multibody.actuation->tau,
+[4.371s]       |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[4.371s]   143 |       d->multibody.contacts->Jc.topRows(nc), d->multibody.contacts->a0.head(nc),
+[4.371s]       |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[4.371s]   144 |       JMinvJt_damping_);
+[4.371s]       |       ~~~~~~~~~~~~~~~~~      
+[4.371s] In file included from /opt/openrobots/include/pinocchio/algorithm/contact-dynamics.hpp:302,
+[4.371s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/multibody/actions/contact-fwddyn.hxx:12,
+[4.371s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/multibody/actions/contact-fwddyn.hpp:400,
+[4.371s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/multibody/utils/quadruped-gaits.hpp:24,
+[4.371s]                  from /home/jkang/third_party/PRIME/src/multibody/utils/quadruped-gaits.cpp:9:
+[4.372s] /opt/openrobots/include/pinocchio/algorithm/contact-dynamics.hxx:90:3: note: declared here
+[4.372s]    90 |   forwardDynamics(
+[4.372s]       |   ^~~~~~~~~~~~~~~
+[4.372s] In file included from /home/jkang/third_party/PRIME/include/crocoddyl/multibody/actions/contact-fwddyn.hpp:400,
+[4.372s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/multibody/utils/quadruped-gaits.hpp:24,
+[4.372s]                  from /home/jkang/third_party/PRIME/src/multibody/utils/quadruped-gaits.cpp:9:
+[4.372s] /home/jkang/third_party/PRIME/include/crocoddyl/multibody/actions/contact-fwddyn.hxx: In instantiation of ‘void crocoddyl::DifferentialActionModelContactFwdDynamicsTpl<Scalar>::calcDiff(const boost::shared_ptr<crocoddyl::DifferentialActionDataAbstractTpl<_Scalar> >&, const Eigen::Ref<const typename crocoddyl::MathBaseTpl<_Scalar>::VectorXs>&, const Eigen::Ref<const typename crocoddyl::MathBaseTpl<_Scalar>::VectorXs>&) [with _Scalar = double; typename Eigen::internal::conditional<const typename crocoddyl::MathBaseTpl<_Scalar>::VectorXs::IsVectorAtCompileTime, Eigen::InnerStride<1>, Eigen::OuterStride<> >::type = Eigen::InnerStride<1>; typename crocoddyl::MathBaseTpl<_Scalar>::VectorXs = Eigen::Matrix<double, -1, 1>]’:
+[4.372s] /home/jkang/third_party/PRIME/include/crocoddyl/multibody/actions/contact-fwddyn.hxx:187:6:   required from here
+[4.372s] /home/jkang/third_party/PRIME/include/crocoddyl/multibody/actions/contact-fwddyn.hxx:218:47: warning: ‘void pinocchio::getKKTContactDynamicMatrixInverse(const pinocchio::ModelTpl<_Scalar, _Options, JointCollectionTpl>&, const pinocchio::DataTpl<S1, O1, JointCollectionTpl>&, const Eigen::MatrixBase<Matrix3Like>&, const Eigen::MatrixBase<MatRet>&) [with Scalar = double; int Options = 0; JointCollectionTpl = pinocchio::JointCollectionDefaultTpl; ConstraintMatrixType = Eigen::Block<Eigen::Matrix<double, -1, -1>, -1, -1, false>; KKTMatrixType = Eigen::Matrix<double, -1, -1>]’ is deprecated [-Wdeprecated-declarations]
+[4.372s]   218 |   pinocchio::getKKTContactDynamicMatrixInverse(
+[4.372s]       |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+[4.373s]   219 |       pinocchio_, d->pinocchio, d->multibody.contacts->Jc.topRows(nc), d->Kinv);
+[4.373s]       |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[4.373s] In file included from /opt/openrobots/include/pinocchio/algorithm/contact-dynamics.hpp:302,
+[4.373s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/multibody/actions/contact-fwddyn.hxx:12,
+[4.373s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/multibody/actions/contact-fwddyn.hpp:400,
+[4.373s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/multibody/utils/quadruped-gaits.hpp:24,
+[4.373s]                  from /home/jkang/third_party/PRIME/src/multibody/utils/quadruped-gaits.cpp:9:
+[4.373s] /opt/openrobots/include/pinocchio/algorithm/contact-dynamics.hxx:218:8: note: declared here
+[4.373s]   218 |   void getKKTContactDynamicMatrixInverse(
+[4.373s]       |        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[4.563s] In file included from /home/jkang/third_party/PRIME/include/crocoddyl/multibody/contact-base.hpp:243,
+[4.563s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/multibody/contacts/multiple-contacts.hpp:19,
+[4.563s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/multibody/actions/contact-fwddyn.hpp:19,
+[4.563s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/multibody/utils/quadruped-gaits.hpp:24,
+[4.563s]                  from /home/jkang/third_party/PRIME/src/multibody/utils/quadruped-gaits.cpp:9:
+[4.563s] /home/jkang/third_party/PRIME/include/crocoddyl/multibody/contact-base.hxx: In instantiation of ‘void crocoddyl::ContactModelAbstractTpl<Scalar>::updateMode(const boost::shared_ptr<crocoddyl::ContactDataAbstractTpl<_Scalar> >&, const Scalar&, const Vector3s&, const Vector3s&) [with _Scalar = double; crocoddyl::ContactModelAbstractTpl<Scalar>::Scalar = double; crocoddyl::ContactModelAbstractTpl<Scalar>::Vector3s = Eigen::Matrix<double, 3, 1>]’:
+[4.563s] /home/jkang/third_party/PRIME/include/crocoddyl/multibody/contact-base.hxx:79:8:   required from here
+[4.563s] /home/jkang/third_party/PRIME/include/crocoddyl/multibody/contact-base.hxx:80:53: warning: unused parameter ‘data’ [-Wunused-parameter]
+[4.563s]    80 |       const boost::shared_ptr<ContactDataAbstract> &data,
+[4.563s]       |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~
+[4.563s] /home/jkang/third_party/PRIME/include/crocoddyl/multibody/contact-base.hxx:81:21: warning: unused parameter ‘mode’ [-Wunused-parameter]
+[4.563s]    81 |       const Scalar &mode,
+[4.563s]       |       ~~~~~~~~~~~~~~^~~~
+[4.563s] /home/jkang/third_party/PRIME/include/crocoddyl/multibody/contact-base.hxx:82:23: warning: unused parameter ‘normal’ [-Wunused-parameter]
+[4.564s]    82 |       const Vector3s &normal,
+[4.564s]       |       ~~~~~~~~~~~~~~~~^~~~~~
+[4.564s] /home/jkang/third_party/PRIME/include/crocoddyl/multibody/contact-base.hxx:83:23: warning: unused parameter ‘tangent’ [-Wunused-parameter]
+[4.564s]    83 |       const Vector3s &tangent)
+[4.564s]       |       ~~~~~~~~~~~~~~~~^~~~~~~
+[4.659s] In file included from /home/jkang/third_party/PRIME/include/crocoddyl/multibody/actions/impulse-fwddyn.hpp:373,
+[4.659s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/multibody/utils/quadruped-gaits.hpp:25,
+[4.659s]                  from /home/jkang/third_party/PRIME/src/multibody/utils/quadruped-gaits.cpp:9:
+[4.659s] /home/jkang/third_party/PRIME/include/crocoddyl/multibody/actions/impulse-fwddyn.hxx: In instantiation of ‘void crocoddyl::ActionModelImpulseFwdDynamicsTpl<Scalar>::initCalcDiff(crocoddyl::ActionModelImpulseFwdDynamicsTpl<Scalar>::Data*, const Eigen::Ref<const typename crocoddyl::MathBaseTpl<_Scalar>::VectorXs>&) [with _Scalar = double; crocoddyl::ActionModelImpulseFwdDynamicsTpl<Scalar>::Data = crocoddyl::ActionDataImpulseFwdDynamicsTpl<double>; typename Eigen::internal::conditional<const typename crocoddyl::MathBaseTpl<_Scalar>::VectorXs::IsVectorAtCompileTime, Eigen::InnerStride<1>, Eigen::OuterStride<> >::type = Eigen::InnerStride<1>; typename crocoddyl::MathBaseTpl<_Scalar>::VectorXs = Eigen::Matrix<double, -1, 1>]’:
+[4.659s] /home/jkang/third_party/PRIME/include/crocoddyl/multibody/actions/impulse-fwddyn.hxx:115:3:   required from ‘void crocoddyl::ActionModelImpulseFwdDynamicsTpl<Scalar>::calcDiff(const boost::shared_ptr<crocoddyl::ActionDataAbstractTpl<_Scalar> >&, const Eigen::Ref<const typename crocoddyl::MathBaseTpl<_Scalar>::VectorXs>&, const Eigen::Ref<const typename crocoddyl::MathBaseTpl<_Scalar>::VectorXs>&) [with _Scalar = double; typename Eigen::internal::conditional<const typename crocoddyl::MathBaseTpl<_Scalar>::VectorXs::IsVectorAtCompileTime, Eigen::InnerStride<1>, Eigen::OuterStride<> >::type = Eigen::InnerStride<1>; typename crocoddyl::MathBaseTpl<_Scalar>::VectorXs = Eigen::Matrix<double, -1, 1>]’
+[4.659s] /home/jkang/third_party/PRIME/include/crocoddyl/multibody/actions/impulse-fwddyn.hxx:109:6:   required from here
+[4.659s] /home/jkang/third_party/PRIME/include/crocoddyl/multibody/actions/impulse-fwddyn.hxx:237:47: warning: ‘void pinocchio::getKKTContactDynamicMatrixInverse(const pinocchio::ModelTpl<_Scalar, _Options, JointCollectionTpl>&, const pinocchio::DataTpl<S1, O1, JointCollectionTpl>&, const Eigen::MatrixBase<Matrix3Like>&, const Eigen::MatrixBase<MatRet>&) [with Scalar = double; int Options = 0; JointCollectionTpl = pinocchio::JointCollectionDefaultTpl; ConstraintMatrixType = Eigen::Block<Eigen::Matrix<double, -1, -1>, -1, -1, false>; KKTMatrixType = Eigen::Matrix<double, -1, -1>]’ is deprecated [-Wdeprecated-declarations]
+[4.659s]   237 |   pinocchio::getKKTContactDynamicMatrixInverse(
+[4.659s]       |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+[4.660s]   238 |       pinocchio_, data->pinocchio, data->multibody.impulses->Jc.topRows(nc),
+[4.660s]       |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[4.660s]   239 |       data->Kinv);
+[4.660s]       |       ~~~~~~~~~~~                              
+[4.660s] In file included from /opt/openrobots/include/pinocchio/algorithm/contact-dynamics.hpp:302,
+[4.660s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/multibody/actions/contact-fwddyn.hxx:12,
+[4.660s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/multibody/actions/contact-fwddyn.hpp:400,
+[4.660s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/multibody/utils/quadruped-gaits.hpp:24,
+[4.660s]                  from /home/jkang/third_party/PRIME/src/multibody/utils/quadruped-gaits.cpp:9:
+[4.660s] /opt/openrobots/include/pinocchio/algorithm/contact-dynamics.hxx:218:8: note: declared here
+[4.660s]   218 |   void getKKTContactDynamicMatrixInverse(
+[4.660s]       |        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[4.978s] In file included from /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/actions/arrival-fwddyn-id.hpp:34,
+[4.978s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/problem/contact-anitescu-id.hpp:32,
+[4.978s]                  from /home/jkang/third_party/PRIME/src/contact_id/problem/contact-anitescu-id.cpp:16:
+[4.978s] /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/states/multibody_params.hxx: In instantiation of ‘crocoddyl::StateMultibodyParamsTpl<Scalar>::StateMultibodyParamsTpl(boost::shared_ptr<pinocchio::ModelTpl<Scalar> >, std::vector<long unsigned int>) [with _Scalar = double]’:
+[4.978s] /usr/include/boost/smart_ptr/make_shared_object.hpp:256:5:   required from ‘typename boost::detail::sp_if_not_array<T>::type boost::make_shared(Args&& ...) [with T = crocoddyl::StateMultibodyParamsTpl<double>; Args = {boost::shared_ptr<pinocchio::ModelTpl<double, 0, pinocchio::JointCollectionDefaultTpl> >, std::vector<long unsigned int, std::allocator<long unsigned int> >&}; typename boost::detail::sp_if_not_array<T>::type = boost::shared_ptr<crocoddyl::StateMultibodyParamsTpl<double> >]’
+[4.978s] /home/jkang/third_party/PRIME/src/contact_id/problem/contact-anitescu-id.cpp:117:65:   required from here
+[4.978s] /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/states/multibody_params.hpp:131:40: warning: ‘crocoddyl::StateMultibodyParamsTpl<double>::joints_’ will be initialized after [-Wreorder]
+[4.978s]   131 |     std::vector<pinocchio::JointIndex> joints_;   //!< Indices of the parameterized joints
+[4.979s]       |                                        ^~~~~~~
+[4.979s] /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/states/multibody_params.hpp:124:17: warning:   ‘std::size_t crocoddyl::StateMultibodyParamsTpl<double>::nq_pin_’ [-Wreorder]
+[4.979s]   124 |     std::size_t nq_pin_;
+[4.979s]       |                 ^~~~~~~
+[4.979s] In file included from /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/states/multibody_params.hpp:139,
+[4.979s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/actions/arrival-fwddyn-id.hpp:34,
+[4.979s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/problem/contact-anitescu-id.hpp:32,
+[4.979s]                  from /home/jkang/third_party/PRIME/src/contact_id/problem/contact-anitescu-id.cpp:16:
+[4.979s] /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/states/multibody_params.hxx:25:3: warning:   when initialized here [-Wreorder]
+[4.979s]    25 |   StateMultibodyParamsTpl<Scalar>::StateMultibodyParamsTpl(
+[4.979s]       |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[4.979s] In file included from /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/actions/arrival-fwddyn-id.hpp:34,
+[4.979s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/problem/contact-anitescu-id.hpp:32,
+[4.979s]                  from /home/jkang/third_party/PRIME/src/contact_id/problem/contact-anitescu-id.cpp:16:
+[4.979s] /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/states/multibody_params.hpp:129:39: warning: ‘crocoddyl::StateMultibodyParamsTpl<double>::pinocchio_’ will be initialized after [-Wreorder]
+[4.979s]   129 |     boost::shared_ptr<PinocchioModel> pinocchio_; //!< Pinocchio model
+[4.979s]       |                                       ^~~~~~~~~~
+[4.979s] In file included from /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/states/multibody_params.hpp:139,
+[4.979s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/actions/arrival-fwddyn-id.hpp:34,
+[4.979s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/problem/contact-anitescu-id.hpp:32,
+[4.979s]                  from /home/jkang/third_party/PRIME/src/contact_id/problem/contact-anitescu-id.cpp:16:
+[4.980s] /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/states/multibody_params.hxx:33:75: warning:   base ‘crocoddyl::StateMultibodyBaseTpl<double>’ [-Wreorder]
+[4.980s]    33 |         x0_(VectorXs::Zero(model->nq + model->nv + 2 * Joints.size() * 10))
+[4.980s]       |                                                                           ^
+[4.980s] /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/states/multibody_params.hxx:25:3: warning:   when initialized here [-Wreorder]
+[4.980s]    25 |   StateMultibodyParamsTpl<Scalar>::StateMultibodyParamsTpl(
+[4.980s]       |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[5.055s] In file included from /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/problem/contact-anitescu-id.hpp:33,
+[5.055s]                  from /home/jkang/third_party/PRIME/src/contact_id/problem/contact-anitescu-id.cpp:16:
+[5.055s] /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/actions/contact-fwddyn-anitescu-id.hxx: In instantiation of ‘crocoddyl::DifferentialActionModelContactFwdDynamicsAnitescuSystemidTpl<Scalar>::DifferentialActionModelContactFwdDynamicsAnitescuSystemidTpl(boost::shared_ptr<crocoddyl::StateMultibodyParamsTpl<_Scalar> >, boost::shared_ptr<crocoddyl::ActuationModelAbstractTpl<Scalar> >, boost::shared_ptr<crocoddyl::CostModelSumTpl<_Scalar> >, std::vector<std::__cxx11::basic_string<char> >, crocoddyl::DifferentialActionModelContactFwdDynamicsAnitescuSystemidTpl<Scalar>::Scalar, crocoddyl::DifferentialActionModelContactFwdDynamicsAnitescuSystemidTpl<Scalar>::Scalar, crocoddyl::DifferentialActionModelContactFwdDynamicsAnitescuSystemidTpl<Scalar>::Scalar, const string&) [with _Scalar = double; crocoddyl::DifferentialActionModelContactFwdDynamicsAnitescuSystemidTpl<Scalar>::Scalar = double; std::string = std::__cxx11::basic_string<char>]’:
+[5.055s] /usr/include/boost/smart_ptr/make_shared_object.hpp:256:5:   required from ‘typename boost::detail::sp_if_not_array<T>::type boost::make_shared(Args&& ...) [with T = crocoddyl::DifferentialActionModelContactFwdDynamicsAnitescuSystemidTpl<double>; Args = {boost::shared_ptr<crocoddyl::StateMultibodyParamsTpl<double> >&, boost::shared_ptr<crocoddyl::ActuationModelFloatingBaseEstimationTpl<double> >&, boost::shared_ptr<crocoddyl::CostModelSumTpl<double> >&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, double&, double&, double&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&}; typename boost::detail::sp_if_not_array<T>::type = boost::shared_ptr<crocoddyl::DifferentialActionModelContactFwdDynamicsAnitescuSystemidTpl<double> >]’
+[5.055s] /home/jkang/third_party/PRIME/src/contact_id/problem/contact-anitescu-id.cpp:236:80:   required from here
+[5.055s] /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/actions/contact-fwddyn-anitescu-id.hpp:287:21: warning: ‘crocoddyl::DifferentialActionModelContactFwdDynamicsAnitescuSystemidTpl<double>::force_log_path_’ will be initialized after [-Wreorder]
+[5.055s]   287 |         std::string force_log_path_;                            //!< Optional force CSV log path
+[5.055s]       |                     ^~~~~~~~~~~~~~~
+[5.055s] /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/actions/contact-fwddyn-anitescu-id.hpp:276:49: warning:   ‘boost::shared_ptr<crocoddyl::StateMultibodyParamsTpl<double> > crocoddyl::DifferentialActionModelContactFwdDynamicsAnitescuSystemidTpl<double>::params_state_’ [-Wreorder]
+[5.055s]   276 |         boost::shared_ptr<StateMultibodyParams> params_state_;
+[5.055s]       |                                                 ^~~~~~~~~~~~~
+[5.055s] In file included from /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/actions/contact-fwddyn-anitescu-id.hpp:353,
+[5.055s]                  from /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/problem/contact-anitescu-id.hpp:33,
+[5.055s]                  from /home/jkang/third_party/PRIME/src/contact_id/problem/contact-anitescu-id.cpp:16:
+[5.055s] /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/actions/contact-fwddyn-anitescu-id.hxx:65:3: warning:   when initialized here [-Wreorder]
+[5.055s]    65 |   DifferentialActionModelContactFwdDynamicsAnitescuSystemidTpl<Scalar>::
+[5.055s]       |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[5.227s] gmake[2]: *** [prime/CMakeFiles/crocoddyl.dir/build.make:177: prime/CMakeFiles/crocoddyl.dir/src/core/solvers/intro.cpp.o] Error 1
+[15.517s] gmake[2]: *** [prime/CMakeFiles/crocoddyl.dir/build.make:261: prime/CMakeFiles/crocoddyl.dir/src/multibody/utils/quadruped-anitescu-id.cpp.o] Error 1
+[15.600s] gmake[2]: *** [prime/CMakeFiles/crocoddyl.dir/build.make:247: prime/CMakeFiles/crocoddyl.dir/src/multibody/utils/contact-anitescu-id.cpp.o] Error 1
+[16.772s] In file included from /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/problem/contact-anitescu-id.hpp:35,
+[16.772s]                  from /home/jkang/third_party/PRIME/src/contact_id/problem/contact-anitescu-id.cpp:16:
+[16.773s] /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/actuations/floating-base-id-arrivial.hpp: In instantiation of ‘boost::shared_ptr<crocoddyl::ActuationDataAbstractTpl<_Scalar> > crocoddyl::ActuationModelFloatingBaseArrivalIDTpl<Scalar>::createData() [with _Scalar = double]’:
+[16.773s] /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/actuations/floating-base-id-arrivial.hpp:150:37:   required from here
+[16.773s] /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/actuations/floating-base-id-arrivial.hpp:156:25: warning: unused variable ‘root_joint_id’ [-Wunused-variable]
+[16.773s]   156 |       const std::size_t root_joint_id =
+[16.773s]       |                         ^~~~~~~~~~~~~
+[27.129s] gmake[2]: *** [prime/CMakeFiles/crocoddyl.dir/build.make:275: prime/CMakeFiles/crocoddyl.dir/src/multibody/utils/quadruped-gaits.cpp.o] Error 1
+[54.059s] gmake[2]: *** [prime/CMakeFiles/crocoddyl.dir/build.make:79: prime/CMakeFiles/crocoddyl.dir/src/contact_id/problem/contact-anitescu-id.cpp.o] Error 1
+[54.060s] gmake[1]: *** [CMakeFiles/Makefile2:1288: prime/CMakeFiles/crocoddyl.dir/all] Error 2
+[54.060s] gmake: *** [Makefile:146: all] Error 2
+[54.061s] Invoked command in '/home/jkang/third_party/PRIME_ros/build/prime_contact_id_ros' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/jkang/third_party/PRIME_ros/build/prime_contact_id_ros -- -j32 -l32

@@ -1,0 +1,29 @@
+[ 80%] Built target crocoddyl
+[35m[1mConsolidate compiler generated dependencies of target prime_moving_window_node[0m
+[ 90%] Built target prime_csv_replay_node
+[100%] Built target prime_moving_window_node
+-- Install configuration: "Release"
+-- Execute custom install script
+-- Up-to-date symlink: /home/jkang/third_party/PRIME_ros/install/prime_contact_id_ros/lib/prime_contact_id_ros/prime_moving_window_node
+-- Up-to-date symlink: /home/jkang/third_party/PRIME_ros/install/prime_contact_id_ros/lib/prime_contact_id_ros/prime_csv_replay_node
+-- Up-to-date symlink: /home/jkang/third_party/PRIME_ros/install/prime_contact_id_ros/share/prime_contact_id_ros/launch/csv_replay.launch.py
+-- Up-to-date symlink: /home/jkang/third_party/PRIME_ros/install/prime_contact_id_ros/share/prime_contact_id_ros/launch/prime_moving_window.launch.py
+-- Up-to-date symlink: /home/jkang/third_party/PRIME_ros/install/prime_contact_id_ros/share/ament_index/resource_index/package_run_dependencies/prime_contact_id_ros
+-- Up-to-date symlink: /home/jkang/third_party/PRIME_ros/install/prime_contact_id_ros/share/ament_index/resource_index/parent_prefix_path/prime_contact_id_ros
+-- Up-to-date symlink: /home/jkang/third_party/PRIME_ros/install/prime_contact_id_ros/share/prime_contact_id_ros/environment/ament_prefix_path.sh
+-- Up-to-date symlink: /home/jkang/third_party/PRIME_ros/install/prime_contact_id_ros/share/prime_contact_id_ros/environment/ament_prefix_path.dsv
+-- Up-to-date symlink: /home/jkang/third_party/PRIME_ros/install/prime_contact_id_ros/share/prime_contact_id_ros/environment/path.sh
+-- Up-to-date symlink: /home/jkang/third_party/PRIME_ros/install/prime_contact_id_ros/share/prime_contact_id_ros/environment/path.dsv
+-- Up-to-date symlink: /home/jkang/third_party/PRIME_ros/install/prime_contact_id_ros/share/prime_contact_id_ros/local_setup.bash
+-- Up-to-date symlink: /home/jkang/third_party/PRIME_ros/install/prime_contact_id_ros/share/prime_contact_id_ros/local_setup.sh
+-- Up-to-date symlink: /home/jkang/third_party/PRIME_ros/install/prime_contact_id_ros/share/prime_contact_id_ros/local_setup.zsh
+-- Up-to-date symlink: /home/jkang/third_party/PRIME_ros/install/prime_contact_id_ros/share/prime_contact_id_ros/local_setup.dsv
+-- Symlinking: /home/jkang/third_party/PRIME_ros/install/prime_contact_id_ros/share/prime_contact_id_ros/package.dsv
+-- Symlinking: /home/jkang/third_party/PRIME_ros/install/prime_contact_id_ros/share/ament_index/resource_index/packages/prime_contact_id_ros
+-- Up-to-date symlink: /home/jkang/third_party/PRIME_ros/install/prime_contact_id_ros/share/prime_contact_id_ros/cmake/prime_contact_id_rosConfig.cmake
+-- Up-to-date symlink: /home/jkang/third_party/PRIME_ros/install/prime_contact_id_ros/share/prime_contact_id_ros/cmake/prime_contact_id_rosConfig-version.cmake
+-- Up-to-date symlink: /home/jkang/third_party/PRIME_ros/install/prime_contact_id_ros/share/prime_contact_id_ros/package.xml
+-- Symlinking: /home/jkang/third_party/PRIME_ros/install/prime_contact_id_ros/share/ament_index/resource_index/packages/prime_contact_id_ros
+-- Up-to-date symlink: /home/jkang/third_party/PRIME_ros/install/prime_contact_id_ros/share/prime_contact_id_ros/hook/ament_prefix_path.dsv
+-- Up-to-date symlink: /home/jkang/third_party/PRIME_ros/install/prime_contact_id_ros/share/prime_contact_id_ros/hook/python_path.dsv
+-- Up-to-date: /home/jkang/third_party/PRIME_ros/install/prime_contact_id_ros/lib/pkgconfig/crocoddyl.pc

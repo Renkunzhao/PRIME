@@ -1,0 +1,42 @@
+CMake Warning at /opt/openrobots/lib/cmake/hpp-fcl/hpp-fclConfig.cmake:3 (message):
+  Please update your CMake from 'hpp-fcl' to 'coal'
+Call Stack (most recent call first):
+  /usr/share/cmake-3.22/Modules/CMakeFindDependencyMacro.cmake:47 (find_package)
+  /opt/openrobots/lib/cmake/pinocchio/pinocchioConfig.cmake:161 (find_dependency)
+  /home/jkang/third_party/PRIME/cmake/package-config.cmake:133 (find_package)
+  /home/jkang/third_party/PRIME/CMakeLists.txt:107 (add_project_dependency)
+
+
+CMake Error at CMakeLists.txt:41 (target_link_libraries):
+  Error evaluating generator expression:
+
+    $<TARGET_PROPERTY:hpp-fcl::hpp-fcl,INTERFACE_INCLUDE_DIRECTORIES>
+
+  Target "hpp-fcl::hpp-fcl" not found.
+
+
+CMake Error:
+  Error evaluating generator expression:
+
+    $<TARGET_PROPERTY:hpp-fcl::hpp-fcl,INTERFACE_INCLUDE_DIRECTORIES>
+
+  Target "hpp-fcl::hpp-fcl" not found.
+
+
+CMake Error at CMakeLists.txt:49 (target_link_libraries):
+  Error evaluating generator expression:
+
+    $<TARGET_PROPERTY:hpp-fcl::hpp-fcl,INTERFACE_INCLUDE_DIRECTORIES>
+
+  Target "hpp-fcl::hpp-fcl" not found.
+
+
+CMake Error:
+  Error evaluating generator expression:
+
+    $<TARGET_PROPERTY:hpp-fcl::hpp-fcl,INTERFACE_INCLUDE_DIRECTORIES>
+
+  Target "hpp-fcl::hpp-fcl" not found.
+
+
+CMake Generate step failed.  Build files cannot be regenerated correctly.

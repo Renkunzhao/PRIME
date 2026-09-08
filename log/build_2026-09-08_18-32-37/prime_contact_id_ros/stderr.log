@@ -1,0 +1,24 @@
+CMake Warning at /opt/openrobots/lib/cmake/hpp-fcl/hpp-fclConfig.cmake:3 (message):
+  Please update your CMake from 'hpp-fcl' to 'coal'
+Call Stack (most recent call first):
+  CMakeLists.txt:13 (find_package)
+
+
+CMake Warning at /opt/openrobots/lib/cmake/hpp-fcl/hpp-fclConfig.cmake:3 (message):
+  Please update your CMake from 'hpp-fcl' to 'coal'
+Call Stack (most recent call first):
+  /usr/share/cmake-3.22/Modules/CMakeFindDependencyMacro.cmake:47 (find_package)
+  /opt/openrobots/lib/cmake/pinocchio/pinocchioConfig.cmake:161 (find_dependency)
+  /home/jkang/third_party/PRIME/cmake/package-config.cmake:133 (find_package)
+  /home/jkang/third_party/PRIME/CMakeLists.txt:107 (add_project_dependency)
+
+
+CMake Error at /home/jkang/third_party/PRIME/CMakeLists.txt:146 (string):
+  string sub-command REGEX, mode MATCH needs at least 5 arguments total to
+  command.
+
+
+CMake Warning at /home/jkang/third_party/PRIME/CMakeLists.txt:149 (message):
+  The number of threads has to be an integer value, set to 4
+
+

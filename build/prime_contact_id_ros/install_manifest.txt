@@ -1,0 +1,1 @@
+/home/jkang/third_party/PRIME_ros/install/prime_contact_id_ros/lib/pkgconfig/crocoddyl.pc

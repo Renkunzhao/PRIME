@@ -1,0 +1,101 @@
+[0.006s] Invoking command in '/home/jkang/third_party/PRIME_ros/build/prime_contact_id_ros': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/jkang/third_party/PRIME_ros/build/prime_contact_id_ros -- -j32 -l32
+[0.024s] -- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.086s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.089s] -- Found rclcpp: 16.0.12 (/opt/ros/humble/share/rclcpp/cmake)
+[0.104s] -- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.105s] -- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.108s] -- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.112s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.118s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.133s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.134s] -- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.194s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.216s] -- Found sensor_msgs: 4.9.0 (/opt/ros/humble/share/sensor_msgs/cmake)
+[0.229s] -- Found nav_msgs: 4.9.0 (/opt/ros/humble/share/nav_msgs/cmake)
+[0.237s] -- Found diagnostic_msgs: 4.9.0 (/opt/ros/humble/share/diagnostic_msgs/cmake)
+[0.242s] CMake Warning at /opt/openrobots/lib/cmake/hpp-fcl/hpp-fclConfig.cmake:3 (message):
+[0.242s]   Please update your CMake from 'hpp-fcl' to 'coal'
+[0.242s] Call Stack (most recent call first):
+[0.242s]   CMakeLists.txt:13 (find_package)
+[0.242s] 
+[0.242s] 
+[0.242s] -- coal FOUND. coal at /opt/openrobots/lib/libcoal.so
+[0.247s] -- Found Boost: /usr/include (found version "1.74.0") found components: chrono thread date_time serialization filesystem atomic 
+[0.404s] -- Default C++ standard: 201703
+[0.404s] -- C++ standard sufficient: Minimal required 14, currently defined: 17
+[0.406s] -- JRL cmakemodules found in 'cmake/' git submodule
+[0.408s] -- Configuring "crocoddyl" (https://github.com/loco-3d/crocoddyl)
+[0.408s] -- Package version (ROS package.xml): 0.1.0
+[0.408s] -- Contact RObot COntrol by Differential DYnamic programming Library (Crocoddyl), version 0.1.0
+[0.408s] -- Copyright (C) 2018-2024 CNRS-LAAS, University of Edinburgh, INRIA
+[0.408s] --                         Heriot-Watt University
+[0.408s] -- All rights reserved.
+[0.409s] -- Released under the BSD 3-Clause License.
+[0.418s] -- Could NOT find Doxygen (missing: DOXYGEN_EXECUTABLE) 
+[0.418s] -- Failed to find Doxygen, documentation will not be generated.
+[0.418s] -- C++ standard sufficient: Minimal required 14, currently defined: 17
+[0.419s] -- pinocchio_default FOUND. pinocchio_default at /opt/openrobots/lib/libpinocchio_default.so
+[0.419s] -- pinocchio_parsers FOUND. pinocchio_parsers at /opt/openrobots/lib/libpinocchio_parsers.so
+[0.419s] -- pinocchio_casadi FOUND. pinocchio_casadi at /opt/openrobots/lib/libpinocchio_casadi.so
+[0.420s] -- boost_filesystem FOUND. boost_filesystem at /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+[0.420s] -- boost_serialization FOUND. boost_serialization at /usr/lib/x86_64-linux-gnu/libboost_serialization.so
+[0.420s] -- boost_system FOUND. boost_system at /usr/lib/x86_64-linux-gnu/libboost_system.so
+[0.425s] -- Found Boost: /usr/include (found version "1.74.0") found components: filesystem serialization system 
+[0.426s] CMake Warning at /opt/openrobots/lib/cmake/hpp-fcl/hpp-fclConfig.cmake:3 (message):
+[0.426s]   Please update your CMake from 'hpp-fcl' to 'coal'
+[0.426s] Call Stack (most recent call first):
+[0.426s]   /usr/share/cmake-3.22/Modules/CMakeFindDependencyMacro.cmake:47 (find_package)
+[0.426s]   /opt/openrobots/lib/cmake/pinocchio/pinocchioConfig.cmake:161 (find_dependency)
+[0.426s]   /home/jkang/third_party/PRIME/cmake/package-config.cmake:133 (find_package)
+[0.426s]   /home/jkang/third_party/PRIME/CMakeLists.txt:107 (add_project_dependency)
+[0.426s] 
+[0.426s] 
+[0.426s] -- C++ standard sufficient: Minimal required 14, currently defined: 17
+[0.426s] -- example-robot-data is optional.
+[0.427s] -- Checking for module 'example-robot-data'
+[0.435s] --   Found example-robot-data, version 4.2.0
+[0.461s] -- Pkg-config module example-robot-data v4.2.0 has been detected with success.
+[0.461s] -- scipy is optional.
+[0.461s] -- Checking for module 'scipy'
+[0.463s] --   No package 'scipy' found
+[0.477s] -- Found Boost: /usr/include (found suitable version "1.74.0", minimum required is "1.65") found components: filesystem serialization system 
+[0.480s] -- Found Boost: /usr/include (found suitable version "1.74.0", minimum required is "1.65") found components: unit_test_framework 
+[0.525s] -- Create files for AMENT (ROS 2)
+[0.525s] -- Configuring done
+[0.542s] -- Generating done
+[0.549s] -- Build files have been written to: /home/jkang/third_party/PRIME_ros/build/prime_contact_id_ros
+[0.590s] Consolidate compiler generated dependencies of target crocoddyl
+[0.613s] [ 80%] Built target crocoddyl
+[0.627s] Consolidate compiler generated dependencies of target prime_moving_window_node
+[0.632s] Consolidate compiler generated dependencies of target prime_csv_replay_node
+[0.643s] [ 90%] Built target prime_moving_window_node
+[0.645s] [100%] Built target prime_csv_replay_node
+[0.653s] Invoked command in '/home/jkang/third_party/PRIME_ros/build/prime_contact_id_ros' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/jkang/third_party/PRIME_ros/build/prime_contact_id_ros -- -j32 -l32
+[0.660s] Invoking command in '/home/jkang/third_party/PRIME_ros/build/prime_contact_id_ros': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/jkang/third_party/PRIME_ros/build/prime_contact_id_ros
+[0.665s] -- Install configuration: "Release"
+[0.665s] -- Execute custom install script
+[0.665s] -- Up-to-date symlink: /home/jkang/third_party/PRIME_ros/install/prime_contact_id_ros/lib/prime_contact_id_ros/prime_moving_window_node
+[0.665s] -- Up-to-date symlink: /home/jkang/third_party/PRIME_ros/install/prime_contact_id_ros/lib/prime_contact_id_ros/prime_csv_replay_node
+[0.666s] -- Up-to-date symlink: /home/jkang/third_party/PRIME_ros/install/prime_contact_id_ros/share/prime_contact_id_ros/launch/csv_replay.launch.py
+[0.666s] -- Up-to-date symlink: /home/jkang/third_party/PRIME_ros/install/prime_contact_id_ros/share/prime_contact_id_ros/launch/prime_moving_window.launch.py
+[0.666s] -- Symlinking: /home/jkang/third_party/PRIME_ros/install/prime_contact_id_ros/share/prime_contact_id_ros/config/Go2_sim_kunzhao_long_mhe_ros.xml
+[0.672s] -- Up-to-date symlink: /home/jkang/third_party/PRIME_ros/install/prime_contact_id_ros/share/ament_index/resource_index/package_run_dependencies/prime_contact_id_ros
+[0.672s] -- Up-to-date symlink: /home/jkang/third_party/PRIME_ros/install/prime_contact_id_ros/share/ament_index/resource_index/parent_prefix_path/prime_contact_id_ros
+[0.672s] -- Up-to-date symlink: /home/jkang/third_party/PRIME_ros/install/prime_contact_id_ros/share/prime_contact_id_ros/environment/ament_prefix_path.sh
+[0.672s] -- Up-to-date symlink: /home/jkang/third_party/PRIME_ros/install/prime_contact_id_ros/share/prime_contact_id_ros/environment/ament_prefix_path.dsv
+[0.672s] -- Up-to-date symlink: /home/jkang/third_party/PRIME_ros/install/prime_contact_id_ros/share/prime_contact_id_ros/environment/path.sh
+[0.672s] -- Up-to-date symlink: /home/jkang/third_party/PRIME_ros/install/prime_contact_id_ros/share/prime_contact_id_ros/environment/path.dsv
+[0.672s] -- Up-to-date symlink: /home/jkang/third_party/PRIME_ros/install/prime_contact_id_ros/share/prime_contact_id_ros/local_setup.bash
+[0.672s] -- Up-to-date symlink: /home/jkang/third_party/PRIME_ros/install/prime_contact_id_ros/share/prime_contact_id_ros/local_setup.sh
+[0.672s] -- Up-to-date symlink: /home/jkang/third_party/PRIME_ros/install/prime_contact_id_ros/share/prime_contact_id_ros/local_setup.zsh
+[0.672s] -- Up-to-date symlink: /home/jkang/third_party/PRIME_ros/install/prime_contact_id_ros/share/prime_contact_id_ros/local_setup.dsv
+[0.672s] -- Symlinking: /home/jkang/third_party/PRIME_ros/install/prime_contact_id_ros/share/prime_contact_id_ros/package.dsv
+[0.678s] -- Symlinking: /home/jkang/third_party/PRIME_ros/install/prime_contact_id_ros/share/ament_index/resource_index/packages/prime_contact_id_ros
+[0.682s] -- Up-to-date symlink: /home/jkang/third_party/PRIME_ros/install/prime_contact_id_ros/share/prime_contact_id_ros/cmake/prime_contact_id_rosConfig.cmake
+[0.682s] -- Up-to-date symlink: /home/jkang/third_party/PRIME_ros/install/prime_contact_id_ros/share/prime_contact_id_ros/cmake/prime_contact_id_rosConfig-version.cmake
+[0.682s] -- Up-to-date symlink: /home/jkang/third_party/PRIME_ros/install/prime_contact_id_ros/share/prime_contact_id_ros/package.xml
+[0.682s] -- Symlinking: /home/jkang/third_party/PRIME_ros/install/prime_contact_id_ros/share/ament_index/resource_index/packages/prime_contact_id_ros
+[0.688s] -- Up-to-date symlink: /home/jkang/third_party/PRIME_ros/install/prime_contact_id_ros/share/prime_contact_id_ros/hook/ament_prefix_path.dsv
+[0.688s] -- Up-to-date symlink: /home/jkang/third_party/PRIME_ros/install/prime_contact_id_ros/share/prime_contact_id_ros/hook/python_path.dsv
+[0.688s] -- Up-to-date: /home/jkang/third_party/PRIME_ros/install/prime_contact_id_ros/lib/pkgconfig/crocoddyl.pc
+[0.689s] Invoked command in '/home/jkang/third_party/PRIME_ros/build/prime_contact_id_ros' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/jkang/third_party/PRIME_ros/build/prime_contact_id_ros

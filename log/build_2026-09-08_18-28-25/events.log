@@ -1,0 +1,1157 @@
+[0.000000] (-) TimerEvent: {}
+[0.000208] (prime_contact_id_ros) JobQueued: {'identifier': 'prime_contact_id_ros', 'dependencies': OrderedDict()}
+[0.000271] (prime_contact_id_ros) JobStarted: {'identifier': 'prime_contact_id_ros'}
+[0.004115] (prime_contact_id_ros) JobProgress: {'identifier': 'prime_contact_id_ros', 'progress': 'cmake'}
+[0.004640] (prime_contact_id_ros) Command: {'cmd': ['/usr/bin/cmake', '/home/jkang/third_party/PRIME_ros/src/prime_contact_id_ros', '-DAMENT_CMAKE_SYMLINK_INSTALL=1', '-DCMAKE_INSTALL_PREFIX=/home/jkang/third_party/PRIME_ros/install/prime_contact_id_ros'], 'cwd': '/home/jkang/third_party/PRIME_ros/build/prime_contact_id_ros', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('VSCODE_CWD', '/home/jkang/third_party/PRIME_ros'), ('VSCODE_ESM_ENTRYPOINT', 'vs/workbench/api/node/extensionHostProcess'), ('CODEX_CI', '1'), ('USER', 'jkang'), ('CODEX_INTERNAL_ORIGINATOR_OVERRIDE', 'codex_vscode'), ('VSCODE_NLS_CONFIG', '{"userLocale":"en-us","osLocale":"en-us","resolvedLanguage":"en","defaultMessagesFile":"/usr/share/code/resources/app/out/nls.messages.json","locale":"en-us","availableLanguages":{}}'), ('VSCODE_HANDLES_UNCAUGHT_ERRORS', 'true'), ('XDG_SESSION_TYPE', 'x11'), ('DEBUG', 'release'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/opt/openrobots/lib:/usr/lib/x86_64-linux-gnu:'), ('HOME', '/home/jkang'), ('CHROME_DESKTOP', 'code.desktop'), ('DESKTOP_SESSION', 'ubuntu'), ('VSCODE_IPC_HOOK', '/run/user/1000/vscode-9b305d51-1.10-main.sock'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('PAGER', 'cat'), ('LC_CTYPE', 'C.UTF-8'), ('DBUS_STARTER_BUS_TYPE', 'session'), ('SYSTEMD_EXEC_PID', '4156'), ('NO_COLOR', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus,guid=089651f49daa0284a71bb5d569fbf792'), ('COLORTERM', ''), ('VSCODE_CRASH_REPORTER_PROCESS_TYPE', 'extensionHost'), ('VSCODE_L10N_BUNDLE_LOCATION', ''), ('CODEX_PERMISSION_PROFILE', ':workspace'), ('APPLICATION_INSIGHTS_NO_STATSBEAT', 'true'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'jkang'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('PKG_CONFIG_PATH', '/opt/openrobots/lib/pkgconfig:'), ('XDG_SESSION_CLASS', 'user'), ('RUST_LOG', 'warn'), ('USERNAME', 'jkang'), ('TERM', 'dumb'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/humble/bin:/home/jkang/.local/bin:/home/jkang/.local/bin:/home/jkang/.codex/tmp/arg0/codex-arg04QVMMw:/opt/openrobots/bin:/home/jkang/anaconda3/bin:/home/jkang/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/jkang/.vscode/extensions/openai.chatgpt-26.5825.51511/bin/linux-x86_64'), ('SESSION_MANAGER', 'local/jkang-ThinkStation-P3-Tower:@/tmp/.ICE-unix/4156,unix/jkang-ThinkStation-P3-Tower:/tmp/.ICE-unix/4156'), ('CODEX_SESSION_ID', '01a07d88-e98b-7653-8dda-6eb604c19383'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/f0479428_3976_418c_a639_e0eca73023c6'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('GDK_BACKEND', 'x11'), ('DISPLAY', ':1'), ('CODEX_SANDBOX_NETWORK_DISABLED', '1'), ('NoDefaultCurrentDirectoryInExePath', '1'), ('LANG', 'C.UTF-8'), ('XDG_CURRENT_DESKTOP', 'Unity'), ('XMODIFIERS', '@im=ibus'), ('GH_PAGER', 'cat'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.9256'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('ORIGINAL_XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('ELECTRON_RUN_AS_NODE', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('CODEX_THREAD_ID', '01a07d88-e98b-7653-8dda-6eb604c19383'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GIT_PAGER', 'cat'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/jkang/third_party/PRIME_ros/build/prime_contact_id_ros'), ('VSCODE_CLI', '1'), ('LC_ALL', 'C.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('VSCODE_CODE_CACHE_PATH', '/home/jkang/.config/Code/CachedData/2901c5ac6db8a986a5666c3af51ff804d05af0d4'), ('DBUS_STARTER_ADDRESS', 'unix:path=/run/user/1000/bus,guid=089651f49daa0284a71bb5d569fbf792'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages:/opt/openrobots/lib/python3.10/site-packages:'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('ELECTRON_NO_ATTACH_CONSOLE', '1'), ('CMAKE_PREFIX_PATH', '/opt/openrobots:/opt/openrobots/lib/cmake/example-robot-data:/opt/openrobots/lib/cmake/coal:/opt/openrobots/lib/cmake/hpp-fcl:/opt/openrobots/lib/cmake/casadi:/opt/openrobots/lib/cmake/pinocchio:/opt/openrobots/lib/cmake/eigenpy::/opt/ros/humble'), ('VSCODE_PID', '3355432')]), 'shell': False}
+[0.013282] (prime_contact_id_ros) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.081951] (prime_contact_id_ros) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[0.084856] (prime_contact_id_ros) StdoutLine: {'line': b'-- Found rclcpp: 16.0.12 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[0.098936] (prime_contact_id_ros) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[0.099795] (-) TimerEvent: {}
+[0.099909] (prime_contact_id_ros) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.102662] (prime_contact_id_ros) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[0.107069] (prime_contact_id_ros) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.112621] (prime_contact_id_ros) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.127138] (prime_contact_id_ros) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[0.127713] (prime_contact_id_ros) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[0.187212] (prime_contact_id_ros) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[0.199860] (-) TimerEvent: {}
+[0.209575] (prime_contact_id_ros) StdoutLine: {'line': b'-- Found sensor_msgs: 4.9.0 (/opt/ros/humble/share/sensor_msgs/cmake)\n'}
+[0.222545] (prime_contact_id_ros) StdoutLine: {'line': b'-- Found nav_msgs: 4.9.0 (/opt/ros/humble/share/nav_msgs/cmake)\n'}
+[0.230055] (prime_contact_id_ros) StdoutLine: {'line': b'-- Found diagnostic_msgs: 4.9.0 (/opt/ros/humble/share/diagnostic_msgs/cmake)\n'}
+[0.235661] (prime_contact_id_ros) StderrLine: {'line': b'CMake Warning at /opt/openrobots/lib/cmake/hpp-fcl/hpp-fclConfig.cmake:3 (message):\n'}
+[0.235722] (prime_contact_id_ros) StderrLine: {'line': b"  Please update your CMake from 'hpp-fcl' to 'coal'\n"}
+[0.235760] (prime_contact_id_ros) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[0.235795] (prime_contact_id_ros) StderrLine: {'line': b'  CMakeLists.txt:13 (find_package)\n'}
+[0.235828] (prime_contact_id_ros) StderrLine: {'line': b'\n'}
+[0.235861] (prime_contact_id_ros) StderrLine: {'line': b'\n'}
+[0.235940] (prime_contact_id_ros) StdoutLine: {'line': b'-- coal FOUND. coal at /opt/openrobots/lib/libcoal.so\n'}
+[0.240656] (prime_contact_id_ros) StdoutLine: {'line': b'-- Found Boost: /usr/include (found version "1.74.0") found components: chrono thread date_time serialization filesystem atomic \n'}
+[0.299948] (-) TimerEvent: {}
+[0.382635] (prime_contact_id_ros) StdoutLine: {'line': b'-- Default C++ standard: 201402\n'}
+[0.382747] (prime_contact_id_ros) StdoutLine: {'line': b'-- C++ standard sufficient: Minimal required 14, currently defined: 14\n'}
+[0.383739] (prime_contact_id_ros) StdoutLine: {'line': b"-- JRL cmakemodules found in 'cmake/' git submodule\n"}
+[0.385974] (prime_contact_id_ros) StdoutLine: {'line': b'-- Configuring "crocoddyl" (https://github.com/loco-3d/crocoddyl)\n'}
+[0.386033] (prime_contact_id_ros) StdoutLine: {'line': b'-- Package version (ROS package.xml): 0.1.0\n'}
+[0.386471] (prime_contact_id_ros) StdoutLine: {'line': b'-- Contact RObot COntrol by Differential DYnamic programming Library (Crocoddyl), version 0.1.0\n'}
+[0.386510] (prime_contact_id_ros) StdoutLine: {'line': b'-- Copyright (C) 2018-2024 CNRS-LAAS, University of Edinburgh, INRIA\n'}
+[0.386545] (prime_contact_id_ros) StdoutLine: {'line': b'--                         Heriot-Watt University\n'}
+[0.386579] (prime_contact_id_ros) StdoutLine: {'line': b'-- All rights reserved.\n'}
+[0.386612] (prime_contact_id_ros) StdoutLine: {'line': b'-- Released under the BSD 3-Clause License.\n'}
+[0.395284] (prime_contact_id_ros) StdoutLine: {'line': b'-- Could NOT find Doxygen (missing: DOXYGEN_EXECUTABLE) \n'}
+[0.395389] (prime_contact_id_ros) StdoutLine: {'line': b'-- Failed to find Doxygen, documentation will not be generated.\n'}
+[0.395428] (prime_contact_id_ros) StdoutLine: {'line': b'-- C++ standard sufficient: Minimal required 14, currently defined: 14\n'}
+[0.395777] (prime_contact_id_ros) StdoutLine: {'line': b'-- pinocchio_default FOUND. pinocchio_default at /opt/openrobots/lib/libpinocchio_default.so\n'}
+[0.395902] (prime_contact_id_ros) StdoutLine: {'line': b'-- pinocchio_parsers FOUND. pinocchio_parsers at /opt/openrobots/lib/libpinocchio_parsers.so\n'}
+[0.395954] (prime_contact_id_ros) StdoutLine: {'line': b'-- pinocchio_casadi FOUND. pinocchio_casadi at /opt/openrobots/lib/libpinocchio_casadi.so\n'}
+[0.396524] (prime_contact_id_ros) StdoutLine: {'line': b'-- boost_filesystem FOUND. boost_filesystem at /usr/lib/x86_64-linux-gnu/libboost_filesystem.so\n'}
+[0.396863] (prime_contact_id_ros) StdoutLine: {'line': b'-- boost_serialization FOUND. boost_serialization at /usr/lib/x86_64-linux-gnu/libboost_serialization.so\n'}
+[0.397159] (prime_contact_id_ros) StdoutLine: {'line': b'-- boost_system FOUND. boost_system at /usr/lib/x86_64-linux-gnu/libboost_system.so\n'}
+[0.400002] (-) TimerEvent: {}
+[0.402216] (prime_contact_id_ros) StdoutLine: {'line': b'-- Found Boost: /usr/include (found version "1.74.0") found components: filesystem serialization system \n'}
+[0.402549] (prime_contact_id_ros) StderrLine: {'line': b'CMake Warning at /opt/openrobots/lib/cmake/hpp-fcl/hpp-fclConfig.cmake:3 (message):\n'}
+[0.402601] (prime_contact_id_ros) StderrLine: {'line': b"  Please update your CMake from 'hpp-fcl' to 'coal'\n"}
+[0.402645] (prime_contact_id_ros) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[0.402688] (prime_contact_id_ros) StderrLine: {'line': b'  /usr/share/cmake-3.22/Modules/CMakeFindDependencyMacro.cmake:47 (find_package)\n'}
+[0.402731] (prime_contact_id_ros) StderrLine: {'line': b'  /opt/openrobots/lib/cmake/pinocchio/pinocchioConfig.cmake:161 (find_dependency)\n'}
+[0.402775] (prime_contact_id_ros) StderrLine: {'line': b'  /home/jkang/third_party/PRIME/cmake/package-config.cmake:133 (find_package)\n'}
+[0.402822] (prime_contact_id_ros) StderrLine: {'line': b'  /home/jkang/third_party/PRIME/CMakeLists.txt:107 (add_project_dependency)\n'}
+[0.402866] (prime_contact_id_ros) StderrLine: {'line': b'\n'}
+[0.402909] (prime_contact_id_ros) StderrLine: {'line': b'\n'}
+[0.403125] (prime_contact_id_ros) StdoutLine: {'line': b'-- C++ standard sufficient: Minimal required 14, currently defined: 14\n'}
+[0.403220] (prime_contact_id_ros) StdoutLine: {'line': b'-- example-robot-data is optional.\n'}
+[0.403383] (prime_contact_id_ros) StdoutLine: {'line': b"-- Checking for module 'example-robot-data'\n"}
+[0.411148] (prime_contact_id_ros) StdoutLine: {'line': b'--   Found example-robot-data, version 4.2.0\n'}
+[0.437619] (prime_contact_id_ros) StdoutLine: {'line': b'-- Pkg-config module example-robot-data v4.2.0 has been detected with success.\n'}
+[0.437730] (prime_contact_id_ros) StdoutLine: {'line': b'-- scipy is optional.\n'}
+[0.437895] (prime_contact_id_ros) StdoutLine: {'line': b"-- Checking for module 'scipy'\n"}
+[0.439486] (prime_contact_id_ros) StdoutLine: {'line': b"--   No package 'scipy' found\n"}
+[0.450282] (prime_contact_id_ros) StdoutLine: {'line': b'-- Found Boost: /usr/include (found suitable version "1.74.0", minimum required is "1.65") found components: filesystem serialization system \n'}
+[0.453157] (prime_contact_id_ros) StdoutLine: {'line': b'-- Found Boost: /usr/include (found suitable version "1.74.0", minimum required is "1.65") found components: unit_test_framework \n'}
+[0.499710] (prime_contact_id_ros) StdoutLine: {'line': b'-- Create files for AMENT (ROS 2)\n'}
+[0.499990] (prime_contact_id_ros) StdoutLine: {'line': b'-- Configuring done\n'}
+[0.500019] (-) TimerEvent: {}
+[0.516107] (prime_contact_id_ros) StdoutLine: {'line': b'-- Generating done\n'}
+[0.522638] (prime_contact_id_ros) StdoutLine: {'line': b'-- Build files have been written to: /home/jkang/third_party/PRIME_ros/build/prime_contact_id_ros\n'}
+[0.528559] (prime_contact_id_ros) CommandEnded: {'returncode': 0}
+[0.529525] (prime_contact_id_ros) JobProgress: {'identifier': 'prime_contact_id_ros', 'progress': 'build'}
+[0.529563] (prime_contact_id_ros) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/jkang/third_party/PRIME_ros/build/prime_contact_id_ros', '--', '-j32', '-l32'], 'cwd': '/home/jkang/third_party/PRIME_ros/build/prime_contact_id_ros', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('VSCODE_CWD', '/home/jkang/third_party/PRIME_ros'), ('VSCODE_ESM_ENTRYPOINT', 'vs/workbench/api/node/extensionHostProcess'), ('CODEX_CI', '1'), ('USER', 'jkang'), ('CODEX_INTERNAL_ORIGINATOR_OVERRIDE', 'codex_vscode'), ('VSCODE_NLS_CONFIG', '{"userLocale":"en-us","osLocale":"en-us","resolvedLanguage":"en","defaultMessagesFile":"/usr/share/code/resources/app/out/nls.messages.json","locale":"en-us","availableLanguages":{}}'), ('VSCODE_HANDLES_UNCAUGHT_ERRORS', 'true'), ('XDG_SESSION_TYPE', 'x11'), ('DEBUG', 'release'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/opt/openrobots/lib:/usr/lib/x86_64-linux-gnu:'), ('HOME', '/home/jkang'), ('CHROME_DESKTOP', 'code.desktop'), ('DESKTOP_SESSION', 'ubuntu'), ('VSCODE_IPC_HOOK', '/run/user/1000/vscode-9b305d51-1.10-main.sock'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('PAGER', 'cat'), ('LC_CTYPE', 'C.UTF-8'), ('DBUS_STARTER_BUS_TYPE', 'session'), ('SYSTEMD_EXEC_PID', '4156'), ('NO_COLOR', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus,guid=089651f49daa0284a71bb5d569fbf792'), ('COLORTERM', ''), ('VSCODE_CRASH_REPORTER_PROCESS_TYPE', 'extensionHost'), ('VSCODE_L10N_BUNDLE_LOCATION', ''), ('CODEX_PERMISSION_PROFILE', ':workspace'), ('APPLICATION_INSIGHTS_NO_STATSBEAT', 'true'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'jkang'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('PKG_CONFIG_PATH', '/opt/openrobots/lib/pkgconfig:'), ('XDG_SESSION_CLASS', 'user'), ('RUST_LOG', 'warn'), ('USERNAME', 'jkang'), ('TERM', 'dumb'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/humble/bin:/home/jkang/.local/bin:/home/jkang/.local/bin:/home/jkang/.codex/tmp/arg0/codex-arg04QVMMw:/opt/openrobots/bin:/home/jkang/anaconda3/bin:/home/jkang/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/jkang/.vscode/extensions/openai.chatgpt-26.5825.51511/bin/linux-x86_64'), ('SESSION_MANAGER', 'local/jkang-ThinkStation-P3-Tower:@/tmp/.ICE-unix/4156,unix/jkang-ThinkStation-P3-Tower:/tmp/.ICE-unix/4156'), ('CODEX_SESSION_ID', '01a07d88-e98b-7653-8dda-6eb604c19383'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/f0479428_3976_418c_a639_e0eca73023c6'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('GDK_BACKEND', 'x11'), ('DISPLAY', ':1'), ('CODEX_SANDBOX_NETWORK_DISABLED', '1'), ('NoDefaultCurrentDirectoryInExePath', '1'), ('LANG', 'C.UTF-8'), ('XDG_CURRENT_DESKTOP', 'Unity'), ('XMODIFIERS', '@im=ibus'), ('GH_PAGER', 'cat'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.9256'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('ORIGINAL_XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('ELECTRON_RUN_AS_NODE', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('CODEX_THREAD_ID', '01a07d88-e98b-7653-8dda-6eb604c19383'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GIT_PAGER', 'cat'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/jkang/third_party/PRIME_ros/build/prime_contact_id_ros'), ('VSCODE_CLI', '1'), ('LC_ALL', 'C.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('VSCODE_CODE_CACHE_PATH', '/home/jkang/.config/Code/CachedData/2901c5ac6db8a986a5666c3af51ff804d05af0d4'), ('DBUS_STARTER_ADDRESS', 'unix:path=/run/user/1000/bus,guid=089651f49daa0284a71bb5d569fbf792'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages:/opt/openrobots/lib/python3.10/site-packages:'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('ELECTRON_NO_ATTACH_CONSOLE', '1'), ('CMAKE_PREFIX_PATH', '/opt/openrobots:/opt/openrobots/lib/cmake/example-robot-data:/opt/openrobots/lib/cmake/coal:/opt/openrobots/lib/cmake/hpp-fcl:/opt/openrobots/lib/cmake/casadi:/opt/openrobots/lib/cmake/pinocchio:/opt/openrobots/lib/cmake/eigenpy::/opt/ros/humble'), ('VSCODE_PID', '3355432')]), 'shell': False}
+[0.562835] (prime_contact_id_ros) StdoutLine: {'line': b'[ 15%] Building CXX object prime/CMakeFiles/crocoddyl.dir/src/core/solvers/fddp.cpp.o\n'}
+[0.563002] (prime_contact_id_ros) StdoutLine: {'line': b'[ 15%] Building CXX object prime/CMakeFiles/crocoddyl.dir/src/core/solvers/ddp.cpp.o\n'}
+[0.563067] (prime_contact_id_ros) StdoutLine: {'line': b'[ 15%] Building CXX object prime/CMakeFiles/crocoddyl.dir/src/core/solvers/box-qp.cpp.o\n'}
+[0.563396] (prime_contact_id_ros) StdoutLine: {'line': b'[ 20%] Building CXX object prime/CMakeFiles/crocoddyl.dir/src/core/utils/callbacks.cpp.o\n'}
+[0.563850] (prime_contact_id_ros) StdoutLine: {'line': b'[ 25%] Building CXX object prime/CMakeFiles/crocoddyl.dir/src/contact_id/problem/contact-anitescu-id.cpp.o\n'}
+[0.563932] (prime_contact_id_ros) StdoutLine: {'line': b'[ 30%] Building CXX object prime/CMakeFiles/crocoddyl.dir/src/core/solver-base.cpp.o\n'}
+[0.563992] (prime_contact_id_ros) StdoutLine: {'line': b'[ 40%] Building CXX object prime/CMakeFiles/crocoddyl.dir/src/multibody/utils/contact-anitescu-id.cpp.o\n'}
+[0.564058] (prime_contact_id_ros) StdoutLine: {'line': b'[ 45%] Building CXX object prime/CMakeFiles/crocoddyl.dir/src/core/solvers/box-ddp.cpp.o\n'}
+[0.564111] (prime_contact_id_ros) StdoutLine: {'line': b'[ 45%] Building CXX object prime/CMakeFiles/crocoddyl.dir/src/core/solvers/box-fddp.cpp.o\n'}
+[0.564162] (prime_contact_id_ros) StdoutLine: {'line': b'[ 50%] Building CXX object prime/CMakeFiles/crocoddyl.dir/src/multibody/utils/quadruped-anitescu-id.cpp.o\n'}
+[0.564986] (prime_contact_id_ros) StdoutLine: {'line': b'[ 55%] Building CXX object prime/CMakeFiles/crocoddyl.dir/src/core/solvers/intro.cpp.o\n'}
+[0.565087] (prime_contact_id_ros) StdoutLine: {'line': b'[ 60%] Building CXX object prime/CMakeFiles/crocoddyl.dir/src/core/solvers/kkt.cpp.o\n'}
+[0.565143] (prime_contact_id_ros) StdoutLine: {'line': b'[ 65%] Building CXX object prime/CMakeFiles/crocoddyl.dir/src/core/utils/exception.cpp.o\n'}
+[0.565373] (prime_contact_id_ros) StdoutLine: {'line': b'[ 70%] Building CXX object prime/CMakeFiles/crocoddyl.dir/src/core/utils/stop-watch.cpp.o\n'}
+[0.565950] (prime_contact_id_ros) StdoutLine: {'line': b'[ 75%] Building CXX object prime/CMakeFiles/crocoddyl.dir/src/multibody/utils/quadruped-gaits.cpp.o\n'}
+[0.600140] (-) TimerEvent: {}
+[0.700298] (-) TimerEvent: {}
+[0.800484] (-) TimerEvent: {}
+[0.900660] (-) TimerEvent: {}
+[1.000831] (-) TimerEvent: {}
+[1.061561] (prime_contact_id_ros) StderrLine: {'line': b'In file included from /home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hpp:316,\n'}
+[1.061735] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/core/solver-base.hpp:15,\n'}
+[1.061795] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/core/solvers/ddp.hpp:17,\n'}
+[1.061850] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/core/solvers/fddp.hpp:16,\n'}
+[1.061902] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/core/solvers/intro.hpp:12,\n'}
+[1.061965] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/src/core/solvers/intro.cpp:9:\n'}
+[1.062017] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hxx: In member function \xe2\x80\x98void crocoddyl::ShootingProblemTpl<Scalar>::rollout(const std::vector<typename crocoddyl::MathBaseTpl<_Scalar>::VectorXs>&, std::vector<typename crocoddyl::MathBaseTpl<_Scalar>::VectorXs>&)\xe2\x80\x99:\n'}
+[1.062075] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hxx:296:16: error: \xe2\x80\x98std::filesystem\xe2\x80\x99 has not been declared\n'}
+[1.062127] (prime_contact_id_ros) StderrLine: {'line': b'  296 |       if (std::filesystem::exists(fpath))\n'}
+[1.062178] (prime_contact_id_ros) StderrLine: {'line': b'      |                ^~~~~~~~~~\n'}
+[1.062228] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hxx:298:14: error: \xe2\x80\x98std::filesystem\xe2\x80\x99 has not been declared\n'}
+[1.062291] (prime_contact_id_ros) StderrLine: {'line': b'  298 |         std::filesystem::remove(fpath);\n'}
+[1.062347] (prime_contact_id_ros) StderrLine: {'line': b'      |              ^~~~~~~~~~\n'}
+[1.062524] (prime_contact_id_ros) StderrLine: {'line': b'In file included from /home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hpp:316,\n'}
+[1.062653] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/core/solver-base.hpp:15,\n'}
+[1.062711] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/core/solvers/ddp.hpp:17,\n'}
+[1.062762] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/src/core/solvers/ddp.cpp:10:\n'}
+[1.062814] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hxx: In member function \xe2\x80\x98void crocoddyl::ShootingProblemTpl<Scalar>::rollout(const std::vector<typename crocoddyl::MathBaseTpl<_Scalar>::VectorXs>&, std::vector<typename crocoddyl::MathBaseTpl<_Scalar>::VectorXs>&)\xe2\x80\x99:\n'}
+[1.062866] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hxx:296:16: error: \xe2\x80\x98std::filesystem\xe2\x80\x99 has not been declared\n'}
+[1.062917] (prime_contact_id_ros) StderrLine: {'line': b'  296 |       if (std::filesystem::exists(fpath))\n'}
+[1.062966] (prime_contact_id_ros) StderrLine: {'line': b'      |                ^~~~~~~~~~\n'}
+[1.063014] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hxx:298:14: error: \xe2\x80\x98std::filesystem\xe2\x80\x99 has not been declared\n'}
+[1.063063] (prime_contact_id_ros) StderrLine: {'line': b'  298 |         std::filesystem::remove(fpath);\n'}
+[1.063112] (prime_contact_id_ros) StderrLine: {'line': b'      |              ^~~~~~~~~~\n'}
+[1.063964] (prime_contact_id_ros) StderrLine: {'line': b'In file included from /home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hpp:316,\n'}
+[1.064051] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/core/solver-base.hpp:15,\n'}
+[1.064118] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/core/solvers/ddp.hpp:17,\n'}
+[1.064172] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/core/solvers/box-ddp.hpp:16,\n'}
+[1.064223] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/src/core/solvers/box-ddp.cpp:9:\n'}
+[1.064281] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hxx: In member function \xe2\x80\x98void crocoddyl::ShootingProblemTpl<Scalar>::rollout(const std::vector<typename crocoddyl::MathBaseTpl<_Scalar>::VectorXs>&, std::vector<typename crocoddyl::MathBaseTpl<_Scalar>::VectorXs>&)\xe2\x80\x99:\n'}
+[1.064340] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hxx:296:16: error: \xe2\x80\x98std::filesystem\xe2\x80\x99 has not been declared\n'}
+[1.064394] (prime_contact_id_ros) StderrLine: {'line': b'  296 |       if (std::filesystem::exists(fpath))\n'}
+[1.064443] (prime_contact_id_ros) StderrLine: {'line': b'      |                ^~~~~~~~~~\n'}
+[1.064498] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hxx:298:14: error: \xe2\x80\x98std::filesystem\xe2\x80\x99 has not been declared\n'}
+[1.064558] (prime_contact_id_ros) StderrLine: {'line': b'  298 |         std::filesystem::remove(fpath);\n'}
+[1.064608] (prime_contact_id_ros) StderrLine: {'line': b'      |              ^~~~~~~~~~\n'}
+[1.070564] (prime_contact_id_ros) StderrLine: {'line': b'In file included from /home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hpp:316,\n'}
+[1.070713] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/core/solver-base.hpp:15,\n'}
+[1.070767] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/core/solvers/ddp.hpp:17,\n'}
+[1.070817] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/core/solvers/fddp.hpp:16,\n'}
+[1.070866] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/src/core/solvers/fddp.cpp:14:\n'}
+[1.070914] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hxx: In member function \xe2\x80\x98void crocoddyl::ShootingProblemTpl<Scalar>::rollout(const std::vector<typename crocoddyl::MathBaseTpl<_Scalar>::VectorXs>&, std::vector<typename crocoddyl::MathBaseTpl<_Scalar>::VectorXs>&)\xe2\x80\x99:\n'}
+[1.070965] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hxx:296:16: error: \xe2\x80\x98std::filesystem\xe2\x80\x99 has not been declared\n'}
+[1.071013] (prime_contact_id_ros) StderrLine: {'line': b'  296 |       if (std::filesystem::exists(fpath))\n'}
+[1.071060] (prime_contact_id_ros) StderrLine: {'line': b'      |                ^~~~~~~~~~\n'}
+[1.071108] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hxx:298:14: error: \xe2\x80\x98std::filesystem\xe2\x80\x99 has not been declared\n'}
+[1.071161] (prime_contact_id_ros) StderrLine: {'line': b'  298 |         std::filesystem::remove(fpath);\n'}
+[1.071210] (prime_contact_id_ros) StderrLine: {'line': b'      |              ^~~~~~~~~~\n'}
+[1.100930] (-) TimerEvent: {}
+[1.201189] (-) TimerEvent: {}
+[1.283900] (prime_contact_id_ros) StderrLine: {'line': b'In file included from /home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hpp:316,\n'}
+[1.284062] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/core/solver-base.hpp:15,\n'}
+[1.284115] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/core/solvers/ddp.hpp:17,\n'}
+[1.284163] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/core/solvers/fddp.hpp:16,\n'}
+[1.284213] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/core/solvers/box-fddp.hpp:16,\n'}
+[1.284270] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/src/core/solvers/box-fddp.cpp:9:\n'}
+[1.284332] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hxx: In member function \xe2\x80\x98void crocoddyl::ShootingProblemTpl<Scalar>::rollout(const std::vector<typename crocoddyl::MathBaseTpl<_Scalar>::VectorXs>&, std::vector<typename crocoddyl::MathBaseTpl<_Scalar>::VectorXs>&)\xe2\x80\x99:\n'}
+[1.284383] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hxx:296:16: error: \xe2\x80\x98std::filesystem\xe2\x80\x99 has not been declared\n'}
+[1.284431] (prime_contact_id_ros) StderrLine: {'line': b'  296 |       if (std::filesystem::exists(fpath))\n'}
+[1.284478] (prime_contact_id_ros) StderrLine: {'line': b'      |                ^~~~~~~~~~\n'}
+[1.284524] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hxx:298:14: error: \xe2\x80\x98std::filesystem\xe2\x80\x99 has not been declared\n'}
+[1.284571] (prime_contact_id_ros) StderrLine: {'line': b'  298 |         std::filesystem::remove(fpath);\n'}
+[1.284618] (prime_contact_id_ros) StderrLine: {'line': b'      |              ^~~~~~~~~~\n'}
+[1.301363] (-) TimerEvent: {}
+[1.335820] (prime_contact_id_ros) StderrLine: {'line': b'gmake[2]: *** [prime/CMakeFiles/crocoddyl.dir/build.make:163: prime/CMakeFiles/crocoddyl.dir/src/core/solvers/fddp.cpp.o] Error 1\n'}
+[1.335984] (prime_contact_id_ros) StderrLine: {'line': b'gmake[2]: *** Waiting for unfinished jobs....\n'}
+[1.401477] (-) TimerEvent: {}
+[1.434900] (prime_contact_id_ros) StderrLine: {'line': b'In file included from /home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hpp:316,\n'}
+[1.435066] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/core/solver-base.hpp:15,\n'}
+[1.435120] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/core/solvers/kkt.hpp:17,\n'}
+[1.435169] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/src/core/solvers/kkt.cpp:11:\n'}
+[1.435216] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hxx: In member function \xe2\x80\x98void crocoddyl::ShootingProblemTpl<Scalar>::rollout(const std::vector<typename crocoddyl::MathBaseTpl<_Scalar>::VectorXs>&, std::vector<typename crocoddyl::MathBaseTpl<_Scalar>::VectorXs>&)\xe2\x80\x99:\n'}
+[1.435315] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hxx:296:16: error: \xe2\x80\x98std::filesystem\xe2\x80\x99 has not been declared\n'}
+[1.435364] (prime_contact_id_ros) StderrLine: {'line': b'  296 |       if (std::filesystem::exists(fpath))\n'}
+[1.435411] (prime_contact_id_ros) StderrLine: {'line': b'      |                ^~~~~~~~~~\n'}
+[1.435456] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hxx:298:14: error: \xe2\x80\x98std::filesystem\xe2\x80\x99 has not been declared\n'}
+[1.435501] (prime_contact_id_ros) StderrLine: {'line': b'  298 |         std::filesystem::remove(fpath);\n'}
+[1.435546] (prime_contact_id_ros) StderrLine: {'line': b'      |              ^~~~~~~~~~\n'}
+[1.470438] (prime_contact_id_ros) StderrLine: {'line': b'In file included from /home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hpp:316,\n'}
+[1.470606] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/core/solver-base.hpp:15,\n'}
+[1.470669] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/src/core/solver-base.cpp:14:\n'}
+[1.470717] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hxx: In member function \xe2\x80\x98void crocoddyl::ShootingProblemTpl<Scalar>::rollout(const std::vector<typename crocoddyl::MathBaseTpl<_Scalar>::VectorXs>&, std::vector<typename crocoddyl::MathBaseTpl<_Scalar>::VectorXs>&)\xe2\x80\x99:\n'}
+[1.470772] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hxx:296:16: error: \xe2\x80\x98std::filesystem\xe2\x80\x99 has not been declared\n'}
+[1.470820] (prime_contact_id_ros) StderrLine: {'line': b'  296 |       if (std::filesystem::exists(fpath))\n'}
+[1.470865] (prime_contact_id_ros) StderrLine: {'line': b'      |                ^~~~~~~~~~\n'}
+[1.470910] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hxx:298:14: error: \xe2\x80\x98std::filesystem\xe2\x80\x99 has not been declared\n'}
+[1.470955] (prime_contact_id_ros) StderrLine: {'line': b'  298 |         std::filesystem::remove(fpath);\n'}
+[1.471001] (prime_contact_id_ros) StderrLine: {'line': b'      |              ^~~~~~~~~~\n'}
+[1.489181] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/src/core/solver-base.cpp: In constructor \xe2\x80\x98crocoddyl::SolverAbstract::SolverAbstract(boost::shared_ptr<crocoddyl::ShootingProblemTpl<double> >)\xe2\x80\x99:\n'}
+[1.489374] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/src/core/solver-base.cpp:46:19: warning: \xe2\x80\x98crocoddyl::SolverAbstract::xreg_\xe2\x80\x99 is deprecated: Use preg_ for primal-variable regularization [-Wdeprecated-declarations]\n'}
+[1.489431] (prime_contact_id_ros) StderrLine: {'line': b'   46 |       tmp_feas_(0.) {\n'}
+[1.489480] (prime_contact_id_ros) StderrLine: {'line': b'      |                   ^\n'}
+[1.489526] (prime_contact_id_ros) StderrLine: {'line': b'In file included from /home/jkang/third_party/PRIME/include/crocoddyl/core/fwd.hpp:12,\n'}
+[1.489573] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/core/action-base.hpp:17,\n'}
+[1.489619] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hpp:15,\n'}
+[1.489664] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/core/solver-base.hpp:15,\n'}
+[1.489709] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/src/core/solver-base.cpp:14:\n'}
+[1.489755] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/core/solver-base.hpp:466:21: note: declared here\n'}
+[1.489801] (prime_contact_id_ros) StderrLine: {'line': b'  466 |              double xreg_;)  //!< Current state regularization value\n'}
+[1.489846] (prime_contact_id_ros) StderrLine: {'line': b'      |                     ^~~~~\n'}
+[1.489891] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/core/utils/deprecate.hpp:19:51: note: in definition of macro \xe2\x80\x98DEPRECATED\xe2\x80\x99\n'}
+[1.489937] (prime_contact_id_ros) StderrLine: {'line': b'   19 | #define DEPRECATED(msg, func) [[deprecated(msg)]] func\n'}
+[1.489982] (prime_contact_id_ros) StderrLine: {'line': b'      |                                                   ^~~~\n'}
+[1.490027] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/src/core/solver-base.cpp:46:19: warning: \xe2\x80\x98crocoddyl::SolverAbstract::xreg_\xe2\x80\x99 is deprecated: Use preg_ for primal-variable regularization [-Wdeprecated-declarations]\n'}
+[1.490073] (prime_contact_id_ros) StderrLine: {'line': b'   46 |       tmp_feas_(0.) {\n'}
+[1.490117] (prime_contact_id_ros) StderrLine: {'line': b'      |                   ^\n'}
+[1.490162] (prime_contact_id_ros) StderrLine: {'line': b'In file included from /home/jkang/third_party/PRIME/include/crocoddyl/core/fwd.hpp:12,\n'}
+[1.490207] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/core/action-base.hpp:17,\n'}
+[1.490257] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hpp:15,\n'}
+[1.490309] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/core/solver-base.hpp:15,\n'}
+[1.490354] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/src/core/solver-base.cpp:14:\n'}
+[1.490404] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/core/solver-base.hpp:466:21: note: declared here\n'}
+[1.490449] (prime_contact_id_ros) StderrLine: {'line': b'  466 |              double xreg_;)  //!< Current state regularization value\n'}
+[1.490495] (prime_contact_id_ros) StderrLine: {'line': b'      |                     ^~~~~\n'}
+[1.490539] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/core/utils/deprecate.hpp:19:51: note: in definition of macro \xe2\x80\x98DEPRECATED\xe2\x80\x99\n'}
+[1.490585] (prime_contact_id_ros) StderrLine: {'line': b'   19 | #define DEPRECATED(msg, func) [[deprecated(msg)]] func\n'}
+[1.490635] (prime_contact_id_ros) StderrLine: {'line': b'      |                                                   ^~~~\n'}
+[1.490686] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/src/core/solver-base.cpp:46:19: warning: \xe2\x80\x98crocoddyl::SolverAbstract::ureg_\xe2\x80\x99 is deprecated: Use dreg_ for primal-variable regularization [-Wdeprecated-declarations]\n'}
+[1.490732] (prime_contact_id_ros) StderrLine: {'line': b'   46 |       tmp_feas_(0.) {\n'}
+[1.490776] (prime_contact_id_ros) StderrLine: {'line': b'      |                   ^\n'}
+[1.490822] (prime_contact_id_ros) StderrLine: {'line': b'In file included from /home/jkang/third_party/PRIME/include/crocoddyl/core/fwd.hpp:12,\n'}
+[1.490867] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/core/action-base.hpp:17,\n'}
+[1.490913] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hpp:15,\n'}
+[1.490959] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/core/solver-base.hpp:15,\n'}
+[1.491003] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/src/core/solver-base.cpp:14:\n'}
+[1.491048] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/core/solver-base.hpp:468:21: note: declared here\n'}
+[1.491098] (prime_contact_id_ros) StderrLine: {'line': b'  468 |              double ureg_;)        //!< Current control regularization values\n'}
+[1.491143] (prime_contact_id_ros) StderrLine: {'line': b'      |                     ^~~~~\n'}
+[1.491187] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/core/utils/deprecate.hpp:19:51: note: in definition of macro \xe2\x80\x98DEPRECATED\xe2\x80\x99\n'}
+[1.491232] (prime_contact_id_ros) StderrLine: {'line': b'   19 | #define DEPRECATED(msg, func) [[deprecated(msg)]] func\n'}
+[1.491286] (prime_contact_id_ros) StderrLine: {'line': b'      |                                                   ^~~~\n'}
+[1.491337] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/src/core/solver-base.cpp:46:19: warning: \xe2\x80\x98crocoddyl::SolverAbstract::ureg_\xe2\x80\x99 is deprecated: Use dreg_ for primal-variable regularization [-Wdeprecated-declarations]\n'}
+[1.491391] (prime_contact_id_ros) StderrLine: {'line': b'   46 |       tmp_feas_(0.) {\n'}
+[1.491441] (prime_contact_id_ros) StderrLine: {'line': b'      |                   ^\n'}
+[1.491487] (prime_contact_id_ros) StderrLine: {'line': b'In file included from /home/jkang/third_party/PRIME/include/crocoddyl/core/fwd.hpp:12,\n'}
+[1.491534] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/core/action-base.hpp:17,\n'}
+[1.491583] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hpp:15,\n'}
+[1.491630] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/core/solver-base.hpp:15,\n'}
+[1.491676] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/src/core/solver-base.cpp:14:\n'}
+[1.491723] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/core/solver-base.hpp:468:21: note: declared here\n'}
+[1.491769] (prime_contact_id_ros) StderrLine: {'line': b'  468 |              double ureg_;)        //!< Current control regularization values\n'}
+[1.491816] (prime_contact_id_ros) StderrLine: {'line': b'      |                     ^~~~~\n'}
+[1.491861] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/core/utils/deprecate.hpp:19:51: note: in definition of macro \xe2\x80\x98DEPRECATED\xe2\x80\x99\n'}
+[1.491909] (prime_contact_id_ros) StderrLine: {'line': b'   19 | #define DEPRECATED(msg, func) [[deprecated(msg)]] func\n'}
+[1.491955] (prime_contact_id_ros) StderrLine: {'line': b'      |                                                   ^~~~\n'}
+[1.495449] (prime_contact_id_ros) StderrLine: {'line': b'In file included from /home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hpp:316,\n'}
+[1.495618] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/core/solver-base.hpp:15,\n'}
+[1.495672] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/core/utils/callbacks.hpp:16,\n'}
+[1.495721] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/src/core/utils/callbacks.cpp:10:\n'}
+[1.495770] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hxx: In member function \xe2\x80\x98void crocoddyl::ShootingProblemTpl<Scalar>::rollout(const std::vector<typename crocoddyl::MathBaseTpl<_Scalar>::VectorXs>&, std::vector<typename crocoddyl::MathBaseTpl<_Scalar>::VectorXs>&)\xe2\x80\x99:\n'}
+[1.495820] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hxx:296:16: error: \xe2\x80\x98std::filesystem\xe2\x80\x99 has not been declared\n'}
+[1.495868] (prime_contact_id_ros) StderrLine: {'line': b'  296 |       if (std::filesystem::exists(fpath))\n'}
+[1.495915] (prime_contact_id_ros) StderrLine: {'line': b'      |                ^~~~~~~~~~\n'}
+[1.495961] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hxx:298:14: error: \xe2\x80\x98std::filesystem\xe2\x80\x99 has not been declared\n'}
+[1.496007] (prime_contact_id_ros) StderrLine: {'line': b'  298 |         std::filesystem::remove(fpath);\n'}
+[1.496053] (prime_contact_id_ros) StderrLine: {'line': b'      |              ^~~~~~~~~~\n'}
+[1.501567] (-) TimerEvent: {}
+[1.552526] (prime_contact_id_ros) StderrLine: {'line': b'gmake[2]: *** [prime/CMakeFiles/crocoddyl.dir/build.make:107: prime/CMakeFiles/crocoddyl.dir/src/core/solvers/box-ddp.cpp.o] Error 1\n'}
+[1.573301] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/src/core/solver-base.cpp: In member function \xe2\x80\x98void crocoddyl::SolverAbstract::set_xreg(double)\xe2\x80\x99:\n'}
+[1.573467] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/src/core/solver-base.cpp:437:7: warning: \xe2\x80\x98crocoddyl::SolverAbstract::xreg_\xe2\x80\x99 is deprecated: Use preg_ for primal-variable regularization [-Wdeprecated-declarations]\n'}
+[1.573522] (prime_contact_id_ros) StderrLine: {'line': b'  437 |       xreg_ = xreg;\n'}
+[1.573575] (prime_contact_id_ros) StderrLine: {'line': b'      |       ^~~~~\n'}
+[1.573624] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/core/utils/deprecate.hpp:19:51: note: in definition of macro \xe2\x80\x98DEPRECATED\xe2\x80\x99\n'}
+[1.573687] (prime_contact_id_ros) StderrLine: {'line': b'   19 | #define DEPRECATED(msg, func) [[deprecated(msg)]] func\n'}
+[1.573735] (prime_contact_id_ros) StderrLine: {'line': b'      |                                                   ^~~~\n'}
+[1.573783] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/core/solver-base.hpp:466:21: note: declared here\n'}
+[1.573830] (prime_contact_id_ros) StderrLine: {'line': b'  466 |              double xreg_;)  //!< Current state regularization value\n'}
+[1.573878] (prime_contact_id_ros) StderrLine: {'line': b'      |                     ^~~~~\n'}
+[1.573928] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/core/utils/deprecate.hpp:19:51: note: in definition of macro \xe2\x80\x98DEPRECATED\xe2\x80\x99\n'}
+[1.573977] (prime_contact_id_ros) StderrLine: {'line': b'   19 | #define DEPRECATED(msg, func) [[deprecated(msg)]] func\n'}
+[1.574027] (prime_contact_id_ros) StderrLine: {'line': b'      |                                                   ^~~~\n'}
+[1.574078] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/src/core/solver-base.cpp:437:7: warning: \xe2\x80\x98crocoddyl::SolverAbstract::xreg_\xe2\x80\x99 is deprecated: Use preg_ for primal-variable regularization [-Wdeprecated-declarations]\n'}
+[1.574327] (prime_contact_id_ros) StderrLine: {'line': b'  437 |       xreg_ = xreg;\n'}
+[1.574388] (prime_contact_id_ros) StderrLine: {'line': b'      |       ^~~~~\n'}
+[1.574443] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/core/utils/deprecate.hpp:19:51: note: in definition of macro \xe2\x80\x98DEPRECATED\xe2\x80\x99\n'}
+[1.574493] (prime_contact_id_ros) StderrLine: {'line': b'   19 | #define DEPRECATED(msg, func) [[deprecated(msg)]] func\n'}
+[1.574540] (prime_contact_id_ros) StderrLine: {'line': b'      |                                                   ^~~~\n'}
+[1.574587] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/core/solver-base.hpp:466:21: note: declared here\n'}
+[1.574634] (prime_contact_id_ros) StderrLine: {'line': b'  466 |              double xreg_;)  //!< Current state regularization value\n'}
+[1.574680] (prime_contact_id_ros) StderrLine: {'line': b'      |                     ^~~~~\n'}
+[1.574727] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/core/utils/deprecate.hpp:19:51: note: in definition of macro \xe2\x80\x98DEPRECATED\xe2\x80\x99\n'}
+[1.574774] (prime_contact_id_ros) StderrLine: {'line': b'   19 | #define DEPRECATED(msg, func) [[deprecated(msg)]] func\n'}
+[1.574821] (prime_contact_id_ros) StderrLine: {'line': b'      |                                                   ^~~~\n'}
+[1.574868] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/src/core/solver-base.cpp: In member function \xe2\x80\x98void crocoddyl::SolverAbstract::set_ureg(double)\xe2\x80\x99:\n'}
+[1.574915] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/src/core/solver-base.cpp:447:7: warning: \xe2\x80\x98crocoddyl::SolverAbstract::ureg_\xe2\x80\x99 is deprecated: Use dreg_ for primal-variable regularization [-Wdeprecated-declarations]\n'}
+[1.574963] (prime_contact_id_ros) StderrLine: {'line': b'  447 |       ureg_ = ureg;\n'}
+[1.575010] (prime_contact_id_ros) StderrLine: {'line': b'      |       ^~~~~\n'}
+[1.575057] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/core/utils/deprecate.hpp:19:51: note: in definition of macro \xe2\x80\x98DEPRECATED\xe2\x80\x99\n'}
+[1.575104] (prime_contact_id_ros) StderrLine: {'line': b'   19 | #define DEPRECATED(msg, func) [[deprecated(msg)]] func\n'}
+[1.575150] (prime_contact_id_ros) StderrLine: {'line': b'      |                                                   ^~~~\n'}
+[1.575197] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/core/solver-base.hpp:468:21: note: declared here\n'}
+[1.575252] (prime_contact_id_ros) StderrLine: {'line': b'  468 |              double ureg_;)        //!< Current control regularization values\n'}
+[1.575304] (prime_contact_id_ros) StderrLine: {'line': b'      |                     ^~~~~\n'}
+[1.575350] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/core/utils/deprecate.hpp:19:51: note: in definition of macro \xe2\x80\x98DEPRECATED\xe2\x80\x99\n'}
+[1.575398] (prime_contact_id_ros) StderrLine: {'line': b'   19 | #define DEPRECATED(msg, func) [[deprecated(msg)]] func\n'}
+[1.575445] (prime_contact_id_ros) StderrLine: {'line': b'      |                                                   ^~~~\n'}
+[1.575492] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/src/core/solver-base.cpp:447:7: warning: \xe2\x80\x98crocoddyl::SolverAbstract::ureg_\xe2\x80\x99 is deprecated: Use dreg_ for primal-variable regularization [-Wdeprecated-declarations]\n'}
+[1.575539] (prime_contact_id_ros) StderrLine: {'line': b'  447 |       ureg_ = ureg;\n'}
+[1.575587] (prime_contact_id_ros) StderrLine: {'line': b'      |       ^~~~~\n'}
+[1.575634] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/core/utils/deprecate.hpp:19:51: note: in definition of macro \xe2\x80\x98DEPRECATED\xe2\x80\x99\n'}
+[1.575681] (prime_contact_id_ros) StderrLine: {'line': b'   19 | #define DEPRECATED(msg, func) [[deprecated(msg)]] func\n'}
+[1.575728] (prime_contact_id_ros) StderrLine: {'line': b'      |                                                   ^~~~\n'}
+[1.575777] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/core/solver-base.hpp:468:21: note: declared here\n'}
+[1.575824] (prime_contact_id_ros) StderrLine: {'line': b'  468 |              double ureg_;)        //!< Current control regularization values\n'}
+[1.575873] (prime_contact_id_ros) StderrLine: {'line': b'      |                     ^~~~~\n'}
+[1.575920] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/core/utils/deprecate.hpp:19:51: note: in definition of macro \xe2\x80\x98DEPRECATED\xe2\x80\x99\n'}
+[1.575968] (prime_contact_id_ros) StderrLine: {'line': b'   19 | #define DEPRECATED(msg, func) [[deprecated(msg)]] func\n'}
+[1.576016] (prime_contact_id_ros) StderrLine: {'line': b'      |                                                   ^~~~\n'}
+[1.593314] (prime_contact_id_ros) StderrLine: {'line': b'gmake[2]: *** [prime/CMakeFiles/crocoddyl.dir/build.make:205: prime/CMakeFiles/crocoddyl.dir/src/core/utils/callbacks.cpp.o] Error 1\n'}
+[1.601809] (-) TimerEvent: {}
+[1.696336] (prime_contact_id_ros) StderrLine: {'line': b'gmake[2]: *** [prime/CMakeFiles/crocoddyl.dir/build.make:93: prime/CMakeFiles/crocoddyl.dir/src/core/solver-base.cpp.o] Error 1\n'}
+[1.701871] (-) TimerEvent: {}
+[1.780013] (prime_contact_id_ros) StderrLine: {'line': b'gmake[2]: *** [prime/CMakeFiles/crocoddyl.dir/build.make:121: prime/CMakeFiles/crocoddyl.dir/src/core/solvers/box-fddp.cpp.o] Error 1\n'}
+[1.801989] (-) TimerEvent: {}
+[1.902298] (-) TimerEvent: {}
+[2.002607] (-) TimerEvent: {}
+[2.102904] (-) TimerEvent: {}
+[2.203086] (-) TimerEvent: {}
+[2.215666] (prime_contact_id_ros) StderrLine: {'line': b'In file included from /opt/openrobots/include/hpp/fcl/config.hh:1,\n'}
+[2.215820] (prime_contact_id_ros) StderrLine: {'line': b'                 from /opt/openrobots/include/pinocchio/serialization/eigen.hpp:20,\n'}
+[2.215877] (prime_contact_id_ros) StderrLine: {'line': b'                 from /opt/openrobots/include/pinocchio/serialization/fwd.hpp:11,\n'}
+[2.215927] (prime_contact_id_ros) StderrLine: {'line': b'                 from /opt/openrobots/include/pinocchio/multibody/joint/joint-composite.hpp:14,\n'}
+[2.215976] (prime_contact_id_ros) StderrLine: {'line': b'                 from /opt/openrobots/include/pinocchio/multibody/joint/joint-generic.hpp:9,\n'}
+[2.216031] (prime_contact_id_ros) StderrLine: {'line': b'                 from /opt/openrobots/include/pinocchio/multibody/model.hpp:17,\n'}
+[2.216079] (prime_contact_id_ros) StderrLine: {'line': b'                 from /opt/openrobots/include/pinocchio/algorithm/frames.hpp:8,\n'}
+[2.216128] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/problem/contact-anitescu-id.hpp:21,\n'}
+[2.216176] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/multibody/utils/contact-anitescu-id.hpp:11,\n'}
+[2.216222] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/multibody/utils/quadruped-anitescu-id.hpp:12,\n'}
+[2.216284] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/src/multibody/utils/quadruped-anitescu-id.cpp:9:\n'}
+[2.216333] (prime_contact_id_ros) StderrLine: {'line': b"/opt/openrobots/include/hpp/fcl/coal.hpp:10:71: note: \xe2\x80\x98#pragma message: Please update your includes from 'hpp/fcl' to 'coal'\xe2\x80\x99\n"}
+[2.216392] (prime_contact_id_ros) StderrLine: {'line': b'   10 | #pragma message("Please update your includes from \'hpp/fcl\' to \'coal\'")\n'}
+[2.216442] (prime_contact_id_ros) StderrLine: {'line': b'      |                                                                       ^\n'}
+[2.236297] (prime_contact_id_ros) StderrLine: {'line': b'In file included from /opt/openrobots/include/hpp/fcl/config.hh:1,\n'}
+[2.236416] (prime_contact_id_ros) StderrLine: {'line': b'                 from /opt/openrobots/include/pinocchio/serialization/eigen.hpp:20,\n'}
+[2.236466] (prime_contact_id_ros) StderrLine: {'line': b'                 from /opt/openrobots/include/pinocchio/serialization/fwd.hpp:11,\n'}
+[2.236512] (prime_contact_id_ros) StderrLine: {'line': b'                 from /opt/openrobots/include/pinocchio/multibody/joint/joint-composite.hpp:14,\n'}
+[2.236557] (prime_contact_id_ros) StderrLine: {'line': b'                 from /opt/openrobots/include/pinocchio/multibody/joint/joint-generic.hpp:9,\n'}
+[2.236603] (prime_contact_id_ros) StderrLine: {'line': b'                 from /opt/openrobots/include/pinocchio/multibody/model.hpp:17,\n'}
+[2.236648] (prime_contact_id_ros) StderrLine: {'line': b'                 from /opt/openrobots/include/pinocchio/algorithm/frames.hpp:8,\n'}
+[2.236692] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/problem/contact-anitescu-id.hpp:21,\n'}
+[2.236738] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/multibody/utils/contact-anitescu-id.hpp:11,\n'}
+[2.236783] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/src/multibody/utils/contact-anitescu-id.cpp:7:\n'}
+[2.236828] (prime_contact_id_ros) StderrLine: {'line': b"/opt/openrobots/include/hpp/fcl/coal.hpp:10:71: note: \xe2\x80\x98#pragma message: Please update your includes from 'hpp/fcl' to 'coal'\xe2\x80\x99\n"}
+[2.236874] (prime_contact_id_ros) StderrLine: {'line': b'   10 | #pragma message("Please update your includes from \'hpp/fcl\' to \'coal\'")\n'}
+[2.236919] (prime_contact_id_ros) StderrLine: {'line': b'      |                                                                       ^\n'}
+[2.303315] (-) TimerEvent: {}
+[2.361837] (prime_contact_id_ros) StderrLine: {'line': b'gmake[2]: *** [prime/CMakeFiles/crocoddyl.dir/build.make:149: prime/CMakeFiles/crocoddyl.dir/src/core/solvers/ddp.cpp.o] Error 1\n'}
+[2.403525] (-) TimerEvent: {}
+[2.417100] (prime_contact_id_ros) StderrLine: {'line': b'gmake[2]: *** [prime/CMakeFiles/crocoddyl.dir/build.make:191: prime/CMakeFiles/crocoddyl.dir/src/core/solvers/kkt.cpp.o] Error 1\n'}
+[2.503686] (-) TimerEvent: {}
+[2.559188] (prime_contact_id_ros) StderrLine: {'line': b'In file included from /home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hpp:316,\n'}
+[2.559362] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/problem/contact-anitescu-id.hpp:30,\n'}
+[2.559416] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/multibody/utils/contact-anitescu-id.hpp:11,\n'}
+[2.559465] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/multibody/utils/quadruped-anitescu-id.hpp:12,\n'}
+[2.559513] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/src/multibody/utils/quadruped-anitescu-id.cpp:9:\n'}
+[2.559561] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hxx: In member function \xe2\x80\x98void crocoddyl::ShootingProblemTpl<Scalar>::rollout(const std::vector<typename crocoddyl::MathBaseTpl<_Scalar>::VectorXs>&, std::vector<typename crocoddyl::MathBaseTpl<_Scalar>::VectorXs>&)\xe2\x80\x99:\n'}
+[2.559611] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hxx:296:16: error: \xe2\x80\x98std::filesystem\xe2\x80\x99 has not been declared\n'}
+[2.559659] (prime_contact_id_ros) StderrLine: {'line': b'  296 |       if (std::filesystem::exists(fpath))\n'}
+[2.559706] (prime_contact_id_ros) StderrLine: {'line': b'      |                ^~~~~~~~~~\n'}
+[2.559752] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hxx:298:14: error: \xe2\x80\x98std::filesystem\xe2\x80\x99 has not been declared\n'}
+[2.559798] (prime_contact_id_ros) StderrLine: {'line': b'  298 |         std::filesystem::remove(fpath);\n'}
+[2.559845] (prime_contact_id_ros) StderrLine: {'line': b'      |              ^~~~~~~~~~\n'}
+[2.580947] (prime_contact_id_ros) StderrLine: {'line': b'In file included from /home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hpp:316,\n'}
+[2.581113] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/problem/contact-anitescu-id.hpp:30,\n'}
+[2.581167] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/multibody/utils/contact-anitescu-id.hpp:11,\n'}
+[2.581218] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/src/multibody/utils/contact-anitescu-id.cpp:7:\n'}
+[2.581273] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hxx: In member function \xe2\x80\x98void crocoddyl::ShootingProblemTpl<Scalar>::rollout(const std::vector<typename crocoddyl::MathBaseTpl<_Scalar>::VectorXs>&, std::vector<typename crocoddyl::MathBaseTpl<_Scalar>::VectorXs>&)\xe2\x80\x99:\n'}
+[2.581323] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hxx:296:16: error: \xe2\x80\x98std::filesystem\xe2\x80\x99 has not been declared\n'}
+[2.581369] (prime_contact_id_ros) StderrLine: {'line': b'  296 |       if (std::filesystem::exists(fpath))\n'}
+[2.581418] (prime_contact_id_ros) StderrLine: {'line': b'      |                ^~~~~~~~~~\n'}
+[2.581464] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hxx:298:14: error: \xe2\x80\x98std::filesystem\xe2\x80\x99 has not been declared\n'}
+[2.581509] (prime_contact_id_ros) StderrLine: {'line': b'  298 |         std::filesystem::remove(fpath);\n'}
+[2.581554] (prime_contact_id_ros) StderrLine: {'line': b'      |              ^~~~~~~~~~\n'}
+[2.590707] (prime_contact_id_ros) StderrLine: {'line': b'In file included from /opt/openrobots/include/hpp/fcl/config.hh:1,\n'}
+[2.590862] (prime_contact_id_ros) StderrLine: {'line': b'                 from /opt/openrobots/include/pinocchio/serialization/eigen.hpp:20,\n'}
+[2.590915] (prime_contact_id_ros) StderrLine: {'line': b'                 from /opt/openrobots/include/pinocchio/serialization/fwd.hpp:11,\n'}
+[2.590971] (prime_contact_id_ros) StderrLine: {'line': b'                 from /opt/openrobots/include/pinocchio/multibody/joint/joint-composite.hpp:14,\n'}
+[2.591018] (prime_contact_id_ros) StderrLine: {'line': b'                 from /opt/openrobots/include/pinocchio/multibody/joint/joint-generic.hpp:9,\n'}
+[2.591065] (prime_contact_id_ros) StderrLine: {'line': b'                 from /opt/openrobots/include/pinocchio/multibody/model.hpp:17,\n'}
+[2.591112] (prime_contact_id_ros) StderrLine: {'line': b'                 from /opt/openrobots/include/pinocchio/algorithm/center-of-mass.hpp:8,\n'}
+[2.591159] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/multibody/utils/quadruped-gaits.hpp:12,\n'}
+[2.591206] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/src/multibody/utils/quadruped-gaits.cpp:9:\n'}
+[2.591259] (prime_contact_id_ros) StderrLine: {'line': b"/opt/openrobots/include/hpp/fcl/coal.hpp:10:71: note: \xe2\x80\x98#pragma message: Please update your includes from 'hpp/fcl' to 'coal'\xe2\x80\x99\n"}
+[2.591309] (prime_contact_id_ros) StderrLine: {'line': b'   10 | #pragma message("Please update your includes from \'hpp/fcl\' to \'coal\'")\n'}
+[2.591356] (prime_contact_id_ros) StderrLine: {'line': b'      |                                                                       ^\n'}
+[2.603888] (-) TimerEvent: {}
+[2.704178] (-) TimerEvent: {}
+[2.722697] (prime_contact_id_ros) StderrLine: {'line': b'In file included from /opt/openrobots/include/hpp/fcl/config.hh:1,\n'}
+[2.722853] (prime_contact_id_ros) StderrLine: {'line': b'                 from /opt/openrobots/include/pinocchio/serialization/eigen.hpp:20,\n'}
+[2.722906] (prime_contact_id_ros) StderrLine: {'line': b'                 from /opt/openrobots/include/pinocchio/serialization/fwd.hpp:11,\n'}
+[2.722953] (prime_contact_id_ros) StderrLine: {'line': b'                 from /opt/openrobots/include/pinocchio/multibody/joint/joint-composite.hpp:14,\n'}
+[2.723000] (prime_contact_id_ros) StderrLine: {'line': b'                 from /opt/openrobots/include/pinocchio/multibody/joint/joint-generic.hpp:9,\n'}
+[2.723045] (prime_contact_id_ros) StderrLine: {'line': b'                 from /opt/openrobots/include/pinocchio/multibody/model.hpp:17,\n'}
+[2.723090] (prime_contact_id_ros) StderrLine: {'line': b'                 from /opt/openrobots/include/pinocchio/algorithm/frames.hpp:8,\n'}
+[2.723136] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/problem/contact-anitescu-id.hpp:21,\n'}
+[2.723181] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/src/contact_id/problem/contact-anitescu-id.cpp:16:\n'}
+[2.723225] (prime_contact_id_ros) StderrLine: {'line': b"/opt/openrobots/include/hpp/fcl/coal.hpp:10:71: note: \xe2\x80\x98#pragma message: Please update your includes from 'hpp/fcl' to 'coal'\xe2\x80\x99\n"}
+[2.723280] (prime_contact_id_ros) StderrLine: {'line': b'   10 | #pragma message("Please update your includes from \'hpp/fcl\' to \'coal\'")\n'}
+[2.723326] (prime_contact_id_ros) StderrLine: {'line': b'      |                                                                       ^\n'}
+[2.804414] (-) TimerEvent: {}
+[2.904679] (-) TimerEvent: {}
+[3.004981] (-) TimerEvent: {}
+[3.017261] (prime_contact_id_ros) StderrLine: {'line': b'In file included from /home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hpp:316,\n'}
+[3.017379] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/problem/contact-anitescu-id.hpp:30,\n'}
+[3.017405] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/src/contact_id/problem/contact-anitescu-id.cpp:16:\n'}
+[3.017427] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hxx: In member function \xe2\x80\x98void crocoddyl::ShootingProblemTpl<Scalar>::rollout(const std::vector<typename crocoddyl::MathBaseTpl<_Scalar>::VectorXs>&, std::vector<typename crocoddyl::MathBaseTpl<_Scalar>::VectorXs>&)\xe2\x80\x99:\n'}
+[3.017457] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hxx:296:16: error: \xe2\x80\x98std::filesystem\xe2\x80\x99 has not been declared\n'}
+[3.017481] (prime_contact_id_ros) StderrLine: {'line': b'  296 |       if (std::filesystem::exists(fpath))\n'}
+[3.017501] (prime_contact_id_ros) StderrLine: {'line': b'      |                ^~~~~~~~~~\n'}
+[3.017522] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hxx:298:14: error: \xe2\x80\x98std::filesystem\xe2\x80\x99 has not been declared\n'}
+[3.017542] (prime_contact_id_ros) StderrLine: {'line': b'  298 |         std::filesystem::remove(fpath);\n'}
+[3.017561] (prime_contact_id_ros) StderrLine: {'line': b'      |              ^~~~~~~~~~\n'}
+[3.054887] (prime_contact_id_ros) StderrLine: {'line': b'In file included from /home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hpp:316,\n'}
+[3.055001] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/multibody/utils/quadruped-gaits.hpp:22,\n'}
+[3.055029] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/src/multibody/utils/quadruped-gaits.cpp:9:\n'}
+[3.055050] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hxx: In member function \xe2\x80\x98void crocoddyl::ShootingProblemTpl<Scalar>::rollout(const std::vector<typename crocoddyl::MathBaseTpl<_Scalar>::VectorXs>&, std::vector<typename crocoddyl::MathBaseTpl<_Scalar>::VectorXs>&)\xe2\x80\x99:\n'}
+[3.055080] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hxx:296:16: error: \xe2\x80\x98std::filesystem\xe2\x80\x99 has not been declared\n'}
+[3.055101] (prime_contact_id_ros) StderrLine: {'line': b'  296 |       if (std::filesystem::exists(fpath))\n'}
+[3.055121] (prime_contact_id_ros) StderrLine: {'line': b'      |                ^~~~~~~~~~\n'}
+[3.055140] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/core/optctrl/shooting.hxx:298:14: error: \xe2\x80\x98std::filesystem\xe2\x80\x99 has not been declared\n'}
+[3.055160] (prime_contact_id_ros) StderrLine: {'line': b'  298 |         std::filesystem::remove(fpath);\n'}
+[3.055179] (prime_contact_id_ros) StderrLine: {'line': b'      |              ^~~~~~~~~~\n'}
+[3.105161] (-) TimerEvent: {}
+[3.205382] (-) TimerEvent: {}
+[3.288362] (prime_contact_id_ros) StderrLine: {'line': b'In file included from /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/actions/contact-fwddyn-anitescu-id.hpp:31,\n'}
+[3.288475] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/problem/contact-anitescu-id.hpp:33,\n'}
+[3.288502] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/multibody/utils/contact-anitescu-id.hpp:11,\n'}
+[3.288524] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/multibody/utils/quadruped-anitescu-id.hpp:12,\n'}
+[3.288545] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/src/multibody/utils/quadruped-anitescu-id.cpp:9:\n'}
+[3.288566] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/contact_id/anitescu/DifferentiableAnitescuSimulator.hpp: In member function \xe2\x80\x98void DifferentiableAnitescuSimulator::computeSensitivities()\xe2\x80\x99:\n'}
+[3.288585] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/contact_id/anitescu/DifferentiableAnitescuSimulator.hpp:405:37: warning: comparison of integer expressions of different signedness: \xe2\x80\x98pinocchio::JointIndex\xe2\x80\x99 {aka \xe2\x80\x98long unsigned int\xe2\x80\x99} and \xe2\x80\x98const int\xe2\x80\x99 [-Wsign-compare]\n'}
+[3.288614] (prime_contact_id_ros) StderrLine: {'line': b'  405 |                 if (jid == 0 || jid >= model_.njoints)\n'}
+[3.288633] (prime_contact_id_ros) StderrLine: {'line': b'      |                                 ~~~~^~~~~~~~~~~~~~~~~\n'}
+[3.294372] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/contact_id/anitescu/DifferentiableAnitescuSimulator.hpp:426:37: warning: comparison of integer expressions of different signedness: \xe2\x80\x98pinocchio::JointIndex\xe2\x80\x99 {aka \xe2\x80\x98long unsigned int\xe2\x80\x99} and \xe2\x80\x98const int\xe2\x80\x99 [-Wsign-compare]\n'}
+[3.294479] (prime_contact_id_ros) StderrLine: {'line': b'  426 |                 if (jid == 0 || jid >= model_.njoints)\n'}
+[3.294505] (prime_contact_id_ros) StderrLine: {'line': b'      |                                 ~~~~^~~~~~~~~~~~~~~~~\n'}
+[3.294526] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/contact_id/anitescu/DifferentiableAnitescuSimulator.hpp:429:76: warning: conversion from \xe2\x80\x98pinocchio::JointIndex\xe2\x80\x99 {aka \xe2\x80\x98long unsigned int\xe2\x80\x99} to \xe2\x80\x98int\xe2\x80\x99 may change value [-Wconversion]\n'}
+[3.294548] (prime_contact_id_ros) StderrLine: {'line': b'  429 |                 Eigen::VectorXd p_jid = computeLogCholeskyFromLink(model_, jid);\n'}
+[3.294569] (prime_contact_id_ros) StderrLine: {'line': b'      |                                                                            ^~~\n'}
+[3.305561] (-) TimerEvent: {}
+[3.314531] (prime_contact_id_ros) StderrLine: {'line': b'In file included from /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/actions/contact-fwddyn-anitescu-id.hpp:31,\n'}
+[3.314640] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/problem/contact-anitescu-id.hpp:33,\n'}
+[3.314666] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/multibody/utils/contact-anitescu-id.hpp:11,\n'}
+[3.314688] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/src/multibody/utils/contact-anitescu-id.cpp:7:\n'}
+[3.314716] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/contact_id/anitescu/DifferentiableAnitescuSimulator.hpp: In member function \xe2\x80\x98void DifferentiableAnitescuSimulator::computeSensitivities()\xe2\x80\x99:\n'}
+[3.314737] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/contact_id/anitescu/DifferentiableAnitescuSimulator.hpp:405:37: warning: comparison of integer expressions of different signedness: \xe2\x80\x98pinocchio::JointIndex\xe2\x80\x99 {aka \xe2\x80\x98long unsigned int\xe2\x80\x99} and \xe2\x80\x98const int\xe2\x80\x99 [-Wsign-compare]\n'}
+[3.314761] (prime_contact_id_ros) StderrLine: {'line': b'  405 |                 if (jid == 0 || jid >= model_.njoints)\n'}
+[3.314781] (prime_contact_id_ros) StderrLine: {'line': b'      |                                 ~~~~^~~~~~~~~~~~~~~~~\n'}
+[3.321021] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/contact_id/anitescu/DifferentiableAnitescuSimulator.hpp:426:37: warning: comparison of integer expressions of different signedness: \xe2\x80\x98pinocchio::JointIndex\xe2\x80\x99 {aka \xe2\x80\x98long unsigned int\xe2\x80\x99} and \xe2\x80\x98const int\xe2\x80\x99 [-Wsign-compare]\n'}
+[3.321180] (prime_contact_id_ros) StderrLine: {'line': b'  426 |                 if (jid == 0 || jid >= model_.njoints)\n'}
+[3.321233] (prime_contact_id_ros) StderrLine: {'line': b'      |                                 ~~~~^~~~~~~~~~~~~~~~~\n'}
+[3.321299] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/contact_id/anitescu/DifferentiableAnitescuSimulator.hpp:429:76: warning: conversion from \xe2\x80\x98pinocchio::JointIndex\xe2\x80\x99 {aka \xe2\x80\x98long unsigned int\xe2\x80\x99} to \xe2\x80\x98int\xe2\x80\x99 may change value [-Wconversion]\n'}
+[3.321353] (prime_contact_id_ros) StderrLine: {'line': b'  429 |                 Eigen::VectorXd p_jid = computeLogCholeskyFromLink(model_, jid);\n'}
+[3.321401] (prime_contact_id_ros) StderrLine: {'line': b'      |                                                                            ^~~\n'}
+[3.405663] (-) TimerEvent: {}
+[3.505846] (-) TimerEvent: {}
+[3.606034] (-) TimerEvent: {}
+[3.695309] (prime_contact_id_ros) StderrLine: {'line': b'In file included from /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/anitescu/BarrierSOCP.hpp:19,\n'}
+[3.695461] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/anitescu/DifferentiableAnitescuSimulator.hpp:34,\n'}
+[3.695512] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/actions/contact-fwddyn-anitescu-id.hpp:31,\n'}
+[3.695558] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/problem/contact-anitescu-id.hpp:33,\n'}
+[3.695603] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/multibody/utils/contact-anitescu-id.hpp:11,\n'}
+[3.695646] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/multibody/utils/quadruped-anitescu-id.hpp:12,\n'}
+[3.695689] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/src/multibody/utils/quadruped-anitescu-id.cpp:9:\n'}
+[3.695733] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/contact_id/anitescu/NewtonSolver.hpp: In instantiation of \xe2\x80\x98bool NewtonSolver::solve(Eigen::VectorXd&, F&&, G&&, HFun&&, Feas&&) [with F = DifferentiableAnitescuSimulator::solveBarrierNewton()::<lambda(const VectorXd&)>; G = DifferentiableAnitescuSimulator::solveBarrierNewton()::<lambda(const VectorXd&, Eigen::VectorXd&)>; HFun = DifferentiableAnitescuSimulator::solveBarrierNewton()::<lambda(const VectorXd&, Eigen::MatrixXd&)>; Feas = DifferentiableAnitescuSimulator::solveBarrierNewton()::<lambda(const VectorXd&)>; Eigen::VectorXd = Eigen::Matrix<double, -1, 1>]\xe2\x80\x99:\n'}
+[3.695781] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/contact_id/anitescu/DifferentiableAnitescuSimulator.hpp:340:22:   required from here\n'}
+[3.695823] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/contact_id/anitescu/NewtonSolver.hpp:52:25: warning: conversion from \xe2\x80\x98Eigen::EigenBase<Eigen::Matrix<double, -1, 1> >::Index\xe2\x80\x99 {aka \xe2\x80\x98long int\xe2\x80\x99} to \xe2\x80\x98int\xe2\x80\x99 may change value [-Wconversion]\n'}
+[3.695867] (prime_contact_id_ros) StderrLine: {'line': b'   52 |     const int n = x.size();\n'}
+[3.695909] (prime_contact_id_ros) StderrLine: {'line': b'      |                   ~~~~~~^~\n'}
+[3.706103] (-) TimerEvent: {}
+[3.723620] (prime_contact_id_ros) StderrLine: {'line': b'In file included from /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/anitescu/BarrierSOCP.hpp:19,\n'}
+[3.723762] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/anitescu/DifferentiableAnitescuSimulator.hpp:34,\n'}
+[3.723808] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/actions/contact-fwddyn-anitescu-id.hpp:31,\n'}
+[3.723852] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/problem/contact-anitescu-id.hpp:33,\n'}
+[3.723908] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/multibody/utils/contact-anitescu-id.hpp:11,\n'}
+[3.723954] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/src/multibody/utils/contact-anitescu-id.cpp:7:\n'}
+[3.723997] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/contact_id/anitescu/NewtonSolver.hpp: In instantiation of \xe2\x80\x98bool NewtonSolver::solve(Eigen::VectorXd&, F&&, G&&, HFun&&, Feas&&) [with F = DifferentiableAnitescuSimulator::solveBarrierNewton()::<lambda(const VectorXd&)>; G = DifferentiableAnitescuSimulator::solveBarrierNewton()::<lambda(const VectorXd&, Eigen::VectorXd&)>; HFun = DifferentiableAnitescuSimulator::solveBarrierNewton()::<lambda(const VectorXd&, Eigen::MatrixXd&)>; Feas = DifferentiableAnitescuSimulator::solveBarrierNewton()::<lambda(const VectorXd&)>; Eigen::VectorXd = Eigen::Matrix<double, -1, 1>]\xe2\x80\x99:\n'}
+[3.724048] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/contact_id/anitescu/DifferentiableAnitescuSimulator.hpp:340:22:   required from here\n'}
+[3.724091] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/contact_id/anitescu/NewtonSolver.hpp:52:25: warning: conversion from \xe2\x80\x98Eigen::EigenBase<Eigen::Matrix<double, -1, 1> >::Index\xe2\x80\x99 {aka \xe2\x80\x98long int\xe2\x80\x99} to \xe2\x80\x98int\xe2\x80\x99 may change value [-Wconversion]\n'}
+[3.724135] (prime_contact_id_ros) StderrLine: {'line': b'   52 |     const int n = x.size();\n'}
+[3.724178] (prime_contact_id_ros) StderrLine: {'line': b'      |                   ~~~~~~^~\n'}
+[3.749652] (prime_contact_id_ros) StderrLine: {'line': b'In file included from /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/actions/contact-fwddyn-anitescu-id.hpp:31,\n'}
+[3.749801] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/problem/contact-anitescu-id.hpp:33,\n'}
+[3.749851] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/src/contact_id/problem/contact-anitescu-id.cpp:16:\n'}
+[3.749906] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/contact_id/anitescu/DifferentiableAnitescuSimulator.hpp: In member function \xe2\x80\x98void DifferentiableAnitescuSimulator::computeSensitivities()\xe2\x80\x99:\n'}
+[3.749953] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/contact_id/anitescu/DifferentiableAnitescuSimulator.hpp:405:37: warning: comparison of integer expressions of different signedness: \xe2\x80\x98pinocchio::JointIndex\xe2\x80\x99 {aka \xe2\x80\x98long unsigned int\xe2\x80\x99} and \xe2\x80\x98const int\xe2\x80\x99 [-Wsign-compare]\n'}
+[3.750000] (prime_contact_id_ros) StderrLine: {'line': b'  405 |                 if (jid == 0 || jid >= model_.njoints)\n'}
+[3.750044] (prime_contact_id_ros) StderrLine: {'line': b'      |                                 ~~~~^~~~~~~~~~~~~~~~~\n'}
+[3.755749] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/contact_id/anitescu/DifferentiableAnitescuSimulator.hpp:426:37: warning: comparison of integer expressions of different signedness: \xe2\x80\x98pinocchio::JointIndex\xe2\x80\x99 {aka \xe2\x80\x98long unsigned int\xe2\x80\x99} and \xe2\x80\x98const int\xe2\x80\x99 [-Wsign-compare]\n'}
+[3.755820] (prime_contact_id_ros) StderrLine: {'line': b'  426 |                 if (jid == 0 || jid >= model_.njoints)\n'}
+[3.755865] (prime_contact_id_ros) StderrLine: {'line': b'      |                                 ~~~~^~~~~~~~~~~~~~~~~\n'}
+[3.755909] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/contact_id/anitescu/DifferentiableAnitescuSimulator.hpp:429:76: warning: conversion from \xe2\x80\x98pinocchio::JointIndex\xe2\x80\x99 {aka \xe2\x80\x98long unsigned int\xe2\x80\x99} to \xe2\x80\x98int\xe2\x80\x99 may change value [-Wconversion]\n'}
+[3.755959] (prime_contact_id_ros) StderrLine: {'line': b'  429 |                 Eigen::VectorXd p_jid = computeLogCholeskyFromLink(model_, jid);\n'}
+[3.756002] (prime_contact_id_ros) StderrLine: {'line': b'      |                                                                            ^~~\n'}
+[3.806209] (-) TimerEvent: {}
+[3.906395] (-) TimerEvent: {}
+[4.006578] (-) TimerEvent: {}
+[4.066095] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/src/contact_id/problem/contact-anitescu-id.cpp: In function \xe2\x80\x98Eigen::VectorXd crocoddyl::computeFrozenSFromLogCholeskyJacobian(const Model&, pinocchio::JointIndex, double)\xe2\x80\x99:\n'}
+[4.066253] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/src/contact_id/problem/contact-anitescu-id.cpp:93:59: warning: conversion from \xe2\x80\x98pinocchio::JointIndex\xe2\x80\x99 {aka \xe2\x80\x98long unsigned int\xe2\x80\x99} to \xe2\x80\x98int\xe2\x80\x99 may change value [-Wconversion]\n'}
+[4.066311] (prime_contact_id_ros) StderrLine: {'line': b'   93 |   Eigen::VectorXd eta = computeLogCholeskyFromLink(model, j_link);\n'}
+[4.066359] (prime_contact_id_ros) StderrLine: {'line': b'      |                                                           ^~~~~~\n'}
+[4.106671] (-) TimerEvent: {}
+[4.206925] (-) TimerEvent: {}
+[4.307138] (-) TimerEvent: {}
+[4.336070] (prime_contact_id_ros) StderrLine: {'line': b'In file included from /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/anitescu/BarrierSOCP.hpp:19,\n'}
+[4.336227] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/anitescu/DifferentiableAnitescuSimulator.hpp:34,\n'}
+[4.336289] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/actions/contact-fwddyn-anitescu-id.hpp:31,\n'}
+[4.336348] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/problem/contact-anitescu-id.hpp:33,\n'}
+[4.336395] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/src/contact_id/problem/contact-anitescu-id.cpp:16:\n'}
+[4.336440] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/contact_id/anitescu/NewtonSolver.hpp: In instantiation of \xe2\x80\x98bool NewtonSolver::solve(Eigen::VectorXd&, F&&, G&&, HFun&&, Feas&&) [with F = DifferentiableAnitescuSimulator::solveBarrierNewton()::<lambda(const VectorXd&)>; G = DifferentiableAnitescuSimulator::solveBarrierNewton()::<lambda(const VectorXd&, Eigen::VectorXd&)>; HFun = DifferentiableAnitescuSimulator::solveBarrierNewton()::<lambda(const VectorXd&, Eigen::MatrixXd&)>; Feas = DifferentiableAnitescuSimulator::solveBarrierNewton()::<lambda(const VectorXd&)>; Eigen::VectorXd = Eigen::Matrix<double, -1, 1>]\xe2\x80\x99:\n'}
+[4.336490] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/contact_id/anitescu/DifferentiableAnitescuSimulator.hpp:340:22:   required from here\n'}
+[4.336540] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/contact_id/anitescu/NewtonSolver.hpp:52:25: warning: conversion from \xe2\x80\x98Eigen::EigenBase<Eigen::Matrix<double, -1, 1> >::Index\xe2\x80\x99 {aka \xe2\x80\x98long int\xe2\x80\x99} to \xe2\x80\x98int\xe2\x80\x99 may change value [-Wconversion]\n'}
+[4.336586] (prime_contact_id_ros) StderrLine: {'line': b'   52 |     const int n = x.size();\n'}
+[4.336629] (prime_contact_id_ros) StderrLine: {'line': b'      |                   ~~~~~~^~\n'}
+[4.370816] (prime_contact_id_ros) StderrLine: {'line': b'In file included from /home/jkang/third_party/PRIME/include/crocoddyl/multibody/actions/contact-fwddyn.hpp:400,\n'}
+[4.370976] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/multibody/utils/quadruped-gaits.hpp:24,\n'}
+[4.371023] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/src/multibody/utils/quadruped-gaits.cpp:9:\n'}
+[4.371068] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/multibody/actions/contact-fwddyn.hxx: In instantiation of \xe2\x80\x98void crocoddyl::DifferentialActionModelContactFwdDynamicsTpl<Scalar>::calc(const boost::shared_ptr<crocoddyl::DifferentialActionDataAbstractTpl<_Scalar> >&, const Eigen::Ref<const typename crocoddyl::MathBaseTpl<_Scalar>::VectorXs>&, const Eigen::Ref<const typename crocoddyl::MathBaseTpl<_Scalar>::VectorXs>&) [with _Scalar = double; typename Eigen::internal::conditional<const typename crocoddyl::MathBaseTpl<_Scalar>::VectorXs::IsVectorAtCompileTime, Eigen::InnerStride<1>, Eigen::OuterStride<> >::type = Eigen::InnerStride<1>; typename crocoddyl::MathBaseTpl<_Scalar>::VectorXs = Eigen::Matrix<double, -1, 1>]\xe2\x80\x99:\n'}
+[4.371122] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/multibody/actions/contact-fwddyn.hxx:99:6:   required from here\n'}
+[4.371168] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/multibody/actions/contact-fwddyn.hxx:141:29: warning: \xe2\x80\x98const typename pinocchio::DataTpl<_Scalar, _Options, JointCollectionTpl>::TangentVectorType& pinocchio::forwardDynamics(const pinocchio::ModelTpl<_Scalar, _Options, JointCollectionTpl>&, pinocchio::DataTpl<S1, O1, JointCollectionTpl>&, const Eigen::MatrixBase<Matrix3Like>&, const Eigen::MatrixBase<MatRet>&, const Eigen::MatrixBase<VectorLike>&, Scalar) [with Scalar = double; int Options = 0; JointCollectionTpl = pinocchio::JointCollectionDefaultTpl; TangentVectorType = Eigen::Matrix<double, -1, 1>; ConstraintMatrixType = Eigen::Block<Eigen::Matrix<double, -1, -1>, -1, -1, false>; DriftVectorType = Eigen::Block<Eigen::Matrix<double, -1, 1>, -1, 1, false>; typename pinocchio::DataTpl<_Scalar, _Options, JointCollectionTpl>::TangentVectorType = Eigen::Matrix<double, -1, 1>]\xe2\x80\x99 is deprecated [-Wdeprecated-declarations]\n'}
+[4.371217] (prime_contact_id_ros) StderrLine: {'line': b'  141 |   pinocchio::forwardDynamics(\n'}
+[4.371266] (prime_contact_id_ros) StderrLine: {'line': b'      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~^\n'}
+[4.371310] (prime_contact_id_ros) StderrLine: {'line': b'  142 |       pinocchio_, d->pinocchio, d->multibody.actuation->tau,\n'}
+[4.371356] (prime_contact_id_ros) StderrLine: {'line': b'      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n'}
+[4.371401] (prime_contact_id_ros) StderrLine: {'line': b'  143 |       d->multibody.contacts->Jc.topRows(nc), d->multibody.contacts->a0.head(nc),\n'}
+[4.371445] (prime_contact_id_ros) StderrLine: {'line': b'      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n'}
+[4.371487] (prime_contact_id_ros) StderrLine: {'line': b'  144 |       JMinvJt_damping_);\n'}
+[4.371530] (prime_contact_id_ros) StderrLine: {'line': b'      |       ~~~~~~~~~~~~~~~~~      \n'}
+[4.371575] (prime_contact_id_ros) StderrLine: {'line': b'In file included from /opt/openrobots/include/pinocchio/algorithm/contact-dynamics.hpp:302,\n'}
+[4.371619] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/multibody/actions/contact-fwddyn.hxx:12,\n'}
+[4.371661] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/multibody/actions/contact-fwddyn.hpp:400,\n'}
+[4.371703] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/multibody/utils/quadruped-gaits.hpp:24,\n'}
+[4.371745] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/src/multibody/utils/quadruped-gaits.cpp:9:\n'}
+[4.371792] (prime_contact_id_ros) StderrLine: {'line': b'/opt/openrobots/include/pinocchio/algorithm/contact-dynamics.hxx:90:3: note: declared here\n'}
+[4.371835] (prime_contact_id_ros) StderrLine: {'line': b'   90 |   forwardDynamics(\n'}
+[4.371877] (prime_contact_id_ros) StderrLine: {'line': b'      |   ^~~~~~~~~~~~~~~\n'}
+[4.372400] (prime_contact_id_ros) StderrLine: {'line': b'In file included from /home/jkang/third_party/PRIME/include/crocoddyl/multibody/actions/contact-fwddyn.hpp:400,\n'}
+[4.372449] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/multibody/utils/quadruped-gaits.hpp:24,\n'}
+[4.372492] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/src/multibody/utils/quadruped-gaits.cpp:9:\n'}
+[4.372534] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/multibody/actions/contact-fwddyn.hxx: In instantiation of \xe2\x80\x98void crocoddyl::DifferentialActionModelContactFwdDynamicsTpl<Scalar>::calcDiff(const boost::shared_ptr<crocoddyl::DifferentialActionDataAbstractTpl<_Scalar> >&, const Eigen::Ref<const typename crocoddyl::MathBaseTpl<_Scalar>::VectorXs>&, const Eigen::Ref<const typename crocoddyl::MathBaseTpl<_Scalar>::VectorXs>&) [with _Scalar = double; typename Eigen::internal::conditional<const typename crocoddyl::MathBaseTpl<_Scalar>::VectorXs::IsVectorAtCompileTime, Eigen::InnerStride<1>, Eigen::OuterStride<> >::type = Eigen::InnerStride<1>; typename crocoddyl::MathBaseTpl<_Scalar>::VectorXs = Eigen::Matrix<double, -1, 1>]\xe2\x80\x99:\n'}
+[4.372584] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/multibody/actions/contact-fwddyn.hxx:187:6:   required from here\n'}
+[4.372627] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/multibody/actions/contact-fwddyn.hxx:218:47: warning: \xe2\x80\x98void pinocchio::getKKTContactDynamicMatrixInverse(const pinocchio::ModelTpl<_Scalar, _Options, JointCollectionTpl>&, const pinocchio::DataTpl<S1, O1, JointCollectionTpl>&, const Eigen::MatrixBase<Matrix3Like>&, const Eigen::MatrixBase<MatRet>&) [with Scalar = double; int Options = 0; JointCollectionTpl = pinocchio::JointCollectionDefaultTpl; ConstraintMatrixType = Eigen::Block<Eigen::Matrix<double, -1, -1>, -1, -1, false>; KKTMatrixType = Eigen::Matrix<double, -1, -1>]\xe2\x80\x99 is deprecated [-Wdeprecated-declarations]\n'}
+[4.372676] (prime_contact_id_ros) StderrLine: {'line': b'  218 |   pinocchio::getKKTContactDynamicMatrixInverse(\n'}
+[4.372718] (prime_contact_id_ros) StderrLine: {'line': b'      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n'}
+[4.372761] (prime_contact_id_ros) StderrLine: {'line': b'  219 |       pinocchio_, d->pinocchio, d->multibody.contacts->Jc.topRows(nc), d->Kinv);\n'}
+[4.372802] (prime_contact_id_ros) StderrLine: {'line': b'      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n'}
+[4.372845] (prime_contact_id_ros) StderrLine: {'line': b'In file included from /opt/openrobots/include/pinocchio/algorithm/contact-dynamics.hpp:302,\n'}
+[4.372887] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/multibody/actions/contact-fwddyn.hxx:12,\n'}
+[4.372930] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/multibody/actions/contact-fwddyn.hpp:400,\n'}
+[4.372972] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/multibody/utils/quadruped-gaits.hpp:24,\n'}
+[4.373014] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/src/multibody/utils/quadruped-gaits.cpp:9:\n'}
+[4.373057] (prime_contact_id_ros) StderrLine: {'line': b'/opt/openrobots/include/pinocchio/algorithm/contact-dynamics.hxx:218:8: note: declared here\n'}
+[4.373099] (prime_contact_id_ros) StderrLine: {'line': b'  218 |   void getKKTContactDynamicMatrixInverse(\n'}
+[4.373143] (prime_contact_id_ros) StderrLine: {'line': b'      |        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n'}
+[4.407234] (-) TimerEvent: {}
+[4.507420] (-) TimerEvent: {}
+[4.562991] (prime_contact_id_ros) StderrLine: {'line': b'In file included from /home/jkang/third_party/PRIME/include/crocoddyl/multibody/contact-base.hpp:243,\n'}
+[4.563158] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/multibody/contacts/multiple-contacts.hpp:19,\n'}
+[4.563215] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/multibody/actions/contact-fwddyn.hpp:19,\n'}
+[4.563276] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/multibody/utils/quadruped-gaits.hpp:24,\n'}
+[4.563337] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/src/multibody/utils/quadruped-gaits.cpp:9:\n'}
+[4.563388] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/multibody/contact-base.hxx: In instantiation of \xe2\x80\x98void crocoddyl::ContactModelAbstractTpl<Scalar>::updateMode(const boost::shared_ptr<crocoddyl::ContactDataAbstractTpl<_Scalar> >&, const Scalar&, const Vector3s&, const Vector3s&) [with _Scalar = double; crocoddyl::ContactModelAbstractTpl<Scalar>::Scalar = double; crocoddyl::ContactModelAbstractTpl<Scalar>::Vector3s = Eigen::Matrix<double, 3, 1>]\xe2\x80\x99:\n'}
+[4.563440] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/multibody/contact-base.hxx:79:8:   required from here\n'}
+[4.563487] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/multibody/contact-base.hxx:80:53: warning: unused parameter \xe2\x80\x98data\xe2\x80\x99 [-Wunused-parameter]\n'}
+[4.563533] (prime_contact_id_ros) StderrLine: {'line': b'   80 |       const boost::shared_ptr<ContactDataAbstract> &data,\n'}
+[4.563577] (prime_contact_id_ros) StderrLine: {'line': b'      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~\n'}
+[4.563620] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/multibody/contact-base.hxx:81:21: warning: unused parameter \xe2\x80\x98mode\xe2\x80\x99 [-Wunused-parameter]\n'}
+[4.563664] (prime_contact_id_ros) StderrLine: {'line': b'   81 |       const Scalar &mode,\n'}
+[4.563708] (prime_contact_id_ros) StderrLine: {'line': b'      |       ~~~~~~~~~~~~~~^~~~\n'}
+[4.563751] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/multibody/contact-base.hxx:82:23: warning: unused parameter \xe2\x80\x98normal\xe2\x80\x99 [-Wunused-parameter]\n'}
+[4.563794] (prime_contact_id_ros) StderrLine: {'line': b'   82 |       const Vector3s &normal,\n'}
+[4.563837] (prime_contact_id_ros) StderrLine: {'line': b'      |       ~~~~~~~~~~~~~~~~^~~~~~\n'}
+[4.563884] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/multibody/contact-base.hxx:83:23: warning: unused parameter \xe2\x80\x98tangent\xe2\x80\x99 [-Wunused-parameter]\n'}
+[4.563928] (prime_contact_id_ros) StderrLine: {'line': b'   83 |       const Vector3s &tangent)\n'}
+[4.563972] (prime_contact_id_ros) StderrLine: {'line': b'      |       ~~~~~~~~~~~~~~~~^~~~~~~\n'}
+[4.607521] (-) TimerEvent: {}
+[4.659251] (prime_contact_id_ros) StderrLine: {'line': b'In file included from /home/jkang/third_party/PRIME/include/crocoddyl/multibody/actions/impulse-fwddyn.hpp:373,\n'}
+[4.659403] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/multibody/utils/quadruped-gaits.hpp:25,\n'}
+[4.659455] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/src/multibody/utils/quadruped-gaits.cpp:9:\n'}
+[4.659500] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/multibody/actions/impulse-fwddyn.hxx: In instantiation of \xe2\x80\x98void crocoddyl::ActionModelImpulseFwdDynamicsTpl<Scalar>::initCalcDiff(crocoddyl::ActionModelImpulseFwdDynamicsTpl<Scalar>::Data*, const Eigen::Ref<const typename crocoddyl::MathBaseTpl<_Scalar>::VectorXs>&) [with _Scalar = double; crocoddyl::ActionModelImpulseFwdDynamicsTpl<Scalar>::Data = crocoddyl::ActionDataImpulseFwdDynamicsTpl<double>; typename Eigen::internal::conditional<const typename crocoddyl::MathBaseTpl<_Scalar>::VectorXs::IsVectorAtCompileTime, Eigen::InnerStride<1>, Eigen::OuterStride<> >::type = Eigen::InnerStride<1>; typename crocoddyl::MathBaseTpl<_Scalar>::VectorXs = Eigen::Matrix<double, -1, 1>]\xe2\x80\x99:\n'}
+[4.659564] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/multibody/actions/impulse-fwddyn.hxx:115:3:   required from \xe2\x80\x98void crocoddyl::ActionModelImpulseFwdDynamicsTpl<Scalar>::calcDiff(const boost::shared_ptr<crocoddyl::ActionDataAbstractTpl<_Scalar> >&, const Eigen::Ref<const typename crocoddyl::MathBaseTpl<_Scalar>::VectorXs>&, const Eigen::Ref<const typename crocoddyl::MathBaseTpl<_Scalar>::VectorXs>&) [with _Scalar = double; typename Eigen::internal::conditional<const typename crocoddyl::MathBaseTpl<_Scalar>::VectorXs::IsVectorAtCompileTime, Eigen::InnerStride<1>, Eigen::OuterStride<> >::type = Eigen::InnerStride<1>; typename crocoddyl::MathBaseTpl<_Scalar>::VectorXs = Eigen::Matrix<double, -1, 1>]\xe2\x80\x99\n'}
+[4.659612] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/multibody/actions/impulse-fwddyn.hxx:109:6:   required from here\n'}
+[4.659655] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/multibody/actions/impulse-fwddyn.hxx:237:47: warning: \xe2\x80\x98void pinocchio::getKKTContactDynamicMatrixInverse(const pinocchio::ModelTpl<_Scalar, _Options, JointCollectionTpl>&, const pinocchio::DataTpl<S1, O1, JointCollectionTpl>&, const Eigen::MatrixBase<Matrix3Like>&, const Eigen::MatrixBase<MatRet>&) [with Scalar = double; int Options = 0; JointCollectionTpl = pinocchio::JointCollectionDefaultTpl; ConstraintMatrixType = Eigen::Block<Eigen::Matrix<double, -1, -1>, -1, -1, false>; KKTMatrixType = Eigen::Matrix<double, -1, -1>]\xe2\x80\x99 is deprecated [-Wdeprecated-declarations]\n'}
+[4.659706] (prime_contact_id_ros) StderrLine: {'line': b'  237 |   pinocchio::getKKTContactDynamicMatrixInverse(\n'}
+[4.659750] (prime_contact_id_ros) StderrLine: {'line': b'      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n'}
+[4.659792] (prime_contact_id_ros) StderrLine: {'line': b'  238 |       pinocchio_, data->pinocchio, data->multibody.impulses->Jc.topRows(nc),\n'}
+[4.659835] (prime_contact_id_ros) StderrLine: {'line': b'      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n'}
+[4.659877] (prime_contact_id_ros) StderrLine: {'line': b'  239 |       data->Kinv);\n'}
+[4.659919] (prime_contact_id_ros) StderrLine: {'line': b'      |       ~~~~~~~~~~~                              \n'}
+[4.659960] (prime_contact_id_ros) StderrLine: {'line': b'In file included from /opt/openrobots/include/pinocchio/algorithm/contact-dynamics.hpp:302,\n'}
+[4.660003] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/multibody/actions/contact-fwddyn.hxx:12,\n'}
+[4.660045] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/multibody/actions/contact-fwddyn.hpp:400,\n'}
+[4.660087] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/multibody/utils/quadruped-gaits.hpp:24,\n'}
+[4.660130] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/src/multibody/utils/quadruped-gaits.cpp:9:\n'}
+[4.660175] (prime_contact_id_ros) StderrLine: {'line': b'/opt/openrobots/include/pinocchio/algorithm/contact-dynamics.hxx:218:8: note: declared here\n'}
+[4.660224] (prime_contact_id_ros) StderrLine: {'line': b'  218 |   void getKKTContactDynamicMatrixInverse(\n'}
+[4.660276] (prime_contact_id_ros) StderrLine: {'line': b'      |        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n'}
+[4.707645] (-) TimerEvent: {}
+[4.807829] (-) TimerEvent: {}
+[4.908013] (-) TimerEvent: {}
+[4.978282] (prime_contact_id_ros) StderrLine: {'line': b'In file included from /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/actions/arrival-fwddyn-id.hpp:34,\n'}
+[4.978439] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/problem/contact-anitescu-id.hpp:32,\n'}
+[4.978491] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/src/contact_id/problem/contact-anitescu-id.cpp:16:\n'}
+[4.978547] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/contact_id/states/multibody_params.hxx: In instantiation of \xe2\x80\x98crocoddyl::StateMultibodyParamsTpl<Scalar>::StateMultibodyParamsTpl(boost::shared_ptr<pinocchio::ModelTpl<Scalar> >, std::vector<long unsigned int>) [with _Scalar = double]\xe2\x80\x99:\n'}
+[4.978601] (prime_contact_id_ros) StderrLine: {'line': b'/usr/include/boost/smart_ptr/make_shared_object.hpp:256:5:   required from \xe2\x80\x98typename boost::detail::sp_if_not_array<T>::type boost::make_shared(Args&& ...) [with T = crocoddyl::StateMultibodyParamsTpl<double>; Args = {boost::shared_ptr<pinocchio::ModelTpl<double, 0, pinocchio::JointCollectionDefaultTpl> >, std::vector<long unsigned int, std::allocator<long unsigned int> >&}; typename boost::detail::sp_if_not_array<T>::type = boost::shared_ptr<crocoddyl::StateMultibodyParamsTpl<double> >]\xe2\x80\x99\n'}
+[4.978656] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/src/contact_id/problem/contact-anitescu-id.cpp:117:65:   required from here\n'}
+[4.978703] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/contact_id/states/multibody_params.hpp:131:40: warning: \xe2\x80\x98crocoddyl::StateMultibodyParamsTpl<double>::joints_\xe2\x80\x99 will be initialized after [-Wreorder]\n'}
+[4.978750] (prime_contact_id_ros) StderrLine: {'line': b'  131 |     std::vector<pinocchio::JointIndex> joints_;   //!< Indices of the parameterized joints\n'}
+[4.978796] (prime_contact_id_ros) StderrLine: {'line': b'      |                                        ^~~~~~~\n'}
+[4.978845] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/contact_id/states/multibody_params.hpp:124:17: warning:   \xe2\x80\x98std::size_t crocoddyl::StateMultibodyParamsTpl<double>::nq_pin_\xe2\x80\x99 [-Wreorder]\n'}
+[4.978891] (prime_contact_id_ros) StderrLine: {'line': b'  124 |     std::size_t nq_pin_;\n'}
+[4.978936] (prime_contact_id_ros) StderrLine: {'line': b'      |                 ^~~~~~~\n'}
+[4.978981] (prime_contact_id_ros) StderrLine: {'line': b'In file included from /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/states/multibody_params.hpp:139,\n'}
+[4.979027] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/actions/arrival-fwddyn-id.hpp:34,\n'}
+[4.979074] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/problem/contact-anitescu-id.hpp:32,\n'}
+[4.979120] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/src/contact_id/problem/contact-anitescu-id.cpp:16:\n'}
+[4.979166] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/contact_id/states/multibody_params.hxx:25:3: warning:   when initialized here [-Wreorder]\n'}
+[4.979212] (prime_contact_id_ros) StderrLine: {'line': b'   25 |   StateMultibodyParamsTpl<Scalar>::StateMultibodyParamsTpl(\n'}
+[4.979264] (prime_contact_id_ros) StderrLine: {'line': b'      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n'}
+[4.979320] (prime_contact_id_ros) StderrLine: {'line': b'In file included from /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/actions/arrival-fwddyn-id.hpp:34,\n'}
+[4.979370] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/problem/contact-anitescu-id.hpp:32,\n'}
+[4.979416] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/src/contact_id/problem/contact-anitescu-id.cpp:16:\n'}
+[4.979462] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/contact_id/states/multibody_params.hpp:129:39: warning: \xe2\x80\x98crocoddyl::StateMultibodyParamsTpl<double>::pinocchio_\xe2\x80\x99 will be initialized after [-Wreorder]\n'}
+[4.979509] (prime_contact_id_ros) StderrLine: {'line': b'  129 |     boost::shared_ptr<PinocchioModel> pinocchio_; //!< Pinocchio model\n'}
+[4.979555] (prime_contact_id_ros) StderrLine: {'line': b'      |                                       ^~~~~~~~~~\n'}
+[4.979600] (prime_contact_id_ros) StderrLine: {'line': b'In file included from /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/states/multibody_params.hpp:139,\n'}
+[4.979647] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/actions/arrival-fwddyn-id.hpp:34,\n'}
+[4.979692] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/problem/contact-anitescu-id.hpp:32,\n'}
+[4.979738] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/src/contact_id/problem/contact-anitescu-id.cpp:16:\n'}
+[4.979786] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/contact_id/states/multibody_params.hxx:33:75: warning:   base \xe2\x80\x98crocoddyl::StateMultibodyBaseTpl<double>\xe2\x80\x99 [-Wreorder]\n'}
+[4.979833] (prime_contact_id_ros) StderrLine: {'line': b'   33 |         x0_(VectorXs::Zero(model->nq + model->nv + 2 * Joints.size() * 10))\n'}
+[4.979879] (prime_contact_id_ros) StderrLine: {'line': b'      |                                                                           ^\n'}
+[4.979924] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/contact_id/states/multibody_params.hxx:25:3: warning:   when initialized here [-Wreorder]\n'}
+[4.979970] (prime_contact_id_ros) StderrLine: {'line': b'   25 |   StateMultibodyParamsTpl<Scalar>::StateMultibodyParamsTpl(\n'}
+[4.980016] (prime_contact_id_ros) StderrLine: {'line': b'      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n'}
+[5.008129] (-) TimerEvent: {}
+[5.054739] (prime_contact_id_ros) StderrLine: {'line': b'In file included from /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/problem/contact-anitescu-id.hpp:33,\n'}
+[5.054882] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/src/contact_id/problem/contact-anitescu-id.cpp:16:\n'}
+[5.054944] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/contact_id/actions/contact-fwddyn-anitescu-id.hxx: In instantiation of \xe2\x80\x98crocoddyl::DifferentialActionModelContactFwdDynamicsAnitescuSystemidTpl<Scalar>::DifferentialActionModelContactFwdDynamicsAnitescuSystemidTpl(boost::shared_ptr<crocoddyl::StateMultibodyParamsTpl<_Scalar> >, boost::shared_ptr<crocoddyl::ActuationModelAbstractTpl<Scalar> >, boost::shared_ptr<crocoddyl::CostModelSumTpl<_Scalar> >, std::vector<std::__cxx11::basic_string<char> >, crocoddyl::DifferentialActionModelContactFwdDynamicsAnitescuSystemidTpl<Scalar>::Scalar, crocoddyl::DifferentialActionModelContactFwdDynamicsAnitescuSystemidTpl<Scalar>::Scalar, crocoddyl::DifferentialActionModelContactFwdDynamicsAnitescuSystemidTpl<Scalar>::Scalar, const string&) [with _Scalar = double; crocoddyl::DifferentialActionModelContactFwdDynamicsAnitescuSystemidTpl<Scalar>::Scalar = double; std::string = std::__cxx11::basic_string<char>]\xe2\x80\x99:\n'}
+[5.055004] (prime_contact_id_ros) StderrLine: {'line': b'/usr/include/boost/smart_ptr/make_shared_object.hpp:256:5:   required from \xe2\x80\x98typename boost::detail::sp_if_not_array<T>::type boost::make_shared(Args&& ...) [with T = crocoddyl::DifferentialActionModelContactFwdDynamicsAnitescuSystemidTpl<double>; Args = {boost::shared_ptr<crocoddyl::StateMultibodyParamsTpl<double> >&, boost::shared_ptr<crocoddyl::ActuationModelFloatingBaseEstimationTpl<double> >&, boost::shared_ptr<crocoddyl::CostModelSumTpl<double> >&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, double&, double&, double&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&}; typename boost::detail::sp_if_not_array<T>::type = boost::shared_ptr<crocoddyl::DifferentialActionModelContactFwdDynamicsAnitescuSystemidTpl<double> >]\xe2\x80\x99\n'}
+[5.055055] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/src/contact_id/problem/contact-anitescu-id.cpp:236:80:   required from here\n'}
+[5.055105] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/contact_id/actions/contact-fwddyn-anitescu-id.hpp:287:21: warning: \xe2\x80\x98crocoddyl::DifferentialActionModelContactFwdDynamicsAnitescuSystemidTpl<double>::force_log_path_\xe2\x80\x99 will be initialized after [-Wreorder]\n'}
+[5.055152] (prime_contact_id_ros) StderrLine: {'line': b'  287 |         std::string force_log_path_;                            //!< Optional force CSV log path\n'}
+[5.055197] (prime_contact_id_ros) StderrLine: {'line': b'      |                     ^~~~~~~~~~~~~~~\n'}
+[5.055246] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/contact_id/actions/contact-fwddyn-anitescu-id.hpp:276:49: warning:   \xe2\x80\x98boost::shared_ptr<crocoddyl::StateMultibodyParamsTpl<double> > crocoddyl::DifferentialActionModelContactFwdDynamicsAnitescuSystemidTpl<double>::params_state_\xe2\x80\x99 [-Wreorder]\n'}
+[5.055298] (prime_contact_id_ros) StderrLine: {'line': b'  276 |         boost::shared_ptr<StateMultibodyParams> params_state_;\n'}
+[5.055352] (prime_contact_id_ros) StderrLine: {'line': b'      |                                                 ^~~~~~~~~~~~~\n'}
+[5.055399] (prime_contact_id_ros) StderrLine: {'line': b'In file included from /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/actions/contact-fwddyn-anitescu-id.hpp:353,\n'}
+[5.055446] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/problem/contact-anitescu-id.hpp:33,\n'}
+[5.055492] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/src/contact_id/problem/contact-anitescu-id.cpp:16:\n'}
+[5.055538] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/contact_id/actions/contact-fwddyn-anitescu-id.hxx:65:3: warning:   when initialized here [-Wreorder]\n'}
+[5.055584] (prime_contact_id_ros) StderrLine: {'line': b'   65 |   DifferentialActionModelContactFwdDynamicsAnitescuSystemidTpl<Scalar>::\n'}
+[5.055631] (prime_contact_id_ros) StderrLine: {'line': b'      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n'}
+[5.108323] (-) TimerEvent: {}
+[5.208517] (-) TimerEvent: {}
+[5.227043] (prime_contact_id_ros) StderrLine: {'line': b'gmake[2]: *** [prime/CMakeFiles/crocoddyl.dir/build.make:177: prime/CMakeFiles/crocoddyl.dir/src/core/solvers/intro.cpp.o] Error 1\n'}
+[5.308644] (-) TimerEvent: {}
+[5.408828] (-) TimerEvent: {}
+[5.509014] (-) TimerEvent: {}
+[5.609255] (-) TimerEvent: {}
+[5.709564] (-) TimerEvent: {}
+[5.809780] (-) TimerEvent: {}
+[5.909995] (-) TimerEvent: {}
+[6.010180] (-) TimerEvent: {}
+[6.110376] (-) TimerEvent: {}
+[6.210564] (-) TimerEvent: {}
+[6.310736] (-) TimerEvent: {}
+[6.410888] (-) TimerEvent: {}
+[6.511069] (-) TimerEvent: {}
+[6.611258] (-) TimerEvent: {}
+[6.711440] (-) TimerEvent: {}
+[6.811622] (-) TimerEvent: {}
+[6.911810] (-) TimerEvent: {}
+[7.011998] (-) TimerEvent: {}
+[7.112223] (-) TimerEvent: {}
+[7.212406] (-) TimerEvent: {}
+[7.312583] (-) TimerEvent: {}
+[7.412756] (-) TimerEvent: {}
+[7.512933] (-) TimerEvent: {}
+[7.613111] (-) TimerEvent: {}
+[7.713294] (-) TimerEvent: {}
+[7.813474] (-) TimerEvent: {}
+[7.913655] (-) TimerEvent: {}
+[8.013894] (-) TimerEvent: {}
+[8.114066] (-) TimerEvent: {}
+[8.214300] (-) TimerEvent: {}
+[8.314476] (-) TimerEvent: {}
+[8.414648] (-) TimerEvent: {}
+[8.514823] (-) TimerEvent: {}
+[8.615026] (-) TimerEvent: {}
+[8.715237] (-) TimerEvent: {}
+[8.815420] (-) TimerEvent: {}
+[8.915593] (-) TimerEvent: {}
+[9.015774] (-) TimerEvent: {}
+[9.116031] (-) TimerEvent: {}
+[9.216256] (-) TimerEvent: {}
+[9.316434] (-) TimerEvent: {}
+[9.416607] (-) TimerEvent: {}
+[9.516784] (-) TimerEvent: {}
+[9.616963] (-) TimerEvent: {}
+[9.717173] (-) TimerEvent: {}
+[9.817360] (-) TimerEvent: {}
+[9.917547] (-) TimerEvent: {}
+[10.017727] (-) TimerEvent: {}
+[10.117928] (-) TimerEvent: {}
+[10.218104] (-) TimerEvent: {}
+[10.318321] (-) TimerEvent: {}
+[10.418498] (-) TimerEvent: {}
+[10.518706] (-) TimerEvent: {}
+[10.618887] (-) TimerEvent: {}
+[10.719068] (-) TimerEvent: {}
+[10.819250] (-) TimerEvent: {}
+[10.919435] (-) TimerEvent: {}
+[11.019618] (-) TimerEvent: {}
+[11.119802] (-) TimerEvent: {}
+[11.220018] (-) TimerEvent: {}
+[11.320251] (-) TimerEvent: {}
+[11.420388] (-) TimerEvent: {}
+[11.520569] (-) TimerEvent: {}
+[11.620746] (-) TimerEvent: {}
+[11.720956] (-) TimerEvent: {}
+[11.821174] (-) TimerEvent: {}
+[11.921357] (-) TimerEvent: {}
+[12.021624] (-) TimerEvent: {}
+[12.121909] (-) TimerEvent: {}
+[12.222179] (-) TimerEvent: {}
+[12.322374] (-) TimerEvent: {}
+[12.422628] (-) TimerEvent: {}
+[12.522888] (-) TimerEvent: {}
+[12.623101] (-) TimerEvent: {}
+[12.723359] (-) TimerEvent: {}
+[12.823569] (-) TimerEvent: {}
+[12.923761] (-) TimerEvent: {}
+[13.023950] (-) TimerEvent: {}
+[13.124168] (-) TimerEvent: {}
+[13.224363] (-) TimerEvent: {}
+[13.324554] (-) TimerEvent: {}
+[13.424780] (-) TimerEvent: {}
+[13.524996] (-) TimerEvent: {}
+[13.625279] (-) TimerEvent: {}
+[13.725499] (-) TimerEvent: {}
+[13.825772] (-) TimerEvent: {}
+[13.925958] (-) TimerEvent: {}
+[14.026179] (-) TimerEvent: {}
+[14.126410] (-) TimerEvent: {}
+[14.226597] (-) TimerEvent: {}
+[14.326817] (-) TimerEvent: {}
+[14.427042] (-) TimerEvent: {}
+[14.527369] (-) TimerEvent: {}
+[14.627642] (-) TimerEvent: {}
+[14.727864] (-) TimerEvent: {}
+[14.828046] (-) TimerEvent: {}
+[14.928233] (-) TimerEvent: {}
+[15.028422] (-) TimerEvent: {}
+[15.128598] (-) TimerEvent: {}
+[15.228777] (-) TimerEvent: {}
+[15.328957] (-) TimerEvent: {}
+[15.429217] (-) TimerEvent: {}
+[15.516806] (prime_contact_id_ros) StderrLine: {'line': b'gmake[2]: *** [prime/CMakeFiles/crocoddyl.dir/build.make:261: prime/CMakeFiles/crocoddyl.dir/src/multibody/utils/quadruped-anitescu-id.cpp.o] Error 1\n'}
+[15.529345] (-) TimerEvent: {}
+[15.599816] (prime_contact_id_ros) StderrLine: {'line': b'gmake[2]: *** [prime/CMakeFiles/crocoddyl.dir/build.make:247: prime/CMakeFiles/crocoddyl.dir/src/multibody/utils/contact-anitescu-id.cpp.o] Error 1\n'}
+[15.629445] (-) TimerEvent: {}
+[15.729614] (-) TimerEvent: {}
+[15.829785] (-) TimerEvent: {}
+[15.929958] (-) TimerEvent: {}
+[16.030207] (-) TimerEvent: {}
+[16.130503] (-) TimerEvent: {}
+[16.230655] (-) TimerEvent: {}
+[16.330800] (-) TimerEvent: {}
+[16.430946] (-) TimerEvent: {}
+[16.531094] (-) TimerEvent: {}
+[16.631313] (-) TimerEvent: {}
+[16.731469] (-) TimerEvent: {}
+[16.772618] (prime_contact_id_ros) StderrLine: {'line': b'In file included from /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/problem/contact-anitescu-id.hpp:35,\n'}
+[16.772741] (prime_contact_id_ros) StderrLine: {'line': b'                 from /home/jkang/third_party/PRIME/src/contact_id/problem/contact-anitescu-id.cpp:16:\n'}
+[16.772768] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/contact_id/actuations/floating-base-id-arrivial.hpp: In instantiation of \xe2\x80\x98boost::shared_ptr<crocoddyl::ActuationDataAbstractTpl<_Scalar> > crocoddyl::ActuationModelFloatingBaseArrivalIDTpl<Scalar>::createData() [with _Scalar = double]\xe2\x80\x99:\n'}
+[16.772795] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/contact_id/actuations/floating-base-id-arrivial.hpp:150:37:   required from here\n'}
+[16.772816] (prime_contact_id_ros) StderrLine: {'line': b'/home/jkang/third_party/PRIME/include/crocoddyl/contact_id/actuations/floating-base-id-arrivial.hpp:156:25: warning: unused variable \xe2\x80\x98root_joint_id\xe2\x80\x99 [-Wunused-variable]\n'}
+[16.772837] (prime_contact_id_ros) StderrLine: {'line': b'  156 |       const std::size_t root_joint_id =\n'}
+[16.772856] (prime_contact_id_ros) StderrLine: {'line': b'      |                         ^~~~~~~~~~~~~\n'}
+[16.831558] (-) TimerEvent: {}
+[16.931708] (-) TimerEvent: {}
+[17.031851] (-) TimerEvent: {}
+[17.132040] (-) TimerEvent: {}
+[17.232190] (-) TimerEvent: {}
+[17.332440] (-) TimerEvent: {}
+[17.432597] (-) TimerEvent: {}
+[17.532744] (-) TimerEvent: {}
+[17.632894] (-) TimerEvent: {}
+[17.733042] (-) TimerEvent: {}
+[17.833260] (-) TimerEvent: {}
+[17.933409] (-) TimerEvent: {}
+[18.033559] (-) TimerEvent: {}
+[18.133743] (-) TimerEvent: {}
+[18.233938] (-) TimerEvent: {}
+[18.334085] (-) TimerEvent: {}
+[18.434340] (-) TimerEvent: {}
+[18.534492] (-) TimerEvent: {}
+[18.634644] (-) TimerEvent: {}
+[18.734797] (-) TimerEvent: {}
+[18.834989] (-) TimerEvent: {}
+[18.935205] (-) TimerEvent: {}
+[19.035398] (-) TimerEvent: {}
+[19.135577] (-) TimerEvent: {}
+[19.235717] (-) TimerEvent: {}
+[19.335851] (-) TimerEvent: {}
+[19.435974] (-) TimerEvent: {}
+[19.536093] (-) TimerEvent: {}
+[19.636252] (-) TimerEvent: {}
+[19.736412] (-) TimerEvent: {}
+[19.836646] (-) TimerEvent: {}
+[19.936799] (-) TimerEvent: {}
+[20.037002] (-) TimerEvent: {}
+[20.137225] (-) TimerEvent: {}
+[20.237430] (-) TimerEvent: {}
+[20.337573] (-) TimerEvent: {}
+[20.437721] (-) TimerEvent: {}
+[20.537890] (-) TimerEvent: {}
+[20.638031] (-) TimerEvent: {}
+[20.738235] (-) TimerEvent: {}
+[20.838387] (-) TimerEvent: {}
+[20.938561] (-) TimerEvent: {}
+[21.038739] (-) TimerEvent: {}
+[21.138888] (-) TimerEvent: {}
+[21.239039] (-) TimerEvent: {}
+[21.339306] (-) TimerEvent: {}
+[21.439558] (-) TimerEvent: {}
+[21.539713] (-) TimerEvent: {}
+[21.639869] (-) TimerEvent: {}
+[21.740042] (-) TimerEvent: {}
+[21.840272] (-) TimerEvent: {}
+[21.940420] (-) TimerEvent: {}
+[22.040565] (-) TimerEvent: {}
+[22.140716] (-) TimerEvent: {}
+[22.240861] (-) TimerEvent: {}
+[22.341029] (-) TimerEvent: {}
+[22.441275] (-) TimerEvent: {}
+[22.541548] (-) TimerEvent: {}
+[22.641789] (-) TimerEvent: {}
+[22.742039] (-) TimerEvent: {}
+[22.842297] (-) TimerEvent: {}
+[22.942479] (-) TimerEvent: {}
+[23.042647] (-) TimerEvent: {}
+[23.142781] (-) TimerEvent: {}
+[23.242938] (-) TimerEvent: {}
+[23.343093] (-) TimerEvent: {}
+[23.443255] (-) TimerEvent: {}
+[23.543383] (-) TimerEvent: {}
+[23.643549] (-) TimerEvent: {}
+[23.743700] (-) TimerEvent: {}
+[23.843855] (-) TimerEvent: {}
+[23.944022] (-) TimerEvent: {}
+[24.044198] (-) TimerEvent: {}
+[24.144363] (-) TimerEvent: {}
+[24.244541] (-) TimerEvent: {}
+[24.344680] (-) TimerEvent: {}
+[24.444824] (-) TimerEvent: {}
+[24.544977] (-) TimerEvent: {}
+[24.645176] (-) TimerEvent: {}
+[24.745431] (-) TimerEvent: {}
+[24.845611] (-) TimerEvent: {}
+[24.945760] (-) TimerEvent: {}
+[25.045909] (-) TimerEvent: {}
+[25.146082] (-) TimerEvent: {}
+[25.246253] (-) TimerEvent: {}
+[25.346444] (-) TimerEvent: {}
+[25.446567] (-) TimerEvent: {}
+[25.546672] (-) TimerEvent: {}
+[25.646793] (-) TimerEvent: {}
+[25.746910] (-) TimerEvent: {}
+[25.847090] (-) TimerEvent: {}
+[25.947361] (-) TimerEvent: {}
+[26.047512] (-) TimerEvent: {}
+[26.147664] (-) TimerEvent: {}
+[26.247819] (-) TimerEvent: {}
+[26.348035] (-) TimerEvent: {}
+[26.448285] (-) TimerEvent: {}
+[26.548438] (-) TimerEvent: {}
+[26.648691] (-) TimerEvent: {}
+[26.748840] (-) TimerEvent: {}
+[26.849026] (-) TimerEvent: {}
+[26.949214] (-) TimerEvent: {}
+[27.049367] (-) TimerEvent: {}
+[27.129010] (prime_contact_id_ros) StderrLine: {'line': b'gmake[2]: *** [prime/CMakeFiles/crocoddyl.dir/build.make:275: prime/CMakeFiles/crocoddyl.dir/src/multibody/utils/quadruped-gaits.cpp.o] Error 1\n'}
+[27.149445] (-) TimerEvent: {}
+[27.249580] (-) TimerEvent: {}
+[27.349723] (-) TimerEvent: {}
+[27.449871] (-) TimerEvent: {}
+[27.550020] (-) TimerEvent: {}
+[27.650216] (-) TimerEvent: {}
+[27.750401] (-) TimerEvent: {}
+[27.850548] (-) TimerEvent: {}
+[27.950690] (-) TimerEvent: {}
+[28.050829] (-) TimerEvent: {}
+[28.150969] (-) TimerEvent: {}
+[28.251126] (-) TimerEvent: {}
+[28.351309] (-) TimerEvent: {}
+[28.451448] (-) TimerEvent: {}
+[28.551585] (-) TimerEvent: {}
+[28.651725] (-) TimerEvent: {}
+[28.751863] (-) TimerEvent: {}
+[28.852000] (-) TimerEvent: {}
+[28.952168] (-) TimerEvent: {}
+[29.052304] (-) TimerEvent: {}
+[29.152447] (-) TimerEvent: {}
+[29.252582] (-) TimerEvent: {}
+[29.352750] (-) TimerEvent: {}
+[29.452895] (-) TimerEvent: {}
+[29.553037] (-) TimerEvent: {}
+[29.653271] (-) TimerEvent: {}
+[29.753429] (-) TimerEvent: {}
+[29.853593] (-) TimerEvent: {}
+[29.953833] (-) TimerEvent: {}
+[30.054072] (-) TimerEvent: {}
+[30.154329] (-) TimerEvent: {}
+[30.254475] (-) TimerEvent: {}
+[30.354615] (-) TimerEvent: {}
+[30.454756] (-) TimerEvent: {}
+[30.554898] (-) TimerEvent: {}
+[30.655043] (-) TimerEvent: {}
+[30.755212] (-) TimerEvent: {}
+[30.855404] (-) TimerEvent: {}
+[30.955542] (-) TimerEvent: {}
+[31.055680] (-) TimerEvent: {}
+[31.155846] (-) TimerEvent: {}
+[31.256013] (-) TimerEvent: {}
+[31.356258] (-) TimerEvent: {}
+[31.456426] (-) TimerEvent: {}
+[31.556564] (-) TimerEvent: {}
+[31.656708] (-) TimerEvent: {}
+[31.756852] (-) TimerEvent: {}
+[31.857008] (-) TimerEvent: {}
+[31.957161] (-) TimerEvent: {}
+[32.057284] (-) TimerEvent: {}
+[32.157429] (-) TimerEvent: {}
+[32.257573] (-) TimerEvent: {}
+[32.357809] (-) TimerEvent: {}
+[32.458074] (-) TimerEvent: {}
+[32.558342] (-) TimerEvent: {}
+[32.658498] (-) TimerEvent: {}
+[32.758740] (-) TimerEvent: {}
+[32.858907] (-) TimerEvent: {}
+[32.959076] (-) TimerEvent: {}
+[33.059330] (-) TimerEvent: {}
+[33.159475] (-) TimerEvent: {}
+[33.259613] (-) TimerEvent: {}
+[33.359755] (-) TimerEvent: {}
+[33.459932] (-) TimerEvent: {}
+[33.560183] (-) TimerEvent: {}
+[33.660383] (-) TimerEvent: {}
+[33.760526] (-) TimerEvent: {}
+[33.860706] (-) TimerEvent: {}
+[33.960902] (-) TimerEvent: {}
+[34.061047] (-) TimerEvent: {}
+[34.161332] (-) TimerEvent: {}
+[34.261598] (-) TimerEvent: {}
+[34.361749] (-) TimerEvent: {}
+[34.461900] (-) TimerEvent: {}
+[34.562053] (-) TimerEvent: {}
+[34.662194] (-) TimerEvent: {}
+[34.762370] (-) TimerEvent: {}
+[34.862619] (-) TimerEvent: {}
+[34.962767] (-) TimerEvent: {}
+[35.062913] (-) TimerEvent: {}
+[35.163155] (-) TimerEvent: {}
+[35.263284] (-) TimerEvent: {}
+[35.363428] (-) TimerEvent: {}
+[35.463567] (-) TimerEvent: {}
+[35.563711] (-) TimerEvent: {}
+[35.663880] (-) TimerEvent: {}
+[35.764016] (-) TimerEvent: {}
+[35.864185] (-) TimerEvent: {}
+[35.964345] (-) TimerEvent: {}
+[36.064491] (-) TimerEvent: {}
+[36.164630] (-) TimerEvent: {}
+[36.264769] (-) TimerEvent: {}
+[36.364908] (-) TimerEvent: {}
+[36.465049] (-) TimerEvent: {}
+[36.565189] (-) TimerEvent: {}
+[36.665344] (-) TimerEvent: {}
+[36.765496] (-) TimerEvent: {}
+[36.865644] (-) TimerEvent: {}
+[36.965789] (-) TimerEvent: {}
+[37.065935] (-) TimerEvent: {}
+[37.166084] (-) TimerEvent: {}
+[37.266251] (-) TimerEvent: {}
+[37.366405] (-) TimerEvent: {}
+[37.466560] (-) TimerEvent: {}
+[37.566721] (-) TimerEvent: {}
+[37.666879] (-) TimerEvent: {}
+[37.767029] (-) TimerEvent: {}
+[37.867168] (-) TimerEvent: {}
+[37.967285] (-) TimerEvent: {}
+[38.067468] (-) TimerEvent: {}
+[38.167608] (-) TimerEvent: {}
+[38.267753] (-) TimerEvent: {}
+[38.367896] (-) TimerEvent: {}
+[38.468098] (-) TimerEvent: {}
+[38.568292] (-) TimerEvent: {}
+[38.668439] (-) TimerEvent: {}
+[38.768582] (-) TimerEvent: {}
+[38.868730] (-) TimerEvent: {}
+[38.968871] (-) TimerEvent: {}
+[39.069010] (-) TimerEvent: {}
+[39.169181] (-) TimerEvent: {}
+[39.269316] (-) TimerEvent: {}
+[39.369467] (-) TimerEvent: {}
+[39.469604] (-) TimerEvent: {}
+[39.569744] (-) TimerEvent: {}
+[39.669889] (-) TimerEvent: {}
+[39.770032] (-) TimerEvent: {}
+[39.870175] (-) TimerEvent: {}
+[39.970279] (-) TimerEvent: {}
+[40.070515] (-) TimerEvent: {}
+[40.170779] (-) TimerEvent: {}
+[40.270943] (-) TimerEvent: {}
+[40.371116] (-) TimerEvent: {}
+[40.471262] (-) TimerEvent: {}
+[40.571414] (-) TimerEvent: {}
+[40.671560] (-) TimerEvent: {}
+[40.771705] (-) TimerEvent: {}
+[40.871951] (-) TimerEvent: {}
+[40.972102] (-) TimerEvent: {}
+[41.072281] (-) TimerEvent: {}
+[41.172519] (-) TimerEvent: {}
+[41.272656] (-) TimerEvent: {}
+[41.372804] (-) TimerEvent: {}
+[41.472975] (-) TimerEvent: {}
+[41.573144] (-) TimerEvent: {}
+[41.673313] (-) TimerEvent: {}
+[41.773484] (-) TimerEvent: {}
+[41.873656] (-) TimerEvent: {}
+[41.973799] (-) TimerEvent: {}
+[42.073947] (-) TimerEvent: {}
+[42.174092] (-) TimerEvent: {}
+[42.274264] (-) TimerEvent: {}
+[42.374413] (-) TimerEvent: {}
+[42.474559] (-) TimerEvent: {}
+[42.574719] (-) TimerEvent: {}
+[42.674881] (-) TimerEvent: {}
+[42.775034] (-) TimerEvent: {}
+[42.875176] (-) TimerEvent: {}
+[42.975288] (-) TimerEvent: {}
+[43.075435] (-) TimerEvent: {}
+[43.175576] (-) TimerEvent: {}
+[43.275712] (-) TimerEvent: {}
+[43.375949] (-) TimerEvent: {}
+[43.476222] (-) TimerEvent: {}
+[43.576407] (-) TimerEvent: {}
+[43.676633] (-) TimerEvent: {}
+[43.776869] (-) TimerEvent: {}
+[43.877117] (-) TimerEvent: {}
+[43.977368] (-) TimerEvent: {}
+[44.077631] (-) TimerEvent: {}
+[44.177787] (-) TimerEvent: {}
+[44.278066] (-) TimerEvent: {}
+[44.378442] (-) TimerEvent: {}
+[44.478597] (-) TimerEvent: {}
+[44.578733] (-) TimerEvent: {}
+[44.678878] (-) TimerEvent: {}
+[44.779027] (-) TimerEvent: {}
+[44.879174] (-) TimerEvent: {}
+[44.979285] (-) TimerEvent: {}
+[45.079428] (-) TimerEvent: {}
+[45.179571] (-) TimerEvent: {}
+[45.279710] (-) TimerEvent: {}
+[45.379845] (-) TimerEvent: {}
+[45.479956] (-) TimerEvent: {}
+[45.580052] (-) TimerEvent: {}
+[45.680201] (-) TimerEvent: {}
+[45.780358] (-) TimerEvent: {}
+[45.880498] (-) TimerEvent: {}
+[45.980638] (-) TimerEvent: {}
+[46.080783] (-) TimerEvent: {}
+[46.180952] (-) TimerEvent: {}
+[46.281089] (-) TimerEvent: {}
+[46.381229] (-) TimerEvent: {}
+[46.481374] (-) TimerEvent: {}
+[46.581514] (-) TimerEvent: {}
+[46.681653] (-) TimerEvent: {}
+[46.781791] (-) TimerEvent: {}
+[46.881934] (-) TimerEvent: {}
+[46.982074] (-) TimerEvent: {}
+[47.082243] (-) TimerEvent: {}
+[47.182385] (-) TimerEvent: {}
+[47.282524] (-) TimerEvent: {}
+[47.382756] (-) TimerEvent: {}
+[47.483060] (-) TimerEvent: {}
+[47.583219] (-) TimerEvent: {}
+[47.683381] (-) TimerEvent: {}
+[47.783527] (-) TimerEvent: {}
+[47.883666] (-) TimerEvent: {}
+[47.983820] (-) TimerEvent: {}
+[48.083978] (-) TimerEvent: {}
+[48.184122] (-) TimerEvent: {}
+[48.284271] (-) TimerEvent: {}
+[48.384411] (-) TimerEvent: {}
+[48.484551] (-) TimerEvent: {}
+[48.584693] (-) TimerEvent: {}
+[48.684835] (-) TimerEvent: {}
+[48.784978] (-) TimerEvent: {}
+[48.885134] (-) TimerEvent: {}
+[48.985305] (-) TimerEvent: {}
+[49.085445] (-) TimerEvent: {}
+[49.185623] (-) TimerEvent: {}
+[49.285771] (-) TimerEvent: {}
+[49.385941] (-) TimerEvent: {}
+[49.486081] (-) TimerEvent: {}
+[49.586229] (-) TimerEvent: {}
+[49.686376] (-) TimerEvent: {}
+[49.786521] (-) TimerEvent: {}
+[49.886665] (-) TimerEvent: {}
+[49.986840] (-) TimerEvent: {}
+[50.086981] (-) TimerEvent: {}
+[50.187139] (-) TimerEvent: {}
+[50.287306] (-) TimerEvent: {}
+[50.387460] (-) TimerEvent: {}
+[50.487601] (-) TimerEvent: {}
+[50.587741] (-) TimerEvent: {}
+[50.687915] (-) TimerEvent: {}
+[50.788054] (-) TimerEvent: {}
+[50.888297] (-) TimerEvent: {}
+[50.988448] (-) TimerEvent: {}
+[51.088601] (-) TimerEvent: {}
+[51.188738] (-) TimerEvent: {}
+[51.288899] (-) TimerEvent: {}
+[51.389045] (-) TimerEvent: {}
+[51.489183] (-) TimerEvent: {}
+[51.589280] (-) TimerEvent: {}
+[51.689417] (-) TimerEvent: {}
+[51.789559] (-) TimerEvent: {}
+[51.889697] (-) TimerEvent: {}
+[51.989834] (-) TimerEvent: {}
+[52.090003] (-) TimerEvent: {}
+[52.190147] (-) TimerEvent: {}
+[52.290377] (-) TimerEvent: {}
+[52.390532] (-) TimerEvent: {}
+[52.490688] (-) TimerEvent: {}
+[52.590833] (-) TimerEvent: {}
+[52.690980] (-) TimerEvent: {}
+[52.791135] (-) TimerEvent: {}
+[52.891325] (-) TimerEvent: {}
+[52.991461] (-) TimerEvent: {}
+[53.091599] (-) TimerEvent: {}
+[53.191740] (-) TimerEvent: {}
+[53.291917] (-) TimerEvent: {}
+[53.392056] (-) TimerEvent: {}
+[53.492204] (-) TimerEvent: {}
+[53.592358] (-) TimerEvent: {}
+[53.692498] (-) TimerEvent: {}
+[53.792637] (-) TimerEvent: {}
+[53.892773] (-) TimerEvent: {}
+[53.992910] (-) TimerEvent: {}
+[54.059653] (prime_contact_id_ros) StderrLine: {'line': b'gmake[2]: *** [prime/CMakeFiles/crocoddyl.dir/build.make:79: prime/CMakeFiles/crocoddyl.dir/src/contact_id/problem/contact-anitescu-id.cpp.o] Error 1\n'}
+[54.059885] (prime_contact_id_ros) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:1288: prime/CMakeFiles/crocoddyl.dir/all] Error 2\n'}
+[54.059971] (prime_contact_id_ros) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[54.061425] (prime_contact_id_ros) CommandEnded: {'returncode': 2}
+[54.067956] (prime_contact_id_ros) JobEnded: {'identifier': 'prime_contact_id_ros', 'rc': 2}
+[54.068616] (-) EventReactorShutdown: {}

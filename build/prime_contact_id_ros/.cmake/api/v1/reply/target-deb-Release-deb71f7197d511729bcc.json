@@ -1,0 +1,69 @@
+{
+	"backtrace" : 4,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_custom_target",
+			"_SETUP_PROJECT_DEB",
+			"project",
+			"add_dependencies"
+		],
+		"files" : 
+		[
+			"/home/jkang/third_party/PRIME/cmake/debian.cmake",
+			"/home/jkang/third_party/PRIME/cmake/post-project.cmake",
+			"/home/jkang/third_party/PRIME/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 2
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 84,
+				"parent" : 0
+			},
+			{
+				"file" : 1,
+				"parent" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 67,
+				"parent" : 2
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 130,
+				"parent" : 3
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 140,
+				"parent" : 3
+			}
+		]
+	},
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 5,
+			"id" : "crocoddyl-deb::@747ebaa991c02475c66e"
+		}
+	],
+	"id" : "deb::@747ebaa991c02475c66e",
+	"name" : "deb",
+	"paths" : 
+	{
+		"build" : "prime",
+		"source" : "/home/jkang/third_party/PRIME"
+	},
+	"sources" : [],
+	"type" : "UTILITY"
+}

@@ -1,0 +1,37 @@
+CMake Warning at /opt/openrobots/lib/cmake/hpp-fcl/hpp-fclConfig.cmake:3 (message):
+  Please update your CMake from 'hpp-fcl' to 'coal'
+Call Stack (most recent call first):
+  CMakeLists.txt:13 (find_package)
+
+
+CMake Warning at /opt/openrobots/lib/cmake/hpp-fcl/hpp-fclConfig.cmake:3 (message):
+  Please update your CMake from 'hpp-fcl' to 'coal'
+Call Stack (most recent call first):
+  /usr/share/cmake-3.22/Modules/CMakeFindDependencyMacro.cmake:47 (find_package)
+  /opt/openrobots/lib/cmake/pinocchio/pinocchioConfig.cmake:161 (find_dependency)
+  /home/jkang/third_party/PRIME/cmake/package-config.cmake:133 (find_package)
+  /home/jkang/third_party/PRIME/CMakeLists.txt:107 (add_project_dependency)
+
+
+In file included from /opt/openrobots/include/hpp/fcl/config.hh:1,
+                 from /opt/openrobots/include/pinocchio/serialization/eigen.hpp:20,
+                 from /opt/openrobots/include/pinocchio/serialization/fwd.hpp:11,
+                 from /opt/openrobots/include/pinocchio/multibody/joint/joint-composite.hpp:14,
+                 from /opt/openrobots/include/pinocchio/multibody/joint/joint-generic.hpp:9,
+                 from /opt/openrobots/include/pinocchio/multibody/model.hpp:17,
+                 from /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/config/contact-id-config.hpp:28,
+                 from /home/jkang/third_party/PRIME_ros/src/prime_contact_id_ros/src/prime_csv_replay_node.cpp:20:
+/opt/openrobots/include/hpp/fcl/coal.hpp:10:71: note: ‘#pragma message: Please update your includes from 'hpp/fcl' to 'coal'’
+   10 | #pragma message("Please update your includes from 'hpp/fcl' to 'coal'")
+      |                                                                       ^
+In file included from /opt/openrobots/include/hpp/fcl/config.hh:1,
+                 from /opt/openrobots/include/pinocchio/serialization/eigen.hpp:20,
+                 from /opt/openrobots/include/pinocchio/serialization/fwd.hpp:11,
+                 from /opt/openrobots/include/pinocchio/multibody/joint/joint-composite.hpp:14,
+                 from /opt/openrobots/include/pinocchio/multibody/joint/joint-generic.hpp:9,
+                 from /opt/openrobots/include/pinocchio/multibody/model.hpp:17,
+                 from /home/jkang/third_party/PRIME/include/crocoddyl/contact_id/config/contact-id-config.hpp:28,
+                 from /home/jkang/third_party/PRIME_ros/src/prime_contact_id_ros/src/prime_moving_window_node.cpp:36:
+/opt/openrobots/include/hpp/fcl/coal.hpp:10:71: note: ‘#pragma message: Please update your includes from 'hpp/fcl' to 'coal'’
+   10 | #pragma message("Please update your includes from 'hpp/fcl' to 'coal'")
+      |                                                                       ^
