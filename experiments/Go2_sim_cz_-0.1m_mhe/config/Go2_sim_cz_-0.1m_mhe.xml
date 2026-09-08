@@ -54,7 +54,9 @@
     max_windows="150"
     stride_knots="10"
     information_floor="1e-9"
-    information_ceiling="1e12" />
+    information_ceiling="1e12"
+    information_forgetting_enabled="false"
+    information_forgetting_factor="0.995" />
 
   <weights
     arrival_alpha="40.0"

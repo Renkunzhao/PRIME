@@ -117,13 +117,17 @@ struct ContactIDMovingHorizonConfig {
   std::size_t stride_knots;
   double information_floor;
   double information_ceiling;
+  bool information_forgetting_enabled;
+  double information_forgetting_factor;
 
   ContactIDMovingHorizonConfig()
       : enabled(false),
         max_windows(1),
         stride_knots(1),
         information_floor(1e-9),
-        information_ceiling(1e12) {}
+        information_ceiling(1e12),
+        information_forgetting_enabled(false),
+        information_forgetting_factor(1.) {}
 };
 
 struct ContactIDRobotConfig {
@@ -591,6 +595,12 @@ inline ContactIDXMLConfig load_config(const std::string& xml_path) {
     cfg.moving_horizon.information_ceiling =
         attr_double(moving_horizon, "information_ceiling",
                     cfg.moving_horizon.information_ceiling);
+    cfg.moving_horizon.information_forgetting_enabled = attr_bool(
+        moving_horizon, "information_forgetting_enabled",
+        cfg.moving_horizon.information_forgetting_enabled);
+    cfg.moving_horizon.information_forgetting_factor = attr_double(
+        moving_horizon, "information_forgetting_factor",
+        cfg.moving_horizon.information_forgetting_factor);
     if (cfg.moving_horizon.enabled &&
         cfg.moving_horizon.max_windows == 0) {
       throw std::runtime_error("Moving horizon max_windows must be > 0.");
@@ -604,6 +614,11 @@ inline ContactIDXMLConfig load_config(const std::string& xml_path) {
             cfg.moving_horizon.information_floor) {
       throw std::runtime_error(
           "Moving horizon information bounds are invalid.");
+    }
+    if (!(cfg.moving_horizon.information_forgetting_factor > 0.) ||
+        cfg.moving_horizon.information_forgetting_factor > 1.) {
+      throw std::runtime_error(
+          "Moving horizon information_forgetting_factor must be in (0, 1].");
     }
   }
 

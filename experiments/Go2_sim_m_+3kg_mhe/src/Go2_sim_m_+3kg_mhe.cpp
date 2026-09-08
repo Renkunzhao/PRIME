@@ -413,7 +413,8 @@ ExtractedMarginal extract_dropped_chunk_information(
 ExtractedMarginal accumulate_parameter_information(
     const crocoddyl::MarginalizedArrivalPrior& carried_prior,
     const ExtractedMarginal& dropped_information,
-    double information_floor, double information_ceiling) {
+    double information_floor, double information_ceiling,
+    double information_forgetting_factor) {
   const Eigen::Index np = dropped_information.prior.mean.size();
   Eigen::MatrixXd information =
       Eigen::MatrixXd::Zero(np, np);
@@ -426,8 +427,11 @@ ExtractedMarginal accumulate_parameter_information(
       throw std::runtime_error(
           "Carried prior dimensions do not match dropped information.");
     }
-    information.noalias() += carried_prior.information;
-    eta.noalias() += carried_prior.information * carried_prior.mean;
+    information.noalias() +=
+        information_forgetting_factor * carried_prior.information;
+    eta.noalias() +=
+        information_forgetting_factor * carried_prior.information *
+        carried_prior.mean;
   }
 
   information.noalias() += dropped_information.prior.information;
@@ -458,7 +462,7 @@ ExtractedMarginal accumulate_parameter_information(
 
 void write_summary_header(std::ofstream& os, Eigen::Index np) {
   os << "window,start_idx,cost,feasibility,mass_estimate,min_info_eig,"
-        "max_info_eig,extraction_status";
+        "max_info_eig,extraction_status,information_forgetting_factor";
   for (Eigen::Index i = 0; i < np; ++i) {
     os << ",arrival_prior_diag_" << i;
   }
@@ -474,11 +478,12 @@ void write_summary_header(std::ofstream& os, Eigen::Index np) {
 void write_summary_row(std::ofstream& os, std::size_t window_index,
                        std::size_t start_idx, double cost, double feasibility,
                        const crocoddyl::MarginalizedArrivalPrior& arrival_prior,
-                       const ExtractedMarginal& marginal) {
+                       const ExtractedMarginal& marginal,
+                       double information_forgetting_factor) {
   os << window_index << "," << start_idx << "," << cost << "," << feasibility
      << "," << mass_from_theta(marginal.prior.mean) << ","
      << marginal.min_eig << "," << marginal.max_eig << ","
-     << marginal.status;
+     << marginal.status << "," << information_forgetting_factor;
   for (Eigen::Index i = 0; i < marginal.prior.mean.size(); ++i) {
     if (arrival_prior.enabled) {
       os << "," << arrival_prior.information(i, i);
@@ -552,6 +557,10 @@ int main(int argc, char* argv[]) {
                 << " available_windows=" << max_available_windows
                 << " stride_knots=" << cfg.moving_horizon.stride_knots
                 << " shooting_knots=" << n_shooting_knots
+                << " information_forgetting_enabled="
+                << cfg.moving_horizon.information_forgetting_enabled
+                << " information_forgetting_factor="
+                << cfg.moving_horizon.information_forgetting_factor
                 << "\n";
       return 0;
     }
@@ -580,6 +589,10 @@ int main(int argc, char* argv[]) {
 
     crocoddyl::MarginalizedArrivalPrior carried_prior;
     Eigen::VectorXd carried_theta;
+    const double information_forgetting_factor =
+        cfg.moving_horizon.information_forgetting_enabled
+            ? cfg.moving_horizon.information_forgetting_factor
+            : 1.;
 
     crocoddyl::Timer timer;
     for (std::size_t w = 0; w < n_windows; ++w) {
@@ -608,7 +621,9 @@ int main(int argc, char* argv[]) {
 
       std::cout << "Solving MHE window " << w + 1 << " / " << n_windows
                 << " start_idx=" << window_cfg.solver.start_idx
-                << " dense_prior=" << carried_prior.enabled << "\n";
+                << " dense_prior=" << carried_prior.enabled
+                << " information_forgetting_factor="
+                << information_forgetting_factor << "\n";
       boost::shared_ptr<crocoddyl::ShootingProblem> shooting_problem =
           create_problem(model, joints, cfg.contact_frames, cfg.weights,
                          window_cfg.solver, outputs, carried_prior, data);
@@ -640,7 +655,8 @@ int main(int argc, char* argv[]) {
           accumulate_parameter_information(
               carried_prior, dropped_information,
               cfg.moving_horizon.information_floor,
-              cfg.moving_horizon.information_ceiling);
+              cfg.moving_horizon.information_ceiling,
+              information_forgetting_factor);
       save_extraction_debug(outputs, "accumulated_prior", marginal);
       carried_prior = marginal.prior;
       carried_theta = marginal.prior.mean;
@@ -648,7 +664,7 @@ int main(int argc, char* argv[]) {
       const double feasibility = solver.computeDynamicFeasibility();
       write_summary_row(summary, w, window_cfg.solver.start_idx,
                         solver.get_cost(), feasibility, arrival_prior_used,
-                        marginal);
+                        marginal, information_forgetting_factor);
       summary.flush();
     }
 
