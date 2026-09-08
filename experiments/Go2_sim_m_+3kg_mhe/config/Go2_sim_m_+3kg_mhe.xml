@@ -39,10 +39,10 @@
     average_controls="false" />
 
   <solver
-    horizon="40"
+    horizon="100"
     interval="0.005"
     down_sample="2"
-    max_iter="30"
+    max_iter="20"
     callbacks="true"
     start_idx="200"
     n_thread="1"
@@ -51,8 +51,8 @@
 
   <moving_horizon
     enabled="true"
-    max_windows="50"
-    stride_knots="20"
+    max_windows="100"
+    stride_knots="10"
     information_floor="1e-9"
     information_ceiling="1e12" />
 

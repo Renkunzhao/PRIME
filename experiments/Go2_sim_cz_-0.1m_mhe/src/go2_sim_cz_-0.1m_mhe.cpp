@@ -34,6 +34,10 @@ namespace {
 
 struct ExtractedMarginal {
   crocoddyl::MarginalizedArrivalPrior prior;
+  Eigen::MatrixXd raw_information;
+  Eigen::VectorXd raw_gradient;
+  Eigen::VectorXd theta_linearization;
+  Eigen::VectorXd natural_vector;
   double min_eig;
   double max_eig;
   std::string status;
@@ -151,6 +155,161 @@ double mass_from_theta(const Eigen::VectorXd& theta) {
   return mass;
 }
 
+std::size_t shooting_knots(const crocoddyl::ContactIDSolverConfig& solver_cfg) {
+  return (solver_cfg.horizon + solver_cfg.down_sample - 1) /
+         solver_cfg.down_sample;
+}
+
+crocoddyl::ContactIDWeights without_arrival_regularization(
+    const crocoddyl::ContactIDWeights& weights) {
+  crocoddyl::ContactIDWeights out = weights;
+  out.arrival_alpha = 0.;
+  out.arrival_com = 0.;
+  out.arrival_diag = 0.;
+  return out;
+}
+
+crocoddyl::MarginalizedArrivalPrior initial_arrival_prior(
+    const pinocchio::Model& model,
+    const std::vector<pinocchio::JointIndex>& joints,
+    const crocoddyl::ContactIDWeights& weights,
+    const Eigen::VectorXd& theta) {
+  const Eigen::Index np = theta.size();
+  if (np != static_cast<Eigen::Index>(10 * joints.size())) {
+    throw std::runtime_error("Initial theta size does not match identified joints.");
+  }
+
+  Eigen::MatrixXd information = Eigen::MatrixXd::Zero(np, np);
+  const int stride = 10;
+  for (std::size_t j = 0; j < joints.size(); ++j) {
+    Eigen::VectorXd defect_weights = Eigen::VectorXd::Zero(stride);
+    defect_weights[0] = std::pow(weights.arrival_alpha, 2);
+    for (int i = 1; i <= 6; ++i) {
+      defect_weights[i] = std::pow(weights.arrival_diag, 2);
+    }
+    for (int i = 7; i <= 9; ++i) {
+      defect_weights[i] = std::pow(weights.arrival_com, 2);
+    }
+    const Eigen::VectorXd s_link =
+        crocoddyl::computeFrozenSFromLogCholeskyJacobian(
+            model, joints[j], weights.arrival_scale_alpha);
+    if (s_link.size() != stride) {
+      throw std::runtime_error("Initial prior scaling must have size 10.");
+    }
+    information
+        .diagonal()
+        .segment(static_cast<Eigen::Index>(stride * j), stride) =
+        10. * defect_weights.array() * s_link.array().square();
+  }
+  return crocoddyl::MarginalizedArrivalPrior(theta, information);
+}
+
+crocoddyl::ContactIDOutputConfig quiet_outputs(
+    const crocoddyl::ContactIDOutputConfig& outputs) {
+  crocoddyl::ContactIDOutputConfig out = outputs;
+  out.force_log.clear();
+  out.log_initial_guess = false;
+  out.rollout = false;
+  return out;
+}
+
+void write_vector_csv(const std::string& path, const Eigen::VectorXd& vector) {
+  std::ofstream os(path.c_str(), std::ios::out | std::ios::trunc);
+  if (!os.is_open()) {
+    throw std::runtime_error("Cannot open debug vector output: " + path);
+  }
+  os << std::setprecision(16);
+  for (Eigen::Index i = 0; i < vector.size(); ++i) {
+    if (i > 0) {
+      os << ",";
+    }
+    os << vector[i];
+  }
+  os << "\n";
+}
+
+void write_matrix_csv(const std::string& path, const Eigen::MatrixXd& matrix) {
+  std::ofstream os(path.c_str(), std::ios::out | std::ios::trunc);
+  if (!os.is_open()) {
+    throw std::runtime_error("Cannot open debug matrix output: " + path);
+  }
+  os << std::setprecision(16);
+  for (Eigen::Index r = 0; r < matrix.rows(); ++r) {
+    for (Eigen::Index c = 0; c < matrix.cols(); ++c) {
+      if (c > 0) {
+        os << ",";
+      }
+      os << matrix(r, c);
+    }
+    os << "\n";
+  }
+}
+
+void save_prior_debug(
+    const crocoddyl::ContactIDOutputConfig& outputs,
+    const std::string& prefix,
+    const crocoddyl::MarginalizedArrivalPrior& prior) {
+  if (!prior.enabled) {
+    return;
+  }
+  contact_id_experiment::ensure_dir(outputs.directory);
+  write_vector_csv(crocoddyl::contact_id_xml::join_path(
+                       outputs.directory, prefix + "_mean.csv"),
+                   prior.mean);
+  write_matrix_csv(crocoddyl::contact_id_xml::join_path(
+                       outputs.directory, prefix + "_information.csv"),
+                   prior.information);
+  write_vector_csv(crocoddyl::contact_id_xml::join_path(
+                       outputs.directory, prefix + "_eta.csv"),
+                   prior.information * prior.mean);
+}
+
+void save_extraction_debug(
+    const crocoddyl::ContactIDOutputConfig& outputs,
+    const std::string& prefix,
+    const ExtractedMarginal& marginal) {
+  contact_id_experiment::ensure_dir(outputs.directory);
+  save_prior_debug(outputs, prefix, marginal.prior);
+  write_matrix_csv(crocoddyl::contact_id_xml::join_path(
+                       outputs.directory, prefix + "_raw_information.csv"),
+                   marginal.raw_information);
+  write_vector_csv(crocoddyl::contact_id_xml::join_path(
+                       outputs.directory, prefix + "_raw_gradient.csv"),
+                   marginal.raw_gradient);
+  write_vector_csv(crocoddyl::contact_id_xml::join_path(
+                       outputs.directory, prefix + "_theta_linearization.csv"),
+                   marginal.theta_linearization);
+  write_vector_csv(crocoddyl::contact_id_xml::join_path(
+                       outputs.directory, prefix + "_natural_vector.csv"),
+                   marginal.natural_vector);
+}
+
+contact_id_experiment::PreparedContactIDData dropped_chunk_data(
+    const contact_id_experiment::PreparedContactIDData& long_data,
+    const std::vector<Eigen::VectorXd>& xs_solution,
+    std::size_t dropped_knots) {
+  if (dropped_knots == 0) {
+    throw std::runtime_error("Dropped-horizon marginalization needs >0 knots.");
+  }
+  if (xs_solution.size() < dropped_knots + 1 ||
+      long_data.state_task.size() < dropped_knots ||
+      long_data.ctrl_task.size() + 1 < dropped_knots) {
+    throw std::runtime_error(
+        "Solved long-window trajectory is too short for the dropped horizon.");
+  }
+
+  contact_id_experiment::PreparedContactIDData out = long_data;
+  out.x0 = xs_solution[0];
+  out.state_task.assign(long_data.state_task.begin(),
+                        long_data.state_task.begin() + dropped_knots);
+  out.ctrl_task.assign(long_data.ctrl_task.begin(),
+                       long_data.ctrl_task.begin() + dropped_knots - 1);
+  out.state_init.assign(xs_solution.begin(),
+                        xs_solution.begin() + dropped_knots + 1);
+  out.ctrl_init.clear();
+  return out;
+}
+
 boost::shared_ptr<crocoddyl::ShootingProblem> create_problem(
     const pinocchio::Model& model,
     const std::vector<pinocchio::JointIndex>& joints,
@@ -176,35 +335,53 @@ boost::shared_ptr<crocoddyl::ShootingProblem> create_problem(
   return shooting_problem;
 }
 
-ExtractedMarginal extract_marginal(
-    const boost::shared_ptr<crocoddyl::ShootingProblem>& shooting_problem,
-    const crocoddyl::SolverFDDP& solved_solver,
+ExtractedMarginal extract_dropped_chunk_information(
+    const pinocchio::Model& model,
+    const std::vector<pinocchio::JointIndex>& joints,
+    const std::vector<std::string>& contact_frames,
+    const crocoddyl::ContactIDXMLConfig& window_cfg,
+    const contact_id_experiment::PreparedContactIDData& long_data,
     const std::vector<Eigen::VectorXd>& xs_solution,
     const std::vector<Eigen::VectorXd>& us_solution,
-    Eigen::Index nq,
+    std::size_t dropped_knots,
     double information_floor, double information_ceiling) {
-  if (xs_solution.size() < 2 || us_solution.empty()) {
-    throw std::runtime_error("Cannot extract marginal from an empty solution.");
-  }
+  contact_id_experiment::PreparedContactIDData drop_data =
+      dropped_chunk_data(long_data, xs_solution, dropped_knots);
+  crocoddyl::ContactIDSolverConfig drop_solver = window_cfg.solver;
+  drop_solver.horizon = dropped_knots * window_cfg.solver.down_sample;
 
-  std::vector<Eigen::VectorXd> xs_feasible(shooting_problem->get_T() + 1);
-  shooting_problem->rollout(us_solution, xs_feasible);
+  const crocoddyl::ContactIDWeights drop_weights =
+      without_arrival_regularization(window_cfg.weights);
+  const crocoddyl::ContactIDOutputConfig drop_outputs =
+      quiet_outputs(window_cfg.outputs);
+
+  boost::shared_ptr<crocoddyl::ShootingProblem> drop_problem =
+      create_problem(model, joints, contact_frames, drop_weights, drop_solver,
+                     drop_outputs, crocoddyl::MarginalizedArrivalPrior(),
+                     drop_data);
+  if (us_solution.size() < dropped_knots) {
+    throw std::runtime_error(
+        "Solved long-window controls are too short for dropped horizon.");
+  }
+  std::vector<Eigen::VectorXd> us_drop(us_solution.begin(),
+                                       us_solution.begin() + dropped_knots);
+  std::vector<Eigen::VectorXd> xs_feasible(drop_problem->get_T() + 1);
+  drop_problem->rollout(us_drop, xs_feasible);
 
   Eigen::MatrixXd Lambda_raw;
   Eigen::VectorXd eta_raw;
-  std::string status = "fresh_backward";
+  std::string status = "dropped_horizon_backward";
   try {
-    crocoddyl::SolverFDDP extractor(shooting_problem);
+    crocoddyl::SolverFDDP extractor(drop_problem);
     extractor.set_alphas(make_solver_alphas(1.));
-    extractor.setCandidate(xs_feasible, us_solution, true);
+    extractor.setCandidate(xs_feasible, us_drop, true);
     extractor.calcDiff();
     extractor.backwardPass();
     Lambda_raw = extractor.get_Quu()[0];
     eta_raw = extractor.get_Qu()[0];
-  } catch (const std::exception&) {
-    status = "cached_solver_backward";
-    Lambda_raw = solved_solver.get_Quu()[0];
-    eta_raw = solved_solver.get_Qu()[0];
+  } catch (const std::exception& e) {
+    throw std::runtime_error(
+        std::string("Dropped-horizon backward extraction failed: ") + e.what());
   }
 
   double min_eig = 0.;
@@ -214,18 +391,68 @@ ExtractedMarginal extract_marginal(
                         min_eig, max_eig);
 
   const Eigen::VectorXd theta_current =
-      xs_feasible[1].segment(nq, us_solution[0].size());
+      xs_feasible[1].segment(model.nq, us_drop[0].size());
   Eigen::LDLT<Eigen::MatrixXd> ldlt(information);
   if (ldlt.info() != Eigen::Success) {
-    throw std::runtime_error("Failed to solve marginalized information system.");
+    throw std::runtime_error("Failed to solve dropped information system.");
   }
   const Eigen::VectorXd theta_mean = theta_current - ldlt.solve(eta_raw);
 
   ExtractedMarginal out;
   out.prior = crocoddyl::MarginalizedArrivalPrior(theta_mean, information);
+  out.raw_information = Lambda_raw;
+  out.raw_gradient = eta_raw;
+  out.theta_linearization = theta_current;
+  out.natural_vector = information * theta_mean;
   out.min_eig = min_eig;
   out.max_eig = max_eig;
   out.status = status;
+  return out;
+}
+
+ExtractedMarginal accumulate_parameter_information(
+    const crocoddyl::MarginalizedArrivalPrior& carried_prior,
+    const ExtractedMarginal& dropped_information,
+    double information_floor, double information_ceiling) {
+  const Eigen::Index np = dropped_information.prior.mean.size();
+  Eigen::MatrixXd information =
+      Eigen::MatrixXd::Zero(np, np);
+  Eigen::VectorXd eta = Eigen::VectorXd::Zero(np);
+
+  if (carried_prior.enabled) {
+    if (carried_prior.mean.size() != np ||
+        carried_prior.information.rows() != np ||
+        carried_prior.information.cols() != np) {
+      throw std::runtime_error(
+          "Carried prior dimensions do not match dropped information.");
+    }
+    information.noalias() += carried_prior.information;
+    eta.noalias() += carried_prior.information * carried_prior.mean;
+  }
+
+  information.noalias() += dropped_information.prior.information;
+  eta.noalias() +=
+      dropped_information.prior.information * dropped_information.prior.mean;
+
+  double min_eig = 0.;
+  double max_eig = 0.;
+  const Eigen::MatrixXd clamped =
+      clamp_information(information, information_floor, information_ceiling,
+                        min_eig, max_eig);
+  Eigen::LDLT<Eigen::MatrixXd> ldlt(clamped);
+  if (ldlt.info() != Eigen::Success) {
+    throw std::runtime_error("Failed to solve accumulated information system.");
+  }
+
+  ExtractedMarginal out;
+  out.prior = crocoddyl::MarginalizedArrivalPrior(ldlt.solve(eta), clamped);
+  out.raw_information = information;
+  out.raw_gradient = Eigen::VectorXd::Zero(np);
+  out.theta_linearization = out.prior.mean;
+  out.natural_vector = eta;
+  out.min_eig = min_eig;
+  out.max_eig = max_eig;
+  out.status = dropped_information.status;
   return out;
 }
 
@@ -306,6 +533,12 @@ int main(int argc, char* argv[]) {
         cfg.moving_horizon.enabled ? cfg.moving_horizon.max_windows : 1;
     const std::size_t n_windows =
         std::min(requested_windows, max_available_windows);
+    const std::size_t n_shooting_knots = shooting_knots(cfg.solver);
+    if (cfg.moving_horizon.stride_knots > n_shooting_knots) {
+      throw std::runtime_error(
+          "Moving-horizon stride_knots must be <= the down-sampled shooting "
+          "horizon for dropped-chunk marginalization.");
+    }
 
     if (cfg.solver.dry_run) {
       std::cout << "Parsed Go2 shifted-COM MHE contact-ID XML successfully.\n";
@@ -318,14 +551,16 @@ int main(int argc, char* argv[]) {
                 << " requested_windows=" << requested_windows
                 << " available_windows=" << max_available_windows
                 << " stride_knots=" << cfg.moving_horizon.stride_knots
+                << " shooting_knots=" << n_shooting_knots
                 << "\n";
       return 0;
     }
 
     std::cout
-        << "Go2 shifted-COM MHE uses one-knot overlapping windows by default. Carrying "
-           "full Quu[0] is a filtering-style marginalization experiment, not "
-           "an independent non-overlap batch posterior.\n";
+        << "Go2 shifted-COM MHE carries parameter information from the "
+           "dropped horizon only. The long window remains the identification "
+           "solve; the arrival prior is updated by a short dropped-chunk "
+           "backward pass.\n";
 
     const pinocchio::Model model =
         contact_id_experiment::load_floating_base_model(cfg.robot);
@@ -359,6 +594,8 @@ int main(int argc, char* argv[]) {
               model, joints, cfg.contact_frames, window_cfg);
       if (w == 0) {
         carried_theta = flatten_parameter_logs(data.parameter_logs);
+        carried_prior =
+            initial_arrival_prior(model, joints, cfg.weights, carried_theta);
       } else {
         apply_prior_mean_to_data(model, carried_theta, data);
       }
@@ -368,6 +605,7 @@ int main(int argc, char* argv[]) {
       contact_id_experiment::clear_outputs(outputs);
       contact_id_experiment::log_initial_guess(outputs, data.state_task,
                                                data.ctrl_task);
+      save_prior_debug(outputs, "arrival_prior_used", carried_prior);
 
       std::cout << "Solving MHE window " << w + 1 << " / " << n_windows
                 << " start_idx=" << window_cfg.solver.start_idx
@@ -390,11 +628,21 @@ int main(int argc, char* argv[]) {
 
       const crocoddyl::MarginalizedArrivalPrior arrival_prior_used =
           carried_prior;
-      ExtractedMarginal marginal =
-          extract_marginal(shooting_problem, solver, solver.get_xs(),
-                           solver.get_us(), model.nq,
-                           cfg.moving_horizon.information_floor,
-                           cfg.moving_horizon.information_ceiling);
+      const ExtractedMarginal dropped_information =
+          extract_dropped_chunk_information(
+              model, joints, cfg.contact_frames, window_cfg, data,
+              solver.get_xs(), solver.get_us(),
+              cfg.moving_horizon.stride_knots,
+              cfg.moving_horizon.information_floor,
+              cfg.moving_horizon.information_ceiling);
+      save_extraction_debug(outputs, "dropped_information",
+                            dropped_information);
+      const ExtractedMarginal marginal =
+          accumulate_parameter_information(
+              carried_prior, dropped_information,
+              cfg.moving_horizon.information_floor,
+              cfg.moving_horizon.information_ceiling);
+      save_extraction_debug(outputs, "accumulated_prior", marginal);
       carried_prior = marginal.prior;
       carried_theta = marginal.prior.mean;
 
