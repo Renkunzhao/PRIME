@@ -1,4 +1,0 @@
-Invoking command in '/home/jkang/third_party/PRIME_ros/build/prime_contact_id_ros': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/jkang/third_party/PRIME_ros/build/prime_contact_id_ros -- -j32 -l32
-Invoked command in '/home/jkang/third_party/PRIME_ros/build/prime_contact_id_ros' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/jkang/third_party/PRIME_ros/build/prime_contact_id_ros -- -j32 -l32
-Invoking command in '/home/jkang/third_party/PRIME_ros/build/prime_contact_id_ros': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/jkang/third_party/PRIME_ros/build/prime_contact_id_ros
-Invoked command in '/home/jkang/third_party/PRIME_ros/build/prime_contact_id_ros' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/jkang/third_party/PRIME_ros/build/prime_contact_id_ros
