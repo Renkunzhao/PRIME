@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <config>
   <paths
-    ros_workspace="/home/jkang/third_party/PRIME_ros"
-    prime_workspace="/home/jkang/third_party/PRIME"
+    ros_workspace="@PRIME_ROS_ROOT@"
+    prime_workspace="@PRIME_SOURCE_DIR@"
     experiment="${prime_workspace}/experiments/Go2_sim_kunzhao_long_mhe"
     descriptions="${experiment}/descriptions"
     data="${experiment}/data"
@@ -51,7 +51,7 @@
 
   <moving_horizon
     enabled="true"
-    max_windows="100"
+    max_windows="10000"
     stride_knots="50"
     information_floor="1e-9"
     information_ceiling="1e12" 

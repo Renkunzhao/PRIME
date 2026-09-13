@@ -10,9 +10,9 @@ find_package(sensor_msgs REQUIRED)
 find_package(nav_msgs REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(diagnostic_msgs REQUIRED)
-find_package(hpp-fcl REQUIRED)
 
-set(PRIME_SOURCE_DIR "/home/jkang/third_party/PRIME" CACHE PATH "Local PRIME source tree")
+get_filename_component(PRIME_ROS_ROOT "${CMAKE_CURRENT_SOURCE_DIR}/../.." ABSOLUTE)
+set(PRIME_SOURCE_DIR "${PRIME_ROS_ROOT}/core" CACHE PATH "Local PRIME source tree")
 if(NOT EXISTS "${PRIME_SOURCE_DIR}/CMakeLists.txt")
   message(FATAL_ERROR "PRIME_SOURCE_DIR does not point to a PRIME source tree: ${PRIME_SOURCE_DIR}")
 endif()
@@ -68,8 +68,21 @@ install(TARGETS
   DESTINATION lib/${PROJECT_NAME}
 )
 
-install(DIRECTORY launch config
-  DESTINATION share/${PROJECT_NAME}
+configure_file(
+  config/Go2_sim_kunzhao_long_mhe_ros.xml.in
+  ${CMAKE_CURRENT_BINARY_DIR}/Go2_sim_kunzhao_long_mhe_ros.xml
+  @ONLY
+)
+install(DIRECTORY launch DESTINATION share/${PROJECT_NAME})
+install(FILES
+  ${CMAKE_CURRENT_BINARY_DIR}/Go2_sim_kunzhao_long_mhe_ros.xml
+  config/prime_inertial_input.yaml
+  DESTINATION share/${PROJECT_NAME}/config
+)
+install(PROGRAMS
+  scripts/unitree_prime_state_node.py
+  scripts/prime_inertial_input_node.py
+  DESTINATION lib/${PROJECT_NAME}
 )
 
 ament_package()

@@ -1,0 +1,10 @@
+prime_inertial_input:
+  ros__parameters:
+    # Compiled unitree_rl_mjlab Go2 base_link, before basket/payload DR.
+    # Pinocchio dynamic order: m, hx, hy, hz, Ixx, Ixy, Iyy, Ixz, Iyz, Izz.
+    # h=m*COM; inertia is about the base origin, not the COM. SI units.
+    # mass=6.921; COM=(0.021112, 0, -0.005366).
+    policy_nominal_dynamic_parameters:
+      [6.921, 0.146116152, 0.0, -0.037138086,
+       0.024679293737933126, 0.00012165981636169433, 0.1013610783567011,
+       0.0022688681406197305, -0.000031200472825479954, 0.1100850022463658]

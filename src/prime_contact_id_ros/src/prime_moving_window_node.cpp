@@ -472,6 +472,17 @@ class PrimeMovingWindowNode : public rclcpp::Node {
         "~/theta_log_cholesky", 10);
     inertia_pub_ = create_publisher<std_msgs::msg::Float64MultiArray>(
         "~/inertia_dynamic_params", 10);
+    // The Beam adapter needs the URDF nominal before any identification update.
+    // Publish only for a single floating-base inertia, in the same root frame.
+    if (joints_.size() == 1 && joints_[0] == 1) {
+      nominal_inertia_pub_ = create_publisher<std_msgs::msg::Float64MultiArray>(
+          "~/nominal_inertia_dynamic_params",
+          rclcpp::QoS(1).reliable().transient_local());
+      const auto nominal = model_.inertias[joints_[0]].toDynamicParameters();
+      std_msgs::msg::Float64MultiArray message;
+      message.data.assign(nominal.data(), nominal.data() + nominal.size());
+      nominal_inertia_pub_->publish(message);
+    }
     diag_pub_ = create_publisher<diagnostic_msgs::msg::DiagnosticArray>(
         "~/solver_stats", 10);
 
@@ -837,6 +848,7 @@ class PrimeMovingWindowNode : public rclcpp::Node {
   rclcpp::Subscription<std_msgs::msg::Float64MultiArray>::SharedPtr torque_sub_;
   rclcpp::Publisher<std_msgs::msg::Float64MultiArray>::SharedPtr theta_pub_;
   rclcpp::Publisher<std_msgs::msg::Float64MultiArray>::SharedPtr inertia_pub_;
+  rclcpp::Publisher<std_msgs::msg::Float64MultiArray>::SharedPtr nominal_inertia_pub_;
   rclcpp::Publisher<diagnostic_msgs::msg::DiagnosticArray>::SharedPtr diag_pub_;
   rclcpp::TimerBase::SharedPtr timer_;
 };
