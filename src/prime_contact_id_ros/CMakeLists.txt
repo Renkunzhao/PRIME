@@ -10,6 +10,7 @@ find_package(sensor_msgs REQUIRED)
 find_package(nav_msgs REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(diagnostic_msgs REQUIRED)
+find_package(hpp-fcl REQUIRED)
 
 get_filename_component(PRIME_ROS_ROOT "${CMAKE_CURRENT_SOURCE_DIR}/../.." ABSOLUTE)
 set(PRIME_SOURCE_DIR "${PRIME_ROS_ROOT}/core" CACHE PATH "Local PRIME source tree")
@@ -73,15 +74,22 @@ configure_file(
   ${CMAKE_CURRENT_BINARY_DIR}/Go2_sim_kunzhao_long_mhe_ros.xml
   @ONLY
 )
+configure_file(
+  config/Go2_real_m_+4kg_kunzhao_mhe_ros.xml.in
+  ${CMAKE_CURRENT_BINARY_DIR}/Go2_real_m_+4kg_kunzhao_mhe_ros.xml
+  @ONLY
+)
 install(DIRECTORY launch DESTINATION share/${PROJECT_NAME})
 install(FILES
   ${CMAKE_CURRENT_BINARY_DIR}/Go2_sim_kunzhao_long_mhe_ros.xml
+  ${CMAKE_CURRENT_BINARY_DIR}/Go2_real_m_+4kg_kunzhao_mhe_ros.xml
   config/prime_inertial_input.yaml
   DESTINATION share/${PROJECT_NAME}/config
 )
 install(PROGRAMS
   scripts/unitree_prime_state_node.py
   scripts/prime_inertial_input_node.py
+  visualizer/meshcat_go2_data.py
   DESTINATION lib/${PROJECT_NAME}
 )
 

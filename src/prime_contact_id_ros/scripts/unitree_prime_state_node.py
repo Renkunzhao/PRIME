@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 """Resample Go2 state at 200 Hz for PRIME's interval=0.005 configuration."""
 
+import csv
 import time
+from pathlib import Path
 
 import numpy as np
 import rclpy
@@ -85,6 +87,9 @@ def make_state(low, estimate, stamp):
 class UnitreePrimeState(Node):
     def __init__(self):
         super().__init__("unitree_prime_state")
+        self.csv_files = []
+        self.q_writer = self.v_writer = self.tau_writer = None
+        self.configure_csv_logging()
         self.low = self.estimate = None
         self.low_time = self.estimate_time = 0.0
         self.last_low_tick = None
@@ -99,6 +104,30 @@ class UnitreePrimeState(Node):
             Odometry, "/iekf/odom", self.on_estimate, qos_profile_sensor_data
         )
         self.timer = self.create_timer(0.005, self.publish_state)
+
+    def configure_csv_logging(self):
+        self.declare_parameter("log_csv", False)
+        self.declare_parameter("log_directory", "")
+        self.declare_parameter("truncate_logs", True)
+        if not self.get_parameter("log_csv").value:
+            return
+
+        directory_value = self.get_parameter("log_directory").value
+        if not directory_value:
+            raise ValueError("log_directory must be set when log_csv is enabled")
+        directory = Path(directory_value).expanduser()
+        directory.mkdir(parents=True, exist_ok=True)
+        mode = "w" if self.get_parameter("truncate_logs").value else "a"
+        paths = [
+            directory / "p_sense.csv",
+            directory / "v_sense.csv",
+            directory / "tau_sense.csv",
+        ]
+        self.csv_files = [path.open(mode, newline="", buffering=1) for path in paths]
+        self.q_writer, self.v_writer, self.tau_writer = [
+            csv.writer(file) for file in self.csv_files
+        ]
+        self.get_logger().info(f"Writing PRIME-compatible CSV logs to {directory}")
 
     def on_low(self, message):
         if message.tick != self.last_low_tick:
@@ -128,6 +157,49 @@ class UnitreePrimeState(Node):
             return
         self.odom_publisher.publish(odom)
         self.joint_publisher.publish(joints)
+        self.write_csv_rows(odom, joints)
+
+    def write_csv_rows(self, odom, joints):
+        if self.q_writer is None:
+            return
+        stamp = odom.header.stamp
+        stamp_ns = stamp.sec * 1_000_000_000 + stamp.nanosec
+        position = odom.pose.pose.position
+        orientation = odom.pose.pose.orientation
+        linear = odom.twist.twist.linear
+        angular = odom.twist.twist.angular
+        self.q_writer.writerow(
+            [
+                stamp_ns,
+                position.x,
+                position.y,
+                position.z,
+                orientation.x,
+                orientation.y,
+                orientation.z,
+                orientation.w,
+                *joints.position,
+            ]
+        )
+        self.v_writer.writerow(
+            [
+                stamp_ns,
+                linear.x,
+                linear.y,
+                linear.z,
+                angular.x,
+                angular.y,
+                angular.z,
+                *joints.velocity,
+            ]
+        )
+        self.tau_writer.writerow([stamp_ns, *joints.effort])
+
+    def destroy_node(self):
+        for file in self.csv_files:
+            file.close()
+        self.csv_files = []
+        return super().destroy_node()
 
 
 def main():

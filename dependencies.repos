@@ -1,0 +1,25 @@
+repositories:
+  src/go2_estimator:
+    type: git
+    url: https://github.com/Renkunzhao/go2_estimator.git
+    version: cc1b178c593411ef0856e5cdd6f20d37a30f2b5f
+  src/unitree_lowlevel:
+    type: git
+    url: https://github.com/Renkunzhao/unitree_lowlevel.git
+    version: 0909a9917a0d29b6307f1bcacca08097e384cb3a
+  src/legged_base:
+    type: git
+    url: https://github.com/Renkunzhao/legged_base.git
+    version: dbfb05ca87627f586c022f4d3668f85d34182534
+  lib/manif:
+    type: git
+    url: https://github.com/artivis/manif.git
+    version: 65166b3bfd15b1020c29f3eaf6888e1009c79aea
+  lib/unitree_ros2:
+    type: git
+    url: https://github.com/unitreerobotics/unitree_ros2.git
+    version: 3ff13ea08ec619496c2651fd21b172f7958dd5a5
+  lib/unitree_sdk2:
+    type: git
+    url: https://github.com/unitreerobotics/unitree_sdk2.git
+    version: f29ee9f234851e9e79f75102c0f9e83008d8fdd1

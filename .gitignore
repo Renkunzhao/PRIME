@@ -3,3 +3,7 @@
 /log/
 /core/
 /results/
+/lib/
+/src/legged_base/
+/src/go2_estimator/
+/src/unitree_lowlevel/
