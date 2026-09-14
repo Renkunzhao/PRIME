@@ -1,6 +1,6 @@
 # PRIME ROS 2
 
-> **Handoff note for Codex/Claude:** This branch adds a recorded-data pipeline
+> **Handoff note:** This branch adds a recorded-data pipeline
 > from `/lowstate` through IEKF to online PRIME without CSV communication. The
 > main additions are `prime_bag_replay.launch.py` and the tuned
 > `Go2_real_m_+4kg_kunzhao_mhe_ros.xml.in`. `go2_estimator` and
