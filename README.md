@@ -1,5 +1,13 @@
 # PRIME ROS 2
 
+> **Handoff note for Codex/Claude:** This branch adds a recorded-data pipeline
+> from `/lowstate` through IEKF to online PRIME without CSV communication. The
+> main additions are `prime_bag_replay.launch.py` and the tuned
+> `Go2_real_m_+4kg_kunzhao_mhe_ros.xml.in`. `go2_estimator` and
+> `unitree_lowlevel` were not modified; their published commits are pinned in
+> `dependencies.repos`. Keep the PRIME ROS build at `-O3`, since a cached `-O0`
+> build makes identification dramatically slower.
+
 PRIME manages the complete Go2 estimation pipeline: IEKF, the input adapter,
 the online inertia solver, and the output adapter for Beam GT policies.
 `legged_rl_deploy` only consumes the resulting `/prime/inertial_delta`.
